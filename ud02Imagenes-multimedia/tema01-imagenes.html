@@ -1,0 +1,164 @@
+﻿<section class="estructura-formativa" id="ud02-t1">
+  <h2>UD02 · Inserción de imágenes: formatos, atributos y ubicación</h2>
+
+  <div class="bloque" id="intro-ud02-t1">
+    <p><strong>Objetivo:</strong> dominar la inserción de imágenes accesibles y eficientes, elegir formato y atributos adecuados, y ubicar cada imagen con la semántica correcta.</p>
+
+    <div class="card-grid" role="list" aria-label="Puntos clave">
+      <article class="card" role="listitem">
+        <h4>Formatos</h4>
+        <p>JPEG/WebP/AVIF (foto), PNG (transparencia), SVG (vector).</p>
+      </article>
+      <article class="card" role="listitem">
+        <h4>Responsive</h4>
+        <p><code>srcset</code>, <code>sizes</code> y <code>&lt;picture&gt;</code> para art direction.</p>
+      </article>
+      <article class="card" role="listitem">
+        <h4>Rendimiento</h4>
+        <p><code>width/height</code>, <code>loading</code>, <code>decoding</code>, <code>fetchpriority</code>.</p>
+      </article>
+      <article class="card" role="listitem">
+        <h4>Semántica</h4>
+        <p><code>&lt;figure&gt;</code> + <code>&lt;figcaption&gt;</code> y <code>alt</code> significativo.</p>
+      </article>
+    </div>
+  </div>
+  <div class="imagen centrado">
+        <img src="assets/imagen.png" alt="Capas HTML" />
+      </div>
+  <div class="bloque">
+    <h3>1) Formatos de imagen y casos de uso</h3>
+    <ul>
+      <li><strong>JPEG/JPG</strong>: ideal para <em>fotografías</em>, buena compresión (con pérdida).</li>
+      <li><strong>PNG</strong>: transparencia alfa; logos y gráficos nítidos.</li>
+      <li><strong>WebP / AVIF</strong>: modernos, gran compresión/calidad; preferibles a JPEG/PNG si hay soporte.</li>
+      <li><strong>SVG</strong>: vectorial y escalable; iconos, logos, diagramas.</li>
+      <li><strong>GIF</strong>: animaciones muy simples; hoy se prefiere vídeo/APNG.</li>
+    </ul>
+  </div>
+
+  <div class="bloque">
+    <h3>2) Incluir imágenes en HTML</h3>
+    <p><strong>Básico recomendado:</strong></p>
+    <pre class="esquema-textual"><code>&lt;img 
+  src="img/faro.jpg" 
+  alt="Faro al atardecer en la costa"
+  title="Faro — Fotografía de ejemplo"
+  width="640" height="426"
+  loading="lazy"
+  decoding="async"
+/&gt;</code></pre>
+    <p><em>Claves:</em> <code>alt</code> accesible; <code>width/height</code> evitan saltos (CLS); <code>loading="lazy"</code> ahorra datos; <code>decoding="async"</code> mejora la percepción.</p>
+  </div>
+
+  <div class="bloque">
+    <h3>3) Imágenes responsive</h3>
+    <p><strong>Por anchura disponible:</strong></p>
+    <pre class="esquema-textual"><code>&lt;img
+  src="img/hero-800.jpg"
+  srcset="img/hero-400.jpg 400w, img/hero-800.jpg 800w, img/hero-1200.jpg 1200w"
+  sizes="(max-width: 600px) 90vw, 800px"
+  alt="Paisaje de montaña con lago"
+/&gt;</code></pre>
+
+    <p><strong>Art direction y formatos modernos:</strong></p>
+    <pre class="esquema-textual"><code>&lt;picture&gt;
+  &lt;source srcset="img/portada.avif" type="image/avif" media="(min-width: 900px)"&gt;
+  &lt;source srcset="img/portada.webp" type="image/webp"&gt;
+  &lt;img src="img/portada.jpg" alt="Portada del sitio con ilustración"/&gt;
+&lt;/picture&gt;</code></pre>
+  </div>
+
+  <div class="bloque">
+    <h3>4) Atributos útiles de &lt;img&gt;</h3>
+    <ul>
+      <li><strong>Básicos:</strong> <code>src</code>, <code>alt</code>, <code>title</code>, <code>width</code>, <code>height</code>.</li>
+      <li><strong>Responsive:</strong> <code>srcset</code>, <code>sizes</code>, <code>&lt;picture&gt;</code>/<code>&lt;source&gt;</code>.</li>
+      <li><strong>Rendimiento:</strong> <code>loading</code>, <code>decoding</code>, <code>fetchpriority</code>, <code>referrerpolicy</code>.</li>
+    </ul>
+
+    <pre class="esquema-textual"><code>&lt;img
+  src="img/hero-1200.jpg"
+  alt="Hero del sitio con persona trabajando"
+  width="1200" height="700"
+  loading="eager"
+  decoding="async"
+  fetchpriority="high"
+  referrerpolicy="no-referrer"
+/&gt;</code></pre>
+  </div>
+
+  <div class="bloque">
+    <h3>5) Ubicación y semántica</h3>
+    <pre class="esquema-textual"><code>&lt;figure&gt;
+  &lt;img src="img/grafico.svg" alt="Crecimiento trimestral en 2025"&gt;
+  &lt;figcaption&gt;Figura 1. Crecimiento trimestral (2025).&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+  </div>
+
+  <div class="bloque">
+    <h3>6) ¿&lt;img&gt; o fondo CSS?</h3>
+    <ul>
+      <li><strong>Contenido</strong> (aporta información) → <code>&lt;img&gt;</code> con <code>alt</code>.</li>
+      <li><strong>Decoración</strong> (solo estética) → <code>background-image</code> y, si se usa <code>&lt;img&gt;</code>, <code>alt=""</code>.</li>
+    </ul>
+    <pre class="esquema-textual"><code>.hero {
+  background-image: image-set(
+    url("img/hero-800.webp") type("image/webp") 1x,
+    url("img/hero-1600.webp") type("image/webp") 2x
+  );
+  background-size: cover;
+  background-position: center;
+}</code></pre>
+  </div>
+
+  <div class="resumen">
+    <p><strong>Resumen:</strong> formato correcto, <code>alt</code> significativo, <code>srcset/sizes</code> (o <code>&lt;picture&gt;</code>), atributos de rendimiento y semántica con <code>&lt;figure&gt;</code>.</p>
+  </div>
+
+  <hr class="separador-verde" />
+
+  <!-- ================== QUIZ ================== -->
+  <section class="bloque">
+    <h3>Autoevaluación · UD02 · Tema 1 (Imágenes)</h3>
+
+    <!-- data-quiz + data-respuestas → el validador global lo detecta -->
+    <form id="quiz-ud02-t1"
+          class="bloque"
+          data-quiz
+          data-respuestas='{"q1":"c","q2":"a","q3":"a"}'
+          novalidate>
+
+      <fieldset>
+        <legend>1) ¿Qué formato es <em>vectorial</em> y escala sin perder calidad?</legend>
+        <label><input type="radio" name="q1" value="a" required> JPEG</label><br>
+        <label><input type="radio" name="q1" value="b"> PNG</label><br>
+        <label><input type="radio" name="q1" value="c"> SVG</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>2) ¿Qué combinación implementa imágenes <em>responsive</em> por tamaño de pantalla?</legend>
+        <label><input type="radio" name="q2" value="a" required> <code>srcset</code> + <code>sizes</code></label><br>
+        <label><input type="radio" name="q2" value="b"> <code>loading</code> + <code>decoding</code></label><br>
+        <label><input type="radio" name="q2" value="c"> <code>title</code> + <code>width</code></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>3) ¿Cómo marcas una imagen con pie descriptivo de forma semántica?</legend>
+        <label><input type="radio" name="q3" value="a" required> <code>&lt;figure&gt;</code> con <code>&lt;img&gt;</code> y <code>&lt;figcaption&gt;</code></label><br>
+        <label><input type="radio" name="q3" value="b"> <code>&lt;div&gt;</code> con <code>&lt;caption&gt;</code></label><br>
+        <label><input type="radio" name="q3" value="c"> <code>&lt;img alt=""&gt;</code> para todo</label>
+      </fieldset>
+
+      <p id="quiz-ud02-t1-msg" aria-live="polite"></p>
+      <button type="submit" class="boton-ir">Comprobar respuestas</button>
+    </form>
+  </section>
+
+  <!-- Override de navegación: al aprobar → UD02/Tema 2 -->
+  <script>
+    window.QUIZ_NAV_OVERRIDE = window.QUIZ_NAV_OVERRIDE || {};
+    // Este parcial corresponde a UD02 · Tema 1  → tras aprobar, abre UD02 · Tema 2
+    QUIZ_NAV_OVERRIDE['ud02:0'] = '#/ud/2/tema/2';
+  </script>
+</section>

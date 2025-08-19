@@ -1,0 +1,110 @@
+
+
+    <h2>Adaptación de Sitios Web Usables</h2>
+    <p><strong>Objetivo:</strong> Comprender y aplicar los principios de usabilidad para adaptar sitios web, mejorando la experiencia del usuario, la accesibilidad y la eficacia de la interacción. Un sitio web usable no es un simple conjunto de características, sino una filosofía de diseño centrada en el usuario.</p>
+
+    <div class="esquema-textual">
+<pre><code>Epígrafes:
+– Adaptación de sitios web usables.
+– Utilización de los sitios web usables.
+</code></pre>
+    
+
+    <h3>1) Adaptación de sitios web usables</h3>
+    <p>La usabilidad es la cualidad que define qué tan fácil, eficiente y satisfactorio es un sistema para sus usuarios. Adaptar un sitio web a los principios de usabilidad significa optimizar cada aspecto de la interfaz para que la experiencia del usuario sea fluida y sin frustraciones. Es un proceso continuo, no un simple paso a seguir al final del desarrollo.</p>
+    
+    <p>Los principios de usabilidad, popularizados por expertos como Jakob Nielsen, son una guía para este proceso. Un sitio web usable permite que el usuario:</p>
+    <ul>
+      <li>Alcance sus objetivos con **eficiencia** y satisfacción, minimizando el esfuerzo.</li>
+      <li>Reduzca **errores** y el tiempo de aprendizaje, haciendo la interfaz intuitiva.</li>
+      <li>Se sienta **satisfecho** y con una experiencia placentera.</li>
+      <li>Sea **accesible** y comprensible, incluso para personas con discapacidad o en condiciones de uso difíciles.</li>
+    </ul>
+
+    <details>
+      <summary>Saber más: Principios de usabilidad (ISO 9241)</summary>
+      <pre><code>
+1. **Facilidad de aprendizaje:** Los usuarios deben poder aprender a usar la web rápidamente.
+2. **Eficiencia de uso:** Una vez aprendido, el usuario realiza tareas de manera rápida y efectiva.
+3. **Facilidad de memorización:** Los usuarios deben poder volver al sitio sin reaprender todo.
+4. **Prevención de errores y gestión de fallos:** El diseño debe minimizar errores y permitir una recuperación sencilla.
+5. **Satisfacción subjetiva:** La experiencia debe ser agradable y sin frustraciones.
+6. **Accesibilidad:** Compatibilidad con tecnologías de asistencia, contraste adecuado, navegación por teclado, etc.
+      </code></pre>
+    </details>
+
+    <p>La adaptación de un sitio web a estos principios requiere un análisis minucioso de cada componente. Esto incluye desde la estructura de navegación y la organización del contenido hasta el diseño de elementos interactivos como formularios y botones.</p>
+
+    <h3>2) Utilización de los sitios web usables</h3>
+    <p>Un sitio web usable es una herramienta potente que permite al usuario interactuar de manera natural y sin barreras. Para lograrlo, la utilización se centra en las siguientes áreas:</p>
+    <ul>
+      <li>**Navegación intuitiva:** Los usuarios encuentran la información rápidamente gracias a una estructura clara y lógica, con un menú consistente en todas las páginas.</li>
+      <li>**Interacción fluida:** Los formularios y el contenido multimedia responden de manera esperada, con feedback claro y en tiempo real.</li>
+      <li>**Adaptación multi-dispositivo:** El diseño se ajusta automáticamente a diferentes tamaños de pantalla (diseño responsive), asegurando que la experiencia sea óptima tanto en computadoras de escritorio como en dispositivos móviles.</li>
+      <li>**Coherencia y predictibilidad:** La interfaz mantiene una coherencia visual y funcional, lo que ayuda a los usuarios a predecir cómo se comportarán los elementos.</li>
+    </ul>
+    
+    <p>En el corazón de la utilización está el **feedback del sistema**. Un sitio usable siempre comunica lo que está sucediendo: si una acción se ha completado, si hay un error en un formulario, o si una página se está cargando.  Este feedback reduce la incertidumbre y aumenta la confianza del usuario.</p>
+    
+    <div class="ejercicio">
+      <h3>Ejercicio 1: Análisis de usabilidad</h3>
+      <p>Selecciona un sitio web y realiza un análisis de usabilidad basado en los principios de la ISO 9241. Evalúa la facilidad de aprendizaje, la eficiencia, la memorabilidad y la satisfacción. Documenta tus hallazgos y propón al menos tres mejoras concretas.</p>
+    </div>
+
+    <div class="ejercicio">
+      <h3>Ejercicio 2: Rediseño de menú adaptable</h3>
+      <p>Crea un menú de navegación que utilice un diseño flexible (Flexbox o Grid) para adaptarse tanto a pantallas de escritorio como a móviles. Asegúrate de que los enlaces sean suficientemente grandes para ser tocados fácilmente con un dedo.</p>
+    </div>
+
+    <div class="ejercicio">
+      <h3>Ejercicio 3: Formularios usables</h3>
+      <p>Rediseña un formulario con campos claramente etiquetados (usando la etiqueta <code>&lt;label&gt;</code>), validación en tiempo real (por ejemplo, verificando si el correo es válido mientras el usuario escribe), y mensajes de error visibles. Considera la experiencia de un usuario que usa solo el teclado.</p>
+    </div>
+
+   
+      <h3>🧩 Autoevaluación · Usabilidad</h3>
+      <form id="quiz-usabilidad"
+            class="bloque"
+            data-quiz
+            data-respuestas='{
+              "q1":"b",
+              "q2":"c",
+              "q3":"a",
+              "q4":"b"
+            }'
+            novalidate>
+        
+        <fieldset>
+          <legend>1) ¿Qué principio de usabilidad se relaciona con la capacidad de los usuarios para volver a un sitio sin reaprender todo?</legend>
+          <label><input type="radio" name="q1" value="a" required> Eficacia de uso</label><br>
+          <label><input type="radio" name="q1" value="b"> Facilidad de memorización</label><br>
+          <label><input type="radio" name="q1" value="c"> Satisfacción</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>2) ¿Qué tipo de feedback es fundamental para comunicar el estado de una acción en la web?</legend>
+          <label><input type="radio" name="q2" value="a" required> Sonido solo</label><br>
+          <label><input type="radio" name="q2" value="b"> Colores aleatorios</label><br>
+          <label><input type="radio" name="q2" value="c"> Mensajes de progreso y error claros</label>
+        </fieldset>
+        
+        <fieldset>
+          <legend>3) En diseño responsive, ¿cuál es el objetivo principal de la adaptación?</legend>
+          <label><input type="radio" name="q3" value="a" required> Asegurar que la experiencia sea óptima en cualquier dispositivo</label><br>
+          <label><input type="radio" name="q3" value="b"> Usar solo Flexbox</label><br>
+          <label><input type="radio" name="q3" value="c"> Ocultar elementos para pantallas pequeñas</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>4) ¿Cuál de las siguientes es una buena práctica para la usabilidad de formularios?</legend>
+          <label><input type="radio" name="q4" value="a" required> Usar texto gris como placeholder para la etiqueta</label><br>
+          <label><input type="radio" name="q4" value="b"> Proporcionar mensajes de error específicos y visibles</label><br>
+          <label><input type="radio" name="q4" value="c"> Pedir datos opcionales en el primer paso</label>
+        </fieldset>
+
+        <p id="quiz-usabilidad-msg" aria-live="polite"></p>
+        <button type="submit" class="boton-ir">Comprobar respuestas</button>
+        <span class="quiz-result"></span>
+      </form>
+
+</div>

@@ -1,0 +1,172 @@
+﻿<section class="estructura-formativa" id="ud02-t2">
+  <h2>UD02 · Mapas de imágenes</h2>
+
+  <div class="bloque" id="intro-ud02-t2">
+    <p><strong>Objetivo:</strong> dominar los mapas de imagen: qué son, cómo se crean, cómo hacerlos accesibles y cómo tratarlos en diseños responsive.</p>
+    
+    <div class="card-grid" role="list" aria-label="Puntos clave">
+      <article class="card" role="listitem">
+        <h4>¿Qué es?</h4>
+        <p>Zonas clicables dentro de una imagen bitmap que llevan a enlaces (planos, infografías).</p>
+      </article>
+      <article class="card" role="listitem">
+        <h4>Sintaxis</h4>
+        <p><code>&lt;img usemap&gt;</code> + <code>&lt;map name&gt;</code> + varias <code>&lt;area&gt;</code> con <code>shape</code>/<code>coords</code>/<code>alt</code>.</p>
+      </article>
+      <article class="card" role="listitem">
+        <h4>Accesible</h4>
+        <p><code>alt</code> por área, equivalentes textuales y navegación por teclado.</p>
+      </article>
+      <article class="card" role="listitem">
+        <h4>Responsive</h4>
+        <p>Recalcular coords con JS o usar <strong>SVG</strong> para escalado perfecto.</p>
+      </article>
+    </div>
+  </div>
+<div class="imagen centrado">
+        <img src="assets/faro.png" alt="Mapa de imagenes HTML" />
+      </div>
+  <div class="bloque">
+    <h3>1) Anatomía de un mapa de imagen</h3>
+    <p>Un <strong>mapa de imagen</strong> asocia zonas clicables de un bitmap a enlaces. La imagen se vincula a un mapa por <code>usemap</code> y las zonas se definen con <code>&lt;area&gt;</code>.</p>
+<pre class="esquema-textual"><code>&lt;img 
+  src="img/faro-plano.png" 
+  alt="Plano del faro con cabina, foco y base"
+  width="300" height="220"
+  usemap="#mapaFaro"&gt;
+
+&lt;map name="mapaFaro"&gt;
+  &lt;area shape="rect"   coords="20,60,120,140" href="cabina.html" alt="Ir a la cabina"&gt;
+  &lt;area shape="circle" coords="160,50,25"     href="foco.html"   alt="Ver el foco"&gt;
+  &lt;area shape="poly"   coords="60,150,180,150,170,220,70,220"
+                       href="base.html"       alt="Explorar la base"&gt;
+&lt;/map&gt;</code></pre>
+    <ul>
+      <li><strong>usemap="#id"</strong> enlaza la imagen con el mapa.</li>
+      <li>En <strong><code>&lt;map name="id"&gt;</code></strong> el <em>name</em> coincide (sin #).</li>
+      <li><strong>width/height</strong> en <code>&lt;img&gt;</code> evitan saltos de maquetación (CLS).</li>
+    </ul>
+  </div>
+
+  <div class="bloque">
+    <h3>2) Formas y coordenadas</h3>
+    <ul>
+      <li><strong>rect</strong> → <code>x1,y1,x2,y2</code> (esquina sup-izq a inf-dcha).</li>
+      <li><strong>circle</strong> → <code>cx,cy,radio</code> (centro y radio).</li>
+      <li><strong>poly</strong> → lista de pares <code>x,y</code> (vértices).</li>
+    </ul>
+<pre class="esquema-textual"><code>&lt;area shape="rect"   coords="20,60,120,140" alt="Ir a la cabina" href="cabina.html"&gt;
+&lt;area shape="circle" coords="160,50,25"     alt="Ver el foco"    href="foco.html"&gt;
+&lt;area shape="poly"   coords="60,150,180,150,170,220,70,220" alt="Base" href="base.html"&gt;</code></pre>
+    <p><strong>Importante:</strong> las <code>coords</code> se miden en píxeles del archivo original, no en CSS.</p>
+  </div>
+
+  <div class="bloque">
+    <h3>3) Accesibilidad y UX</h3>
+    <ul>
+      <li><strong><code>alt</code> por área</strong> describe acción/destino (“Descargar plano”).</li>
+      <li>Proporciona <strong>enlaces equivalentes</strong> visibles en el contenido.</li>
+      <li>Las áreas con <code>href</code> aceptan foco por teclado y activación con Enter/Espacio.</li>
+      <li>Con <code>target="_blank"</code>, añade <code>rel="noopener noreferrer"</code> por seguridad.</li>
+    </ul>
+  </div>
+
+  <div class="bloque">
+    <h3>4) Responsive: tres enfoques</h3>
+    <ol>
+      <li><strong>No escalar</strong> el bitmap (mantener tamaño intrínseco).</li>
+      <li><strong>Recalcular</strong> <code>coords</code> al cambiar el ancho visible (JS).</li>
+      <li><strong>Alternativa SVG</strong>: escalado perfecto y zonas vectoriales enlazables.</li>
+    </ol>
+<pre class="esquema-textual"><code>// Mini patrón de escalado de coords
+const img = document.querySelector('img[usemap="#mapaFaro"]');
+const map = document.querySelector('map[name="mapaFaro"]');
+const origW = 300; // ancho intrínseco del bitmap
+function scaleCoords(){
+  const ratio = img.clientWidth / origW;
+  map.querySelectorAll('area').forEach(a=>{
+    const base = (a.dataset.orig || a.coords).split(',').map(Number);
+    a.coords = base.map(n => Math.round(n * ratio)).join(',');
+  });
+}
+window.addEventListener('resize', scaleCoords);
+img.addEventListener('load', scaleCoords);</code></pre>
+  </div>
+
+  <div class="bloque">
+    <h3>5) Enlaces equivalentes (accesibilidad)</h3>
+    <p>Este epígrafe se refiere a una práctica clave para hacer que los mapas de imágenes sean accesibles para todos los usuarios. Un <strong>mapa de imágenes</strong> te permite definir diferentes áreas clicables en una única imagen (por ejemplo, la cabina, el foco y la base de un faro). Sin embargo, si un usuario no puede ver esa imagen, no podrá navegar por tu sitio web.</p>
+    <p>Aquí es donde entran los <strong>enlaces equivalentes</strong>: son una lista de enlaces de texto estándar que duplican las funciones de las áreas clicables del mapa de imágenes.</p>
+    <h4>¿Por qué son esenciales?</h4>
+    <ul>
+        <li><strong>Para los lectores de pantalla:</strong> Las personas con discapacidad visual utilizan lectores de pantalla que no pueden "ver" las zonas clicables de un mapa de imágenes. Los enlaces de texto son una alternativa clara.</li>
+        <li><strong>Para los navegadores sin imágenes:</strong> Algunos usuarios navegan con las imágenes desactivadas (por motivos de velocidad o ahorro de datos). Sin los enlaces de texto equivalentes, la navegación no funcionaría.</li>
+        <li><strong>Para el SEO:</strong> Los rastreadores de los motores de búsqueda no pueden "ver" un mapa de imágenes. Al proporcionar enlaces de texto, ayudas a que el contenido sea indexado correctamente.</li>
+    </ul>
+    <p>En resumen, los enlaces equivalentes garantizan que tu sitio web sea <strong>accesible</strong> y <strong>funcional</strong> para la mayor cantidad de usuarios posible.</p>
+    
+</div>
+
+  <div class="resumen-final">
+    <p><strong>Resumen:</strong> Construye mapas con <code>&lt;img usemap&gt;</code> + <code>&lt;map&gt;</code>/<code>&lt;area&gt;</code>, mide coords en píxeles del archivo, cuida accesibilidad (alt por área, enlaces equivalentes) y usa <strong>SVG</strong> si necesitas escalado perfecto. Si escalas un bitmap, recalcula coords con JS.</p>
+  </div>
+
+  <hr class="separador-verde" />
+
+  <!-- ========= QUIZ ========= -->
+  <section class="bloque" id="quiz-ud02-t2-bloque">
+    <h3>Autoevaluación · UD02 · Tema 2 (Mapas de imágenes)</h3>
+
+    <!-- data-quiz + data-respuestas: lo detecta el validador global -->
+    <form id="quiz-ud02-t2"
+          class="bloque"
+          data-quiz
+          data-respuestas='{
+            "q1":"b",
+            "q2":"b",
+            "q3":"c",
+            "q4":"a",
+            "q5":"c"
+          }'
+          novalidate>
+
+      <fieldset>
+        <legend>1) ¿Qué atributo enlaza una imagen con su mapa?</legend>
+        <label><input type="radio" name="q1" value="a" required> <code>ismap</code></label><br>
+        <label><input type="radio" name="q1" value="b"> <code>usemap</code></label><br>
+        <label><input type="radio" name="q1" value="c"> <code>map</code></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>2) ¿Qué formato de coordenadas corresponde a <code>shape="rect"</code>?</legend>
+        <label><input type="radio" name="q2" value="a" required> <code>cx,cy,radio</code></label><br>
+        <label><input type="radio" name="q2" value="b"> <code>x1,y1,x2,y2</code></label><br>
+        <label><input type="radio" name="q2" value="c"> lista de pares <code>x,y</code></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>3) En un círculo, ¿qué representan las coords?</legend>
+        <label><input type="radio" name="q3" value="a" required> dos puntos opuestos del diámetro</label><br>
+        <label><input type="radio" name="q3" value="b"> radio y perímetro</label><br>
+        <label><input type="radio" name="q3" value="c"> centro (<code>cx,cy</code>) y <code>radio</code></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>4) ¿Qué atributo es imprescindible en cada <code>&lt;area&gt;</code> por accesibilidad?</legend>
+        <label><input type="radio" name="q4" value="a" required> <code>alt</code></label><br>
+        <label><input type="radio" name="q4" value="b"> <code>title</code></label><br>
+        <label><input type="radio" name="q4" value="c"> <code>tabindex</code></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>5) Si necesitas escalado perfecto sin recalcular coords, ¿qué alternativa usar?</legend>
+        <label><input type="radio" name="q5" value="a" required> PNG con <code>srcset</code></label><br>
+        <label><input type="radio" name="q5" value="b"> GIF animado</label><br>
+        <label><input type="radio" name="q5" value="c"> SVG con enlaces</label>
+      </fieldset>
+
+      <p id="quiz-ud02-t2-msg" aria-live="polite"></p>
+      <button type="submit" class="boton-ir">Comprobar respuestas</button>
+    </form>
+  </section>
+</section>

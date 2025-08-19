@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UD01 · Tema 6 · Marcos y capas</title>
+  <!-- Usa el CSS global cargado por la SPA -->
+</head>
+<body>
+  <!-- Estilos mínimos y locales para ajustar el ancho del tema dentro de la SPA -->
+  <style>
+    .tema-narrow{max-width:1000px;margin:0 auto;padding:0 16px}
+    .tema-narrow img{max-width:100%;height:auto}
+    @media (max-width:1024px){.tema-narrow{padding:0 12px}}
+  </style>
+
+  <main class="tema-narrow">
+
+    <section class="estructura-formativa bloque ancla" aria-labelledby="t-ud01-t6">
+      <h2 id="t-ud01-t6">🔲 Marcos y capas en diseño web</h2>
+
+      <div class="bloque">
+        <h3>📚 Introducción</h3>
+        <p><strong>Control estructural y visual en el diseño web</strong></p>
+        <p>
+          En los orígenes de la web se usaron <strong>marcos</strong> (<em>frames</em>) para dividir la ventana del navegador en
+          zonas independientes. Hoy están obsoletos en favor de HTML semántico y CSS moderno
+          (<code>&lt;div&gt;</code>, <code>&lt;section&gt;</code>, <strong>Flexbox</strong>, <strong>Grid</strong>), pero entenderlos ayuda a
+          comprender la evolución del diseño web.
+        </p>
+      </div>
+
+      <!-- ====== MARCOS ====== -->
+      <div class="bloque">
+        <h3>📌 1) Marcos (frames)</h3>
+        <p>
+          Permitían cargar distintos documentos HTML a la vez en una misma ventana. Se definían con
+          <code>&lt;frameset&gt;</code> (en lugar de <code>&lt;body&gt;</code>) y varios <code>&lt;frame&gt;</code>.
+        </p>
+
+        <details class="tarjeta" id="t-marcos-intro">
+          <summary>📖 Leer más</summary>
+          <button type="button" class="tarjeta-cerrar" aria-label="Cerrar"
+                  onclick="this.closest('details').open=false"><span aria-hidden="true">✕</span></button>
+          <div class="tarjeta-body">
+            <p>
+              Ejemplo típico: un marco izquierdo con el menú y otro a la derecha con el contenido.
+              Presentaban problemas de accesibilidad, SEO, historial y mantenimiento, por lo que quedaron
+              obsoletos en HTML5.
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <div class="bloque">
+        <h3>🧰 2) Creación de marcos (histórico)</h3>
+<pre class="esquema-textual"><code>&lt;frameset cols="30%, 70%"&gt;
+  &lt;frame src="menu.html" name="menu"&gt;
+  &lt;frame src="contenido.html" name="principal"&gt;
+&lt;/frameset&gt;</code></pre>
+        <p><strong>Nota:</strong> <code>&lt;frameset&gt;</code> y <code>&lt;frame&gt;</code> están <em>obsoletos</em> desde HTML5.</p>
+      </div>
+
+      <section class="bloque">
+        <div class="contenido">
+          <div class="texto">
+            <h3>🧩 3) Tipos de marcos</h3>
+            <ul>
+              <li><strong>Verticales</strong>: dividen por columnas con <code>cols</code>.</li>
+              <li><strong>Horizontales</strong>: dividen por filas con <code>rows</code>.</li>
+              <li><strong>Anidados</strong>: combinan ambos.</li>
+            </ul>
+          </div>
+          <div class="foto">
+            <img src="assets/marcos.png" alt="Tipos de marcos en HTML" />
+          </div>
+        </div>
+      </section>
+
+      <div class="bloque">
+        <h3>📍 4) Situación y configuración</h3>
+        <p>
+          Los marcos se declaraban en un archivo “contenedor” con <code>&lt;frameset&gt;</code>. Cada
+          <code>&lt;frame&gt;</code> podía tener <code>src</code>, <code>name</code>, <code>scrolling</code>, <code>noresize</code>,
+          <code>frameborder</code>…
+        </p>
+<pre class="esquema-textual"><code>&lt;frame src="menu.html" name="menu" scrolling="no" noresize frameborder="0"&gt;</code></pre>
+      </div>
+
+      <div class="resumen-final">
+        <strong>Resumen:</strong> Los marcos quedaron atrás. Hoy usamos <code>&lt;iframe&gt;</code> (puntualmente) y, sobre todo,
+        maquetación con CSS (Flexbox/Grid) y aplicaciones SPA.
+      </div>
+
+      <hr class="separador-verde">
+
+      <!-- ====== CAPAS ====== -->
+      <div class="imagen centrado">
+        <img src="assets/capas.png" alt="Capas HTML" />
+      </div>
+      
+        <div class="bloque">
+        <h3>🧱 5) Capas (layers)</h3>
+        <p>
+          “Capa” es un concepto visual: un contenedor (<code>&lt;div&gt;</code>, <code>&lt;section&gt;</code>…) posicionado con CSS
+          que puede superponerse, ocultarse o animarse.
+        </p>
+      </div>
+
+      <div class="bloque">
+        <h3>🧾 6) Definición de capas</h3>
+<pre class="esquema-textual"><code>&lt;div class="capa1"&gt;Capa posicionada&lt;/div&gt;
+
+&lt;style&gt;
+  .capa1 {
+    position: absolute;
+    top: 100px; left: 50px;
+    width: 200px; padding: 10px;
+    background: #dbeafe; /* azul claro */
+  }
+&lt;/style&gt;</code></pre>
+      </div>
+
+      <div class="bloque">
+        <h3>🛠️ 7) Posicionamiento y apilado</h3>
+        <ul>
+          <li><strong>static</strong>: flujo normal.</li>
+          <li><strong>relative</strong>: relativo a su posición original.</li>
+          <li><strong>absolute</strong>: respecto a su contenedor posicionado.</li>
+          <li><strong>fixed</strong>: fijo en pantalla al hacer scroll.</li>
+          <li><strong>z-index</strong>: orden de apilamiento (qué queda por encima).</li>
+        </ul>
+<pre class="esquema-textual"><code>.fondo   { position:absolute; top:50px; left:0;   z-index:1; background:#e5e7eb; }
+.superior{ position:absolute; top:80px; left:30px; z-index:2; background:#fed7aa; }</code></pre>
+
+        <details class="tarjeta" id="t-ejemplo-capa">
+          <summary>🧪 Ejemplo rápido (mostrar/ocultar capa)</summary>
+          <button type="button" class="tarjeta-cerrar" aria-label="Cerrar"
+                  onclick="this.closest('details').open=false"><span aria-hidden="true">✕</span></button>
+          <div class="tarjeta-body">
+<pre class="esquema-textual"><code>&lt;button onclick="document.getElementById('capa').classList.toggle('visible')"&gt;Ver mensaje&lt;/button&gt;
+&lt;div id="capa" class="capa-popup"&gt;¡Hola! Soy una capa emergente.&lt;/div&gt;
+
+&lt;style&gt;
+  .capa-popup{display:none; position:fixed; top:100px; left:30px; padding:20px; background:#ffefbd; z-index:10}
+  .capa-popup.visible{display:block}
+&lt;/style&gt;</code></pre>
+          </div>
+        </details>
+      </div>
+
+      <table class="tabla-indice">
+        <thead>
+          <tr>
+            <th>📑 Característica</th>
+            <th>📁 Marcos (frames)</th>
+            <th>📦 Capas (layers)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Finalidad</strong></td><td>Dividir el navegador</td><td>Posicionar elementos</td></tr>
+          <tr><td><strong>Implementación</strong></td><td><code>&lt;frameset&gt;</code>/<code>&lt;frame&gt;</code></td><td><code>&lt;div&gt;</code> + CSS</td></tr>
+          <tr><td><strong>Estado</strong></td><td>Obsoleto</td><td>Vigente</td></tr>
+          <tr><td><strong>SEO</strong></td><td>Bajo</td><td>Bueno (si se cuida semántica)</td></tr>
+          <tr><td><strong>Accesibilidad</strong></td><td>Baja</td><td>Alta (con buenas prácticas)</td></tr>
+        </tbody>
+      </table>
+
+      <details class="bloque tarjeta" id="t-evolucion-futuro">
+        <summary><strong>📈 Evolución y futuro</strong></summary>
+        <button type="button" class="tarjeta-cerrar" aria-label="Cerrar"
+                onclick="this.closest('details').open=false"><span aria-hidden="true">✕</span></button>
+        <div class="tarjeta-body">
+          <p>
+            Pasamos de marcos rígidos a capas flexibles con CSS, componentes y SPA.
+            Esto mejora accesibilidad, mantenimiento y rendimiento.
+          </p>
+        </div>
+      </details>
+
+      <div class="bloque resumen">
+        <h3>🎯 Conclusión</h3>
+        <p>
+          Conocer los marcos ayuda a entender el pasado; dominar capas y CSS moderno es esencial hoy.
+        </p>
+      </div>
+    </section>
+
+    <hr class="separador-verde">
+
+    <!-- ====== Autoevaluación (Tema 6) ====== -->
+    <section class="bloque ancla" aria-labelledby="t-ud01-t6-quiz">
+      <h3 id="t-ud01-t6-quiz">Autoevaluación · Tema 6 (UD01) — Marcos y capas</h3>
+
+      <!-- Importante: data-quiz + data-respuestas -->
+      <form
+        data-quiz
+        id="quiz-ud01-t6"
+        class="bloque"
+        novalidate
+        data-respuestas='{"q1":"b","q2":"a","q3":"c"}'
+      >
+        <fieldset>
+          <legend>1) ¿Qué técnica está obsoleta en HTML5 para dividir la ventana del navegador?</legend>
+          <label><input type="radio" name="q1" value="a" required> <code>&lt;iframe&gt;</code></label><br>
+          <label><input type="radio" name="q1" value="b"> <code>&lt;frameset&gt;</code> / <code>&lt;frame&gt;</code></label><br>
+          <label><input type="radio" name="q1" value="c"> <code>&lt;section&gt;</code></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>2) ¿Qué propiedad CSS controla el orden de apilamiento de capas?</legend>
+          <label><input type="radio" name="q2" value="a" required> <code>z-index</code></label><br>
+          <label><input type="radio" name="q2" value="b"> <code>overflow</code></label><br>
+          <label><input type="radio" name="q2" value="c"> <code>opacity</code></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>3) ¿Qué valor de <code>position</code> mantiene fija una capa al hacer scroll?</legend>
+          <label><input type="radio" name="q3" value="a" required> <code>absolute</code></label><br>
+          <label><input type="radio" name="q3" value="b"> <code>relative</code></label><br>
+          <label><input type="radio" name="q3" value="c"> <code>fixed</code></label>
+        </fieldset>
+
+        <p id="quiz-ud01-t6-msg" aria-live="polite"></p>
+        <button type="submit" class="boton-ir">Comprobar respuestas</button>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    // Usabilidad: permitir solo un <details> abierto por sección
+    document.addEventListener('click', (ev) => {
+      const det = ev.target?.closest('details');
+      if (!det) return;
+      if (det.open) return;
+      const cont = det.closest('section') || det.closest('.bloque');
+      if (!cont) return;
+      cont.querySelectorAll('details[open]').forEach(d => { if (d !== det) d.removeAttribute('open'); });
+    });
+  </script>
+</body>
+</html>

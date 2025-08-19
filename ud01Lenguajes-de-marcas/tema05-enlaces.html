@@ -1,0 +1,296 @@
+
+    <!-- ====== 1.5 Enlaces y direccionamientos ====== -->
+    <section class="bloque ancla" aria-labelledby="t-ud01-t5">
+      <h2 id="t-ud01-t5">🔗 1.5. Enlaces y direccionamientos</h2>
+
+      <div class="contenido">
+        <div class="texto">
+          <h3>¿Qué es un enlace?</h3>
+          <p>
+            Un <strong>enlace</strong> (hipervínculo) en HTML conecta un contenido con otro: puede llevar a otra página, un documento,
+            una imagen, una sección de la misma página o acciones como enviar un correo.
+          </p>
+          <p>
+            Se crea con la etiqueta <code>&lt;a&gt;</code> (de <em>anchor</em>, ancla). Esta etiqueta puede envolver texto, imágenes u otros elementos.
+          </p>
+
+          <p><strong>📌 Sintaxis básica</strong></p>
+<pre class="esquema-textual"><code>&lt;a href="https://ejemplo.com"&gt;Texto del enlace&lt;/a&gt;</code></pre>
+
+          <ul>
+            <li><code>href</code>: atributo <strong>obligatorio</strong> con la dirección de destino (URL).</li>
+            <li>El contenido entre <code>&lt;a&gt;</code> y <code>&lt;/a&gt;</code> es lo clicable.</li>
+          </ul>
+
+          <p><strong>💡 Ejemplo</strong></p>
+<pre class="esquema-textual"><code>&lt;a href="https://www.w3schools.com"&gt;Ir a W3Schools&lt;/a&gt;</code></pre>
+
+          <details class="tarjeta" id="t-ud01-t5-mas">
+            <summary>📚 Saber más sobre enlaces</summary>
+            <button type="button" class="tarjeta-cerrar" aria-label="Cerrar"
+                    onclick="this.closest('details').open=false"><span aria-hidden="true">✕</span></button>
+            <div class="tarjeta-body">
+              <h3 data-no-toc>Información ampliada</h3>
+              <p>
+                Los enlaces sustentan la navegación web. Un sitio bien enlazado mejora la experiencia, accesibilidad y posicionamiento.
+                Úsalos con textos descriptivos y estructura coherente (menús, botones, CTAs).
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Tipos de enlaces ====== -->
+    <section class="bloque ancla" aria-labelledby="t-ud01-t5-tipos">
+      <h2 id="t-ud01-t5-tipos">🔍 Tipos de enlace en HTML</h2>
+      <p>Según el destino en <code>href</code>, un enlace puede ser:</p>
+
+      <table class="tabla-indice">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Ejemplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🟢 Externo</td>
+            <td>Fuera del sitio web actual.</td>
+            <td><code>&lt;a href="https://www.wikipedia.org"&gt;Ir a Wikipedia&lt;/a&gt;</code></td>
+          </tr>
+          <tr>
+            <td>🟡 Interno</td>
+            <td>Otra página del mismo proyecto.</td>
+            <td><code>&lt;a href="contacto.html"&gt;Contáctanos&lt;/a&gt;</code></td>
+          </tr>
+          <tr>
+            <td>🔵 Relativo</td>
+            <td>Ruta relativa al archivo actual.</td>
+            <td><code>&lt;a href="../imagenes/logo.png"&gt;Ver logo&lt;/a&gt;</code></td>
+          </tr>
+          <tr>
+            <td>🔴 Absoluto</td>
+            <td>URL completa (http/https).</td>
+            <td><code>&lt;a href="https://ejemplo.com/blog/articulo.html"&gt;Leer artículo&lt;/a&gt;</code></td>
+          </tr>
+          <tr>
+            <td>🟣 Email</td>
+            <td>Abre el cliente de correo.</td>
+            <td><code>&lt;a href="mailto:info@ejemplo.com"&gt;Escríbenos&lt;/a&gt;</code></td>
+          </tr>
+          <tr>
+            <td>🟠 Teléfono</td>
+            <td>Llamada (móvil).</td>
+            <td><code>&lt;a href="tel:+34900111222"&gt;Llamar al 900 111 222&lt;/a&gt;</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ====== Anclas ====== -->
+    <section class="bloque ancla" aria-labelledby="t-ud01-t5-anclas">
+      <h2 id="t-ud01-t5-anclas">📍 Anclas: Navegar dentro de la misma página</h2>
+      <p>
+        Las <strong>anclas</strong> desplazan a una parte concreta de la página sin recargarla. Útiles en documentos largos, FAQ o índices internos.
+      </p>
+      <div class="imagen centrado">
+        <img src="assets/anclas.png" alt="Anclas en HTML" />
+      </div>
+      <h3>🔧 ¿Cómo se crean?</h3>
+      <ol>
+        <li>
+          Asigna un <strong>id</strong> al destino:
+<pre class="esquema-textual"><code>&lt;h2 id="contacto"&gt;Contáctanos&lt;/h2&gt;</code></pre>
+        </li>
+        <li>
+          Crea el enlace con <code>#</code> + id:
+<pre class="esquema-textual"><code>&lt;a href="#contacto"&gt;Ir a la sección de contacto&lt;/a&gt;</code></pre>
+        </li>
+      </ol>
+
+      <h3>🔄 Enlace vs. ancla</h3>
+      <table class="tabla-indice">
+        <thead>
+          <tr><th>Tipo</th><th>Comportamiento</th><th>Ejemplo</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Enlace clásico</strong></td>
+            <td>Abre otra página</td>
+            <td><code>&lt;a href="contacto.html"&gt;</code></td>
+          </tr>
+          <tr>
+            <td><strong>Ancla</strong></td>
+            <td>Desplaza dentro de la misma página</td>
+            <td><code>&lt;a href="#contacto"&gt;</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <details>
+        <summary>📖 Buenas prácticas con anclas</summary>
+        <ul>
+          <li><code>id</code> único en toda la página.</li>
+          <li>Texto del enlace claro y descriptivo.</li>
+          <li>Mejora la accesibilidad y la navegación por teclado.</li>
+        </ul>
+      </details>
+
+      <details class="tarjeta" id="t-ud01-t5-anclas-plus">
+        <summary>🧭 Saber más sobre navegación interna</summary>
+        <button type="button" class="tarjeta-cerrar" aria-label="Cerrar"
+                onclick="this.closest('details').open=false"><span aria-hidden="true">✕</span></button>
+        <div class="tarjeta-body">
+          <h3 data-no-toc>Ventajas</h3>
+          <ul>
+            <li>Navegación rápida sin recarga.</li>
+            <li>Índices y menús internos.</li>
+            <li>Mejor UX en páginas extensas.</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <!-- ====== UX de vínculos ====== -->
+    <section class="bloque ancla" aria-labelledby="t-ud01-t5-ux">
+      <h2 id="t-ud01-t5-ux">🌐 Vínculos y experiencia de usuario</h2>
+      <ul>
+        <li><strong>Claros y descriptivos</strong>: indica el destino.</li>
+        <li><strong>Accesibles</strong>: buen contraste, no solo color.</li>
+        <li><strong>Consistentes</strong>: estilo uniforme.</li>
+      </ul>
+
+      <h3>❌ Mal ejemplo</h3>
+<pre class="esquema-textual"><code>&lt;a href="doc.pdf"&gt;Haz clic aquí&lt;/a&gt;</code></pre>
+
+      <h3>✅ Buen ejemplo</h3>
+<pre class="esquema-textual"><code>&lt;a href="doc.pdf"&gt;Descargar el manual en PDF&lt;/a&gt;</code></pre>
+
+      <details>
+        <summary>📖 ¿Dónde se abre un enlace? (target)</summary>
+
+        <h3>🔧 <code>target</code> controla cómo se abre</h3>
+        <h4><code>_self</code> (por defecto)</h4>
+        <p>En la misma pestaña. Recomendado para enlaces internos.</p>
+
+<pre class="esquema-textual"><code>&lt;a href="pagina2.html"&gt;Ir a la página 2&lt;/a&gt;</code></pre>
+
+        <h4><code>_blank</code></h4>
+        <p>Nueva pestaña. Útil para externos, PDFs, formularios…</p>
+
+<pre class="esquema-textual"><code>&lt;a href="https://google.com" target="_blank"&gt;Buscar en Google&lt;/a&gt;</code></pre>
+
+        <h4>🛡️ Seguridad con <code>rel="noopener noreferrer"</code></h4>
+        <p>Evita ataques como <em>tabnabbing</em>.</p>
+
+<pre class="esquema-textual"><code>&lt;a href="https://openai.com" target="_blank" rel="noopener noreferrer"&gt;Visitar OpenAI&lt;/a&gt;</code></pre>
+
+        <h3>📋 Resumen</h3>
+        <table class="tabla-indice">
+          <thead><tr><th>Valor</th><th>Comportamiento</th><th>Uso recomendado</th></tr></thead>
+          <tbody>
+            <tr><td><code>_self</code></td><td>Misma pestaña</td><td>Internos</td></tr>
+            <tr><td><code>_blank</code></td><td>Nueva pestaña</td><td>Externos / recursos</td></tr>
+            <tr><td><code>_parent</code></td><td>Marco padre</td><td>Con iframes</td></tr>
+            <tr><td><code>_top</code></td><td>Rompe iframe</td><td>Contenido embebido</td></tr>
+          </tbody>
+        </table>
+      </details>
+    </section>
+
+    <!-- ====== Bonus SEO ====== -->
+   
+   <div class="imagen centrado">
+        <img src="assets/seoenlaces.png" alt="seo enlace" />
+      </div>
+    <section class="bloque ancla" aria-labelledby="t-ud01-t5-seo">
+      <h2 id="t-ud01-t5-seo">🎁 Bonus: Enlaces y SEO</h2>
+      <p>
+        Los enlaces afectan a la estructura, navegabilidad y autoridad de un sitio. Bien usados, mejoran la visibilidad en buscadores.
+      </p>
+
+      <table class="tabla-indice">
+        <thead><tr><th>Tipo</th><th>Ejemplo</th><th>¿Aporta SEO?</th></tr></thead>
+        <tbody>
+          <tr><td>Interno</td><td><code>&lt;a href="nosotros.html"&gt;</code></td><td>✅ Sí</td></tr>
+          <tr><td>Externo</td><td><code>&lt;a href="https://w3.org"&gt;</code></td><td>✅ Sí</td></tr>
+          <tr><td>Roto</td><td><code>&lt;a href="404.html"&gt;</code></td><td>❌ No</td></tr>
+          <tr><td>Ancla (<code>#</code>)</td><td><code>&lt;a href="#inicio"&gt;</code></td><td>Neutro</td></tr>
+        </tbody>
+      </table>
+
+      <details>
+        <summary>📖 Buenas prácticas SEO</summary>
+        <ul>
+          <li>Usa enlaces internos para guiar y distribuir autoridad.</li>
+          <li>Evita enlaces rotos.</li>
+          <li>Evita textos genéricos como “haz clic aquí”.</li>
+          <li>Usa <code>rel="nofollow"</code> en enlaces patrocinados o poco fiables.</li>
+        </ul>
+
+<pre class="esquema-textual"><code>&lt;a href="https://publicidad.com" rel="nofollow"&gt;Publicidad&lt;/a&gt;</code></pre>
+      </details>
+    </section>
+
+    <hr class="separador-verde">
+
+    <!-- ====== Autoevaluación (data-quiz + data-respuestas) ====== -->
+    <section class="bloque ancla" aria-labelledby="t-ud01-t5-quiz">
+      <h3 id="t-ud01-t5-quiz">Autoevaluación · Tema 5 (UD01) — Enlaces</h3>
+
+      <!-- Importante: data-quiz + data-respuestas -->
+      <form
+        data-quiz
+        id="quiz-ud01-t5"
+        data-respuestas='{"q1":"a","q2":"b","q3":"c"}'
+        class="bloque"
+        novalidate
+      >
+        <fieldset>
+          <legend>1) ¿Qué atributo es obligatorio en un enlace <code>&lt;a&gt;</code>?</legend>
+          <label><input type="radio" name="q1" value="a" required> <code>href</code></label><br>
+          <label><input type="radio" name="q1" value="b"> <code>target</code></label><br>
+          <label><input type="radio" name="q1" value="c"> <code>rel</code></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>2) ¿Cuál abre en nueva pestaña de forma segura?</legend>
+          <label><input type="radio" name="q2" value="a" required>
+            <code>&lt;a href="https://ejemplo.com" target="_blank"&gt;</code></label><br>
+          <label><input type="radio" name="q2" value="b">
+            <code>&lt;a href="https://ejemplo.com" target="_blank" rel="noopener noreferrer"&gt;</code></label><br>
+          <label><input type="radio" name="q2" value="c">
+            <code>&lt;a href="https://ejemplo.com" target="_self"&gt;</code></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>3) ¿Qué opción crea una <em>ancla interna</em> en la misma página?</legend>
+          <label><input type="radio" name="q3" value="a" required>
+            <code>&lt;a href="contacto.html"&gt;</code></label><br>
+          <label><input type="radio" name="q3" value="b">
+            <code>&lt;a href="mailto:hola@ejemplo.com"&gt;</code></label><br>
+          <label><input type="radio" name="q3" value="c">
+            <code>&lt;a href="#contacto"&gt;</code></label>
+        </fieldset>
+
+        <p id="quiz-ud01-t5-msg" aria-live="polite"></p>
+        <button type="submit" class="boton-ir">Comprobar respuestas</button>
+      </form>
+    </section>
+
+  </main>
+
+  <script>
+    // Usabilidad: abrir solo una tarjeta <details> por sección
+    document.addEventListener('click', (ev) => {
+      const det = ev.target?.closest('details');
+      if (!det) return;
+      if (det.open) return;
+      const cont = det.closest('section');
+      if (!cont) return;
+      cont.querySelectorAll('details[open]').forEach(d => { if (d !== det) d.removeAttribute('open'); });
+    });
+  </script>
+

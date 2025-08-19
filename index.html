@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Diseño Web desde Cero · Manual IFCD0110 para Aprender y Certificarte</title>
+  <meta name="description" content="Aprende diseño web desde cero con este manual práctico del certificado IFCD0110. Domina HTML, CSS y JavaScript de forma sencilla y prepárate para certificarte.">
+  <meta name="keywords" content="diseño web, aprender desde cero, manual IFCD0110, HTML, CSS, JavaScript, SPA, certificarte, desarrollo web, curso práctico">
+  <meta name="author" content="Inmaculada Contreras">
+  <link rel="canonical" href="https://inmacontreras.com/cursoweb">
+
+  <!-- Social -->
+  <meta property="og:title" content="Diseño Web desde Cero · Manual IFCD0110 para Aprender y Certificarte">
+  <meta property="og:description" content="Manual práctico para aprender diseño web desde cero y prepararte para el examen del certificado IFCD0110.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://inmacontreras.com/cursoweb">
+  <meta property="og:image" content="https://tusitio.com/assets/imagen-manual.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Diseño Web desde Cero · Manual IFCD0110 para Aprender y Certificarte">
+  <meta name="twitter:description" content="Domina HTML, CSS y JavaScript desde cero y prepárate para certificarte con el manual IFCD0110.">
+  <meta name="twitter:image" content="https://tusitio.com/assets/imagen-manual.jpg">
+
+ 
+  <link rel="icon" href="assets/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../cssgeneral.css">
+
+
+  <style>
+    /* Layout SPA propio */
+    .layout{display:grid;grid-template-columns:260px 1fr 260px;gap:20px;align-items:start;max-width:1200px;margin:20px auto;padding:0 20px;}
+    @media (max-width:1024px){.layout{grid-template-columns:1fr}}
+
+    .indice-lista{list-style:none;padding-left:0}
+    .indice-item{display:flex;flex-direction:column;gap:6px;margin:8px 0}
+    .badge{font-size:.9rem;border-radius:14px;padding:2px 8px;background:#eef}
+    .estado{font-size:1rem;width:1.6rem;text-align:center}
+    .enlace-ud{text-decoration:none;color:#2c2c2c;font-weight:600}
+    .enlace-ud[aria-disabled="true"]{color:#888;cursor:not-allowed}
+    .indice-item.actual .enlace-ud{text-decoration:underline}
+    .nota{font-size:.95rem;color:#555}
+
+    .intro{margin:10px 0 0}
+    .intro-img{width:100%;height:auto;display:block;border-radius:12px}
+    .centrado{text-align:center}
+
+    .presentacion,.logros{margin:24px 0}
+    .presentacion .texto ul,.logros .texto ul{margin-left:18px}
+
+    #notas-ud{width:100%;min-height:160px;padding:8px;border-radius:8px}
+
+    .toc ul,.temas-ud ul{list-style:none;padding-left:0}
+    .toc li.h3{margin-left:12px;font-size:.95rem;opacity:.9}
+
+    .box{background:#fff;border:1px solid #eaeaea;border-radius:12px;padding:12px;margin-bottom:12px}
+
+    .grupo.modulo>.m-cab{font-weight:700;margin:6px 0}
+    .grupo.uf>.uf-cab{margin:6px 0 2px}
+    .grupo.uc>.uc-cab{font-weight:700;margin:8px 0}
+
+    .temas-ud a{display:block;padding:6px 8px;border-radius:8px;text-decoration:none}
+    .temas-ud a.activo{background:#eef;border:1px solid #dde}
+
+    /* === Feedback del quiz === */
+.quiz-feedback {
+    margin: 16px 0;
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 2px solid #eee;
+}
+
+/* Estilos de los contenedores de preguntas */
+.quiz-ok {
+    background: #ecfdf5;
+    border-color: #16a34a;
+    color: #065f46;
+}
+
+legend {
+    font-weight: bold;
+}
+
+.quiz-err {
+    background: #fef2f2;
+    border-color: #ef4444;
+    color: #7f1d1d;
+}
+
+/* ⚠️ ESTO ES LO QUE DEBES CAMBIAR ⚠️ */
+/* Aplicamos los bordes y colores a la etiqueta <label> (o a su contenido) */
+
+/* Estilo para la respuesta correcta seleccionada */
+.quiz-correcta {
+    outline: 2px solid #22c55e;
+    outline-offset: 4px;
+    border-radius: 8px;
+    padding: 6px;
+    background-color: #d1fae5; /* Color de fondo más claro */
+}
+
+/* Estilo para la respuesta incorrecta seleccionada */
+.quiz-incorrecta {
+    outline: 2px solid #ef4444;
+    outline-offset: 4px;
+    border-radius: 8px;
+    padding: 6px;
+    background-color: #fee2e2; /* Color de fondo más claro */
+}
+
+/* Estilos de los botones - se mantienen igual */
+.acciones-quiz {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn-completar-tema {
+    background: #16a34a;
+    color: #fff;
+    border: 0;
+    border-radius: 999px;
+    padding: 10px 16px;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(0,0,0,.12);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-completar-tema:hover {
+    background: #22c55e;
+}
+
+/* Estilo de foco para accesibilidad */
+.quiz-feedback:focus {
+    outline: 3px dashed #7c3aed;
+    outline-offset: 4px;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Manual IFCD0110 · Aprende a Crear y Publicar Páginas Web</h1>
+    <p class="nivel-ud">Domina el diseño web paso a paso y publica tu página web desde cero.</p>
+    <nav aria-label="Principal">
+      <ul class="menu">
+        <li><a href="#/index">Inicio</a></li>
+        <li><a href="#/indice">Índice</a></li>
+        <li><a href="#/ayuda">Ayuda</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="resumen" role="note">
+    📌 Todas las técnicas de diseño y usabilidad mostradas en este manual se pueden lograr con <strong>HTML + CSS + JS</strong>. 
+    No usamos librerías ni otras tecnologías para que el aprendizaje sea adaptado y universal.
+  </div>
+
+  
+
+  <div class="layout">
+    <!-- Índice -->
+    <aside class="sidebar-left" aria-label="Índice de unidades">
+      <h3>Índice de unidades</h3>
+      <div id="contexto-actual" class="contexto-actual"></div>
+      <ol id="indice-unidades" class="indice-lista" aria-live="polite"></ol>
+      <div id="progreso-resumen" class="resumen" role="status" aria-live="polite">Cargando progreso…</div>
+      <details>
+        <summary>Desbloquear UD</summary>
+        <p>Empiezas con la UD1. Para desbloquear la siguiente, completa la autoevaluación y pulsa <em>Marcar como completada</em>.</p>
+      </details>
+    </aside>
+
+    <!-- Contenido dinámico SPA -->
+    <main id="app" class="bloque" tabindex="-1">
+      <noscript>Necesitas activar JavaScript para disfrutar del modo SPA.</noscript>
+    </main>
+
+    <!-- Panel derecho -->
+    <aside class="sidebar-right" id="panel-contexto">
+      <h3>Índice del tema</h3>
+      <!-- 👇 necesario para el TOC -->
+      <nav id="toc-ud" class="toc"></nav>
+
+      <h3>En esta UD</h3>
+      <nav id="temas-ud" class="temas-ud"></nav>
+
+      <h3>Tus apuntes</h3>
+      <textarea id="notas-ud" placeholder="Escribe tus notas… (se guardan automáticamente)"></textarea>
+
+      <button id="btn-reiniciar" class="boton-ir" type="button" style="display:none">Reiniciar progreso</button>
+      <p class="nota">Tus notas y progreso se guardan en este navegador.</p>
+    </aside>
+  </div>
+
+  <!-- ========= Templates estáticos ======== -->
+  <template id="tpl-index">
+    <section class="intro">
+      <img src="assets/bienvenida.png" alt="Imagen introductoria del curso IFCD0110" class="intro-img">
+    </section>
+
+    <section class="logros">
+      <div class="texto">
+        <h2>Bienvenida al curso IFCD0110</h2>
+        <p class="motivacion centrado">Vas a aprender creando, paso a paso.</p>
+        <ul>
+          <li>No necesitas experiencia previa: empezamos desde cero.</li>
+          <li>Terminarás con nivel profesional, con un portfolio propio.</li>
+          <li>El avance es progresivo: desbloquea cada unidad superando su autoevaluación.</li>
+        </ul>
+        <div class="centrado">
+          <a href="#/indice" class="boton-ir">Índice del curso</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="presentacion" id="formadora-tecnologias-web">
+      <div class="texto">
+        <h2>👩‍🏫 Tu guía en el mundo del desarrollo web</h2>
+        <p>Aprende diseño web y programación desde cero, gratis y a tu ritmo. Soy tu formadora en tecnologías web, y este curso práctico te ayudará a descubrir tu potencial digital y prepararte para certificarte oficialmente.</p>
+        <ul>
+          <li>🎯 Metodología activa con enfoque en empleabilidad real.</li>
+          <li>🧪 Prácticas guiadas, retos semanales y evaluación continua.</li>
+          <li>🌐 Te acompaño en la creación de tu primer sitio web público.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="logros">
+      <div class="texto">
+        <h2>🧭 Objetivos del tema</h2>
+        <p class="motivacion centrado">Diseñar, construir e implementar sitios web accesibles y mantenibles.</p>
+        <ul>
+          <li>Dominar HTML semántico, CSS moderno (Flexbox/Grid) y fundamentos de JS.</li>
+          <li>Aplicar accesibilidad, responsive y buenas prácticas de diseño.</li>
+          <li>Publicar el proyecto con Git/GitHub y un servicio de hosting.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>📦 Contenido del curso</h2>
+      <ul>
+        <li><strong>Módulo 1:</strong> Construcción de páginas web (HTML y CSS)</li>
+        <li><strong>Módulo 2:</strong> Integración de componentes (JavaScript, formularios)</li>
+        <li><strong>Módulo 3:</strong> Publicación y hosting (Git, Netlify/GitHub Pages)</li>
+      </ul>
+      <div class="centrado"><a href="itinerarioformativo.html" class="boton-ir">Conoce tu curso</a></div>
+    </section>
+
+    <section class="mosaico">
+      <h2 class="centrado">Explora</h2>
+      <div class="card-grid">
+        <a href="#/indice" class="card"><img src="assets/explora.png" alt="Conoce tu curso"><p>Conoce tu curso</p></a>
+        <a href="#/ud/1" class="card"><img src="assets/herramienta.png" alt="Primeros pasos"><p>Primeros pasos (UD1)</p></a>
+        <a href="#/ayuda" class="card"><img src="assets/publicar.png" alt="Ayuda y dudas"><p>Ayuda y dudas</p></a>
+      </div>
+    </section>
+
+    <section>
+      <h2>🧑‍💻 Primera actividad</h2>
+      <p>Crea una página muy sencilla con Google Sites con un título, una imagen y dos secciones. Es tu punto de partida.</p>
+      <div class="centrado"><a href="#/ud/1" class="boton-ir">Crear mi primera página</a></div>
+    </section>
+
+    <section class="centrado">
+      <h2>🗓 ¡Empezamos!</h2>
+      <p>Vamos a construir la web desde cero, con pasión y creatividad.</p>
+      <img src="assets/empezamos.png" alt="Aventura web" class="intro2-img" />
+    </section>
+  </template>
+
+  <template id="tpl-ayuda">
+  <section>
+    <h2>Ayuda y Guía de Uso</h2>
+    <p>
+      Bienvenido/a al manual. Para una mejor experiencia de aprendizaje, hemos diseñado una navegación simple y un sistema de ayuda integrado.
+    </p>
+
+    <h3>Navegación</h3>
+    <p>
+      La navegación en este manual utiliza un sistema de **anclas o "hashes"** en la URL. Esto permite que cada sección del contenido tenga una dirección única y que puedas compartir enlaces directos a unidades o temas específicos. No es necesario recargar la página completa al cambiar de sección, lo que hace la experiencia más rápida y fluida.
+    </p>
+    <ul>
+      <li>**Unidades Didácticas (UD)**: Navega entre las unidades usando la estructura `#/ud/[número de unidad]`. Por ejemplo, `#/ud/1` te llevará a la Unidad 1.</li>
+      <li>**Temas**: Dentro de cada unidad, puedes acceder a temas específicos con `#/ud/[número de unidad]/tema/[número de tema]`. Por ejemplo, `#/ud/1/tema/3` te llevará directamente al Tema 3 de la Unidad 1.</li>
+    </ul>
+
+    <p>
+      Si un tema está bloqueado, lo verás indicado con un ícono de **🔒**. Para desbloquearlo, simplemente completa la unidad anterior.
+    </p>
+
+    <hr>
+
+    <h3>Accesibilidad y Usabilidad</h3>
+    <p>
+      Hemos implementado técnicas de accesibilidad web para asegurar que este manual sea usable para la mayor cantidad de usuarios posible. Aquí te explicamos algunas de ellas:
+    </p>
+
+    <details>
+      <summary>Características de Accesibilidad <span class="badge">♿</span></summary>
+      <ul>
+        <li>
+          **Foco Dinámico**: El contenido que se carga de forma dinámica (como una nueva unidad o tema) recibe el foco del teclado automáticamente. Esto es crucial para los usuarios de teclado y tecnologías de asistencia, ya que no tienen que buscar el nuevo contenido en la página.
+          <p>
+            <em>Uso Correcto:</em> Si navegas a una nueva unidad, el primer elemento interactivo de esa sección (por ejemplo, el primer título o botón) se enfocará automáticamente.
+          </p>
+        </li>
+        <li>
+          **Enlaces Deshabilitados**: Los enlaces que no están disponibles o que están bloqueados (marcados con el 🔒) no solo son visualmente distintos, sino que también usan el atributo `aria-disabled="true"`.
+          <p>
+            <em>Uso Correcto:</em> Las tecnologías de asistencia, como los lectores de pantalla, interpretarán este atributo y le informarán al usuario que el enlace no se puede activar. Esto evita confusiones y frustración.
+          </p>
+        </li>
+        <li>
+          **Estructura Semántica**: Se han utilizado etiquetas HTML correctas (<code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>) para organizar el contenido.
+          <p>
+            <em>Uso Correcto:</em> Esto permite a los usuarios de lectores de pantalla navegar el manual usando encabezados, puntos de referencia y listas, haciendo la experiencia más eficiente y lógica.
+          </p>
+        </li>
+        <li>
+          **Diseño Adaptable (Responsive)**: El manual ha sido diseñado para ser completamente funcional en cualquier dispositivo, ya sea una computadora de escritorio, un tablet o un smartphone.
+          <p>
+            <em>Uso Correcto:</em> No importa desde dónde accedas, la lectura y la navegación serán cómodas.
+          </p>
+        </li>
+      </ul>
+    </details>
+
+    <hr>
+    
+    <h3>¿Aún necesitas ayuda?</h3>
+    <p>
+      Si tienes alguna duda sobre el uso del manual o encuentras un error, no dudes en contactar al equipo de soporte a través de [Insertar enlace a formulario de contacto o correo electrónico].
+    </p>
+  </section>
+</template>
+
+  <!-- ========== JavaScript de la SPA ========== -->
+  <script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+    // 1. Seleccionamos todos los formularios de quiz
+    const quizzes = document.querySelectorAll('.quiz');
+
+    quizzes.forEach(quiz => {
+        const answers = JSON.parse(quiz.dataset.answers);
+        const submitButton = quiz.querySelector('.quiz-submit');
+        const resultSpan = quiz.querySelector('.quiz-result');
+
+        submitButton.addEventListener('click', () => {
+            let correctAnswersCount = 0;
+
+            // 2. Recorremos cada pregunta dentro del quiz
+            const questions = quiz.querySelectorAll('li');
+            questions.forEach((question, index) => {
+                const questionName = `r${index + 1}`;
+                const selectedInput = question.querySelector(`input[name="${questionName}"]:checked`);
+                const feedbackDiv = question.querySelector('.feedback');
+                const correctAnswer = answers[questionName];
+
+                // Limpiamos el feedback de intentos anteriores
+                const labels = question.querySelectorAll('label');
+                labels.forEach(label => {
+                    label.classList.remove('quiz-correcta', 'quiz-incorrecta');
+                });
+                feedbackDiv.textContent = '';
+                feedbackDiv.classList.remove('quiz-ok', 'quiz-err');
+                
+                if (selectedInput) {
+                    const selectedValue = selectedInput.value;
+                    const selectedLabel = selectedInput.closest('label');
+
+                    if (selectedValue === correctAnswer) {
+                        // Respuesta correcta: marcamos la etiqueta con la clase 'quiz-correcta'
+                        selectedLabel.classList.add('quiz-correcta');
+                        feedbackDiv.textContent = '¡Respuesta correcta! ✅';
+                        feedbackDiv.classList.add('quiz-ok');
+                        correctAnswersCount++;
+                    } else {
+                        // Respuesta incorrecta: marcamos la etiqueta con la clase 'quiz-incorrecta'
+                        selectedLabel.classList.add('quiz-incorrecta');
+                        feedbackDiv.textContent = 'Respuesta incorrecta. ❌';
+                        feedbackDiv.classList.add('quiz-err');
+                        
+                        // Opcional: Mostramos cuál era la respuesta correcta
+                        const correctInput = question.querySelector(`input[name="${questionName}"][value="${correctAnswer}"]`);
+                        if (correctInput) {
+                            correctInput.closest('label').classList.add('quiz-correcta');
+                        }
+                    }
+                } else {
+                    // Si el usuario no seleccionó nada
+                    feedbackDiv.textContent = 'Por favor, selecciona una opción.';
+                    feedbackDiv.classList.add('quiz-err');
+                }
+            });
+
+            // Mostramos el resultado final
+            resultSpan.textContent = `Has acertado ${correctAnswersCount} de ${questions.length} preguntas.`;
+        });
+    });
+});
+    /******************************************************************
+     * Helpers
+     ******************************************************************/
+    const $  = (sel, ctx = document) => ctx.querySelector(sel);
+    const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+    const STORAGE_KEY = 'ifcd0110:progreso:v1';
+
+    // (opcional) usar si quieres forzar scroll arriba tras cambio de hash
+    function scrollTopAfterNextRoute(){
+      window.addEventListener('hashchange', function onHash(){
+        window.removeEventListener('hashchange', onHash);
+        const t0 = performance.now();
+        (function waitForApp(){
+          const app = document.getElementById('app');
+          if ((app && app.children.length) || performance.now() - t0 > 1500) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          } else {
+            requestAnimationFrame(waitForApp);
+          }
+        })();
+      }, { once:true });
+    }
+
+    /******************************************************************
+     * Catálogo: UC → MF → UF → UDs
+     ******************************************************************/
+    const UC = { UC0950_2: { id:'UC0950_2', titulo:'Construir páginas web' } };
+
+    const MODULOS = {
+      MF0950_2: { id:'MF0950_2', titulo:'Construcción de páginas web', horas:210, ucId:'UC0950_2' },
+      MF0951_2: { id:'MF0951_2', titulo:'Integración de componentes software', horas:180, ucId:'UC0950_2' },
+      MF0952_2: { id:'MF0952_2', titulo:'Publicación de páginas web', horas:90, ucId:'UC0950_2' }
+    };
+
+    const UFS = {
+      UF1302: { id:'UF1302', titulo:'Lenguaje de marcas', horas:80,  moduloId:'MF0950_2' },
+      UF1303: { id:'UF1303', titulo:'Hojas de estilo',     horas:70,  moduloId:'MF0950_2' },
+      UF1304: { id:'UF1304', titulo:'Plantillas y formularios', horas:60, moduloId:'MF0950_2' }
+    };
+
+    const UNIDADES = [
+  { id:'ud01', titulo:'UD01 · Lenguajes de marcas', moduloId:'MF0950_2', ufId:'UF1302', path:'ud01Lenguajes-de-marcas/index.html' },
+  { id:'ud02', titulo:'UD02 · Imágenes y multimedia', moduloId:'MF0950_2', ufId:'UF1302', path:'ud02Imagenes-multimedia/index.html' },
+  { id:'ud03', titulo:'UD03 · Técnicas de accesibilidad y usabilidad', moduloId:'MF0950_2', ufId:'UF1302', path:'ud03Accesibilidad-usabilidad/index.html' },
+  { id:'ud04', titulo:'UD04 · Herramientas de edición web', moduloId:'MF0950_2', ufId:'UF1302', path:'ud04-herramientas-edicion-web/index.html' },
+  
+];
+
+    const TEMARIOS = {
+      ud01: [
+        { titulo:'Tema 1 · Características', href:'ud01Lenguajes-de-marcas/tema01-caracteristicas.html' },
+        { titulo:'Tema 2 · Estructura HTML', href:'ud01Lenguajes-de-marcas/tema02-estructura.html' },
+        { titulo:'Tema 3 · Navegadores',     href:'ud01Lenguajes-de-marcas/tema03-navegadores.html' },
+        { titulo:'Tema 4 · Formato',         href:'ud01Lenguajes-de-marcas/tema04-formato.html' },
+        { titulo:'Tema 5 · Enlaces',         href:'ud01Lenguajes-de-marcas/tema05-enlaces.html' },
+        { titulo:'Tema 6 · Marcos y capas',  href:'ud01Lenguajes-de-marcas/tema06-marcos-capas.html' }
+      ],
+      ud02: [
+        { titulo:'Tema 1 · Inserción de imágenes', href:'ud02Imagenes-multimedia/tema01-imagenes.html' },
+        { titulo:'Tema 2 · Mapas de imágenes',     href:'ud02Imagenes-multimedia/tema02-mapas-imagenes.html' },
+        { titulo:'Tema 3 · Audio y multimedia',    href:'ud02Imagenes-multimedia/tema03-multimedia.html' },
+        { titulo:'Tema 4 · Vídeo y programas',     href:'ud02Imagenes-multimedia/tema04-video.html' },
+        { titulo:'Tema 5 · Marquesinas',           href:'ud02Imagenes-multimedia/tema05-marquesinas.html' }
+      ],
+      ud03: [
+        { titulo:'Tema 1 · Accesibilidad web: ventajas', href:'ud03Accesibilidad-usabilidad/tema01-accesibilidad-ventajas.html' },
+        { titulo:'Tema 2 · Usabilidad web: importancia', href:'ud03Accesibilidad-usabilidad/tema02-usabilidad-importancia.html' },
+        { titulo:'Tema 3 · Aplicaciones y estándares para verificar accesibilidad', href:'ud03Accesibilidad-usabilidad/tema03-herramientas-estandares.html' },
+        { titulo:'Tema 4 · Diseño de sitios web usables', href:'ud03Accesibilidad-usabilidad/tema04-diseno-usable.html' },
+        { titulo:'Tema 5 · Adaptación de sitios web usables', href:'ud03Accesibilidad-usabilidad/tema05-adaptacion-usable.html' }
+      ],
+      ud04: [
+        { titulo:'Tema 1 · Instalación y configuración de herramientas de edición web', href:'ud04-herramientas-edicion-web/tema01-instalacion-configuracion.html' },
+        { titulo:'Tema 2 · Funciones y características.', href:'ud04-herramientas-edicion-web/tema02-funciones-caracteristicas.html' },
+     { titulo:'Seguimos trabajando.', href:'ud04-herramientas-edicion-web/fin.html' }
+       
+      ]
+    };
+
+    /******************************************************************
+     * Progreso UDs
+     ******************************************************************/
+    function progresoPorDefecto(){ const estado={}; UNIDADES.forEach((u,i)=>estado[u.id]=(i===0?'unlocked':'locked')); return estado; }
+    function cargarProgreso(){ try{ const raw=localStorage.getItem(STORAGE_KEY); if(!raw) return progresoPorDefecto(); const data=JSON.parse(raw); UNIDADES.forEach((u,i)=>{ if(!data[u.id]) data[u.id]=(i===0?'unlocked':'locked'); }); return data; }catch{ return progresoPorDefecto(); } }
+    function guardarProgreso(p){ localStorage.setItem(STORAGE_KEY, JSON.stringify(p)); }
+    function desbloquearSiguiente(actualId){ const idx=UNIDADES.findIndex(u=>u.id===actualId); if(idx>=0&&idx<UNIDADES.length-1){ const siguiente=UNIDADES[idx+1].id; const p=cargarProgreso(); if(p[siguiente]==='locked'){ p[siguiente]='unlocked'; guardarProgreso(p); } } }
+
+    /******************************************************************
+     * Progreso por TEMAS (por UD)
+     ******************************************************************/
+    function keyTemas(udId){ return `ifcd0110:temas:${udId}`; }
+    function progresoTemasPorDefecto(udId){ const lista=TEMARIOS[udId]||[]; const est={}; lista.forEach((_,i)=>est[i]=(i===0?'unlocked':'locked')); return est; }
+    function cargarProgresoTemas(udId){
+      try{
+        const raw=localStorage.getItem(keyTemas(udId)); const base=progresoTemasPorDefecto(udId);
+        if(!raw){ base[0]='unlocked'; return base; }
+        const data=JSON.parse(raw);
+        Object.keys(base).forEach(k=>{ if(!(k in data)) data[k]=base[k]; });
+        data[0]=(data[0]==='done')?'done':'unlocked';
+        localStorage.setItem(keyTemas(udId), JSON.stringify(data));
+        return data;
+      }catch{ const est=progresoTemasPorDefecto(udId); est[0]='unlocked'; return est; }
+    }
+    function guardarProgresoTemas(udId,data){ if(data&&data[0]!=='done') data[0]='unlocked'; localStorage.setItem(keyTemas(udId), JSON.stringify(data)); }
+    function desbloquearTemaSiguiente(udId,idx){ const temas=cargarProgresoTemas(udId); const siguiente=idx+1; if(temas[siguiente]==='locked'){ temas[siguiente]='unlocked'; guardarProgresoTemas(udId,temas); } }
+    function udTerminada(udId){ const temas=TEMARIOS[udId]||[]; const est=cargarProgresoTemas(udId); if(!temas.length) return false; return temas.every((_,i)=>est[i]==='done'); }
+    function marcarTemaHecho(udId,idx){
+      const temas=cargarProgresoTemas(udId); temas[idx]='done'; guardarProgresoTemas(udId,temas);
+      if(udTerminada(udId)){ const p=cargarProgreso(); if(p[udId]!=='done'){ p[udId]='done'; guardarProgreso(p); desbloquearSiguiente(udId); } }
+      else { desbloquearTemaSiguiente(udId,idx); }
+    }
+
+    /******************************************************************
+     * Router
+     ******************************************************************/
+    function parseRuta(){
+      const hash = location.hash || '#/index';
+      const mTema = hash.match(/^#\/ud\/([0-9]+)\/tema\/([0-9]+)$/);
+      if (mTema) return { vista:'ud', num:parseInt(mTema[1],10), tema:parseInt(mTema[2],10) };
+
+      const m = hash.match(/^#\/(index|inicio|indice|ayuda|ud\/([0-9]+))$/);
+      if (!m) return { vista:'index' };
+      if (m[1].startsWith('ud/')) return { vista:'ud', num:parseInt(m[2],10) };
+      return { vista:m[1] };
+    }
+
+    /******************************************************************
+     * Render de unidad/tema + ejecución de scripts
+     ******************************************************************/
+    async function renderUnidad(unidad, temaIndex=null){
+      const app = $('#app');
+      try{
+        let url = unidad.path;
+        if (temaIndex != null){
+          const temas = TEMARIOS[unidad.id] || [];
+          const item  = temas[temaIndex];
+          if (item) url = item.href;
+        }
+        const res = await fetch(url, { cache:'no-cache' });
+        if (!res.ok) throw new Error('No se pudo cargar ' + url);
+        const html = await res.text();
+        app.innerHTML = html;
+        await runScripts(app);
+      }catch(e){
+        console.error(e);
+        app.innerHTML = '<p>Contenido no disponible.</p>';
+      }
+      app.focus();
+    }
+
+    async function runScripts(container){
+      const scripts = Array.from(container.querySelectorAll('script'));
+      for (const old of scripts){
+        const s = document.createElement('script');
+        for (const {name,value} of Array.from(old.attributes)) s.setAttribute(name,value);
+        const isExternal = !!s.getAttribute('src');
+        await new Promise((resolve)=>{
+          if (isExternal){ s.onload=resolve; s.onerror=resolve; old.parentNode.replaceChild(s,old); }
+          else { s.textContent = old.textContent || ''; old.parentNode.replaceChild(s,old); resolve(); }
+        });
+      }
+    }
+
+    /******************************************************************
+     * Índice lateral UC → MF → UF → UD (+ TEMAS)
+     ******************************************************************/
+    function renderIndice(){
+      const cont = $('#indice-unidades');
+      const p    = cargarProgreso();
+      cont.innerHTML = '';
+      let hechas = 0;
+
+      const r = parseRuta();
+      let udActualId = null, temaActual = null;
+
+      if (r.vista === 'ud'){
+        const idx = Math.max(0,(r.num||1)-1);
+        udActualId = UNIDADES[idx]?.id || null;
+        temaActual = (typeof r.tema === 'number') ? r.tema-1 : null;
+      }
+
+      const grupos = {};
+      UNIDADES.forEach((u,i)=>{
+        if (udTerminada(u.id)){ if (p[u.id] !== 'done'){ p[u.id]='done'; guardarProgreso(p); desbloquearSiguiente(u.id); } }
+        const estado = p[u.id]; if (estado==='done') hechas++;
+
+        const mId=u.moduloId, ufId=u.ufId, ucId=MODULOS[mId].ucId;
+        if(!grupos[ucId]) grupos[ucId]={meta:UC[ucId], mfs:{}};
+        if(!grupos[ucId].mfs[mId]) grupos[ucId].mfs[mId]={meta:MODULOS[mId], ufs:{}};
+        if(!grupos[ucId].mfs[mId].ufs[ufId]) grupos[ucId].mfs[mId].ufs[ufId]={meta:UFS[ufId], uds:[]};
+        grupos[ucId].mfs[mId].ufs[ufId].uds.push({u,index:i,estado});
+      });
+
+      Object.values(grupos).forEach(grUC=>{
+        const liUC = document.createElement('li');
+        liUC.className='grupo uc';
+        liUC.innerHTML=`<div class="uc-cab"><strong>${grUC.meta.id}</strong> · ${grUC.meta.titulo}</div>`;
+        const olMF = document.createElement('ol');
+
+        Object.values(grUC.mfs).forEach(grM=>{
+          const liM=document.createElement('li'); liM.className='grupo modulo';
+          liM.innerHTML=`<div class="m-cab"><strong>${grM.meta.id}</strong> · ${grM.meta.titulo} <br><small>(${grM.meta.horas} h)</small></div>`;
+          const olUF=document.createElement('ol');
+
+          Object.values(grM.ufs).forEach(grUF=>{
+            const liUF=document.createElement('li'); liUF.className='grupo uf';
+            liUF.innerHTML=`<div class="uf-cab"><strong>${grUF.meta.id}</strong> · ${grUF.meta.titulo} <br><small>(${grUF.meta.horas} h)</small></div>`;
+            const olUD=document.createElement('ol');
+
+            grUF.uds.forEach(({u,index,estado})=>{
+              const li=document.createElement('li');
+              const esActualUD=(u.id===udActualId);
+              li.className='indice-item'+(esActualUD?' actual':'');
+
+              const cab=document.createElement('div'); cab.style.display='flex'; cab.style.alignItems='center'; cab.style.gap='10px';
+              const icono=document.createElement('span'); icono.className='estado';
+              icono.textContent = esActualUD ? '➜' : (estado==='done'?'✅':(estado==='unlocked'?'▶️':'🔒'));
+
+              const enlace=document.createElement('a'); enlace.className='enlace-ud'; enlace.textContent=u.titulo; enlace.href=`#/ud/${index+1}`;
+              if(estado==='locked' && !esActualUD){
+                enlace.setAttribute('aria-disabled','true');
+                enlace.addEventListener('click',(ev)=>{ ev.preventDefault(); alert('Esta unidad está bloqueada. Completa la anterior para continuar.'); });
+              }
+
+              const badge=document.createElement('span'); badge.className='badge'; badge.textContent=(estado==='done')?'Completada':'';
+              cab.append(icono,enlace,badge); li.append(cab);
+
+              if (esActualUD && (estado!=='done')){
+                const temas=TEMARIOS[u.id]||[];
+                if(temas.length){
+                  const olTemas=document.createElement('ol'); olTemas.className='temas-lista';
+                  const progTemas=cargarProgresoTemas(u.id);
+                  temas.forEach((t,ti)=>{
+                    const liT=document.createElement('li');
+                    const sp=document.createElement('span'); sp.className='estado';
+                    const est=progTemas[ti]||'locked';
+                    const esTemaActual=(esActualUD && temaActual===ti);
+                    sp.textContent = est==='done'?'✅':(esTemaActual?'➜':(est==='unlocked'||ti===0?'▶️':'🔒'));
+                    const aT=document.createElement('a'); aT.textContent=t.titulo; aT.href=`#/ud/${index+1}/tema/${ti+1}`;
+                    if(esTemaActual) aT.classList.add('activo');
+                    if(est==='locked' && ti!==0){ aT.setAttribute('aria-disabled','true'); liT.classList.add('tema-bloqueado'); }
+                    liT.append(sp,aT); olTemas.appendChild(liT);
+                  });
+                  li.appendChild(olTemas);
+                }
+              }
+
+              olUD.appendChild(li);
+            });
+
+            liUF.appendChild(olUD);
+            olUF.appendChild(liUF);
+          });
+
+          liM.appendChild(olUF);
+          olMF.appendChild(liM);
+        });
+
+        liUC.appendChild(olMF);
+        cont.appendChild(liUC);
+      });
+
+      const pct = Math.round((hechas/UNIDADES.length)*100);
+      const resumen = $('#progreso-resumen');
+      if(resumen) resumen.textContent = `Progreso general: ${hechas}/${UNIDADES.length} · ${pct}%`;
+
+      // Panel “Estás en…”
+      const ctx = $('#contexto-actual');
+      if(ctx){
+        if(udActualId){
+          const u=UNIDADES.find(x=>x.id===udActualId);
+          const m=MODULOS[u.moduloId], uf=UFS[u.ufId], uc=UC[m.ucId];
+          let temaTxt=''; if(temaActual!=null){ const lista=TEMARIOS[u.id]||[]; const item=lista[temaActual]; if(item) temaTxt=`<p><strong>Tema:</strong> ${item.titulo}</p>`; }
+          ctx.innerHTML = `<div class="box">
+            <h4>Estás en</h4>
+            <p><strong>UC:</strong> ${uc.id} · ${uc.titulo}</p>
+            <p><strong>Módulo:</strong> ${m.id} · ${m.titulo} <small>(${m.horas} h)</small></p>
+            <p><strong>UF:</strong> ${uf.id} · ${uf.titulo} <small>(${uf.horas} h)</small></p>
+            <p><strong>UD:</strong> ${u.titulo}</p>
+            ${temaTxt}
+          </div>`;
+        } else {
+          ctx.innerHTML = `<div class="box"><h4>Estás en</h4><p>Selecciona una unidad del índice.</p></div>`;
+        }
+      }
+    }
+
+    /******************************************************************
+     * TOC (índice del tema) + listado de temas (panel derecho)
+     ******************************************************************/
+    function slugify(str){ return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^\w\s-]/g,'').trim().replace(/\s+/g,'-'); }
+    function construirTOC(){
+      const cont=document.getElementById('toc-ud'); if(!cont) return;
+      cont.innerHTML='';
+      const root=document.getElementById('app');
+      const hs=Array.from(root.querySelectorAll('h2, h3')).filter(h=>!h.hasAttribute('data-no-toc'));
+      if(!hs.length){ cont.innerHTML='<p class="nota">—</p>'; return; }
+      const ul=document.createElement('ul');
+      hs.forEach(h=>{
+        if(!h.id) h.id=slugify(h.textContent);
+        const li=document.createElement('li'); li.className=h.tagName.toLowerCase();
+        const a=document.createElement('a'); a.href=`#${h.id}`; a.textContent=h.textContent;
+        a.addEventListener('click', (e)=>{ e.preventDefault(); document.getElementById(h.id)?.scrollIntoView({behavior:'smooth',block:'start'}); });
+        li.appendChild(a); ul.appendChild(li);
+      });
+      cont.appendChild(ul);
+      cont.querySelectorAll('li.h3').forEach(li=>li.classList.add('h3'));
+    }
+
+    function construirTemas(udId, temaIndex){
+      const nav=$('#temas-ud'); if(!nav) return;
+      const lista=TEMARIOS[udId]||[]; if(!lista.length){ nav.innerHTML='<p class="nota">—</p>'; return; }
+      const idxUD=UNIDADES.findIndex(u=>u.id===udId); if(idxUD===-1){ nav.innerHTML='<p class="nota">—</p>'; return; }
+      const estados=cargarProgresoTemas(udId);
+      const ul=document.createElement('ul'); ul.className='temas-lista';
+      lista.forEach((t,i)=>{
+        const li=document.createElement('li'); const sp=document.createElement('span'); sp.className='estado';
+        const est=estados[i]||'locked';
+        sp.textContent = est==='done'?'✅':(temaIndex===i?'➜':(est==='unlocked'?'▶️':'🔒'));
+        const a=document.createElement('a'); a.href=`#/ud/${idxUD+1}/tema/${i+1}`; a.textContent=t.titulo;
+        if(temaIndex===i) a.classList.add('activo');
+        if(est==='locked'){ a.setAttribute('aria-disabled','true'); li.classList.add('tema-bloqueado'); }
+        li.append(sp,a); ul.appendChild(li);
+      });
+      nav.innerHTML=''; nav.appendChild(ul);
+    }
+
+    /******************************************************************
+     * Quizzes (por tema)
+     ******************************************************************/
+    // (opcional) tabla JS por tema. Si no defines aquí, usa data-respuestas o data-correcta en el HTML del tema.
+    const QUIZ_RESPUESTAS_POR_TEMA = {
+      // ud01: { 1: { q1:'a', q2:'c', q3:'b' } }, // ej: UD01/Tema2
+      // ud02: { 0: { q1:'a', q2:'c', q3:'b' } }
+    };
+    // Placeholder para evitar referencias inexistentes si alguien usa QUIZ en otro lado
+    const QUIZ = {};
+
+    function extraerSoluciones(form, cfg, udId, temaIndex){
+      // 1) Respuestas definidas en JS por tema (si existen)
+      const porTema = QUIZ_RESPUESTAS_POR_TEMA[udId]?.[temaIndex];
+      if (porTema) return porTema;
+
+      // 2) Respuestas de cfg (si las pasaras manualmente)
+      if (cfg && cfg.respuestas) return cfg.respuestas;
+
+      // 3) JSON en el propio <form data-respuestas="...">
+      const raw = form.getAttribute('data-respuestas');
+      if (raw) { try { return JSON.parse(raw); } catch(e){} }
+
+      // 4) Radios marcados con data-correcta
+      const sol = {};
+      form.querySelectorAll('input[type="radio"][name]').forEach(inp=>{
+        if (inp.hasAttribute('data-correcta')) sol[inp.name] = inp.value;
+      });
+      return sol;
+    }
+
+   function validarQuizByConfig(cfg, udId, temaIndex){
+  const QUIZ_NAV_DELAY = 1800; // ms que se muestra el mensaje antes de abrir el siguiente tema
+  
+
+  // Localiza el formulario: por id de cfg, por [data-quiz] o por id que empiece por "quiz-"
+  const form = (cfg && cfg.formId)
+    ? document.getElementById(cfg.formId)
+    : (document.querySelector('form[data-quiz]') || document.querySelector('form[id^="quiz-"]'));
+
+  if (!form) return;
+
+  // Crea/usa la zona de mensaje accesible
+  const msgId = (cfg && cfg.msgId) || (form.id ? `${form.id}-msg` : 'quiz-msg');
+  let msg = document.getElementById(msgId);
+  if (!msg){
+    msg = document.createElement('div');
+    msg.id = msgId;
+    form.insertAdjacentElement('afterend', msg);
+  }
+  msg.setAttribute('role','alert');
+  msg.setAttribute('tabindex','-1');
+
+  const limpiarMarcas = () => {
+    form.querySelectorAll('.quiz-correcta, .quiz-incorrecta').forEach(el=>{
+      el.classList.remove('quiz-correcta','quiz-incorrecta');
+    });
+  };
+
+  form.addEventListener('submit', (ev)=>{
+    ev.preventDefault();
+    ev.stopPropagation();
+    limpiarMarcas();
+
+    const fd = new FormData(form);
+    // Usa tu helper existente; si tu extraerSoluciones ignora udId/temaIndex no pasa nada.
+    const soluciones = extraerSoluciones(form, cfg, udId, temaIndex);
+    const total = Object.keys(soluciones).length || 0;
+    let bien = 0;
+
+    Object.entries(soluciones).forEach(([name, correcta])=>{
+      const elegida = fd.get(name);
+      const grupo = form.querySelector(`[name="${name}"]`)?.closest('fieldset, .pregunta, .bloque, div') || form;
+      if (elegida === correcta){ bien++; grupo.classList.add('quiz-correcta'); }
+      else { grupo.classList.add('quiz-incorrecta'); }
+    });
+
+    const aprobado = total > 0 && (bien === total);
+    msg.className = 'quiz-feedback ' + (aprobado ? 'quiz-ok' : 'quiz-err');
+    msg.innerHTML = aprobado
+      ? `🎉 <strong>¡Bien hecho!</strong> ¡Felicitaciones!  ${bien}/${total}.<br><small>Abriendo el siguiente tema…</small>`
+      : `🔁 Has acertado <strong>${bien}/${total}</strong>. Revisa las preguntas marcadas en rojo y vuelve a intentarlo.`;
+
+    msg.scrollIntoView({ behavior:'smooth', block:'center' });
+    msg.focus?.();
+
+    if (!aprobado) return;
+
+    // ✅ Aprobar ⇒ marcar, refrescar paneles y (tras retardo) abrir el siguiente tema de la misma UD
+    if (typeof temaIndex === 'number' && temaIndex >= 0) {
+      marcarTemaHecho(udId, temaIndex);
+      construirTemas(udId, temaIndex);
+      renderIndice();
+
+      const udIdx  = UNIDADES.findIndex(u => u.id === udId); // 0-based
+      const temas  = TEMARIOS[udId] || [];
+      const nextIx = temaIndex + 1;
+
+      if (udIdx >= 0) {
+        setTimeout(() => {
+          location.hash = (nextIx < temas.length)
+            ? `#/ud/${udIdx+1}/tema/${nextIx+1}`
+            : `#/ud/${udIdx+1}`;
+
+          // pequeño ajuste de scroll tras el cambio de vista
+          setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 10);
+        }, QUIZ_NAV_DELAY);
+      }
+    }
+  }, { passive:false });
+}
+
+    function inicializarUnidad(id, temaIndex){
+      // No pasamos cfg para no interferir con UD01/T1; autodetección con data-quiz
+      validarQuizByConfig(null, id, temaIndex);
+
+      // Botones manuales (si existieran)
+      $$('button[data-completar]').forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          const unidadId = btn.getAttribute('data-completar') || id;
+          const p = cargarProgreso();
+          p[unidadId] = 'done';
+          guardarProgreso(p);
+          desbloquearSiguiente(unidadId);
+          renderIndice();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, { once:true });
+      });
+    }
+
+    /******************************************************************
+     * Vista
+     ******************************************************************/
+    async function renderVista(){
+      const { vista, num, tema } = parseRuta();
+      const app = $('#app'); if(!app) return;
+
+      async function cargarParcial(ruta){
+        app.setAttribute('aria-busy','true');
+        app.innerHTML='<div class="centrado bloque">Cargando…</div>';
+        try{
+          const res=await fetch(ruta,{cache:'no-cache'}); if(!res.ok) throw new Error(`HTTP ${res.status}`);
+          const html=await res.text();
+          const tmp=document.implementation.createHTMLDocument('tmp'); tmp.documentElement.innerHTML=html;
+          const contenido = tmp.body ? tmp.body.innerHTML : html;
+          app.innerHTML = contenido;
+
+          // Ejecutar scripts del parcial
+          const scripts=[...app.querySelectorAll('script')];
+          for(const old of scripts){
+            const s=document.createElement('script');
+            for(const {name,value} of [...old.attributes]) s.setAttribute(name,value);
+            if(!s.src) s.textContent=old.textContent;
+            old.replaceWith(s);
+          }
+          app.focus();
+        }catch(err){
+          app.innerHTML=`<div class="bloque"><h3>No se pudo cargar el contenido</h3><p>Revisa la ruta <code>${ruta}</code>.</p><p><small>${err.message}</small></p></div>`;
+        }finally{
+          app.removeAttribute('aria-busy');
+        }
+      }
+
+      // Rutas
+      if (vista==='index' || vista==='inicio'){
+        app.innerHTML = document.querySelector('#tpl-index').innerHTML;
+        app.focus();
+        return;
+      }
+
+      if (vista==='indice'){
+        await cargarParcial('indice.html');
+        return;
+      }
+
+      if (vista==='ayuda'){
+        app.innerHTML = document.querySelector('#tpl-ayuda').innerHTML;
+        app.focus();
+        return;
+      }
+
+      if (vista==='ud'){
+        const idx = Math.max(0,(num||1)-1);
+        const unidad = UNIDADES[idx];
+        if(!unidad){ app.innerHTML='<p class="bloque">Unidad no encontrada.</p>'; return; }
+
+        const temaIndex = (typeof tema === 'number') ? (tema-1) : null;
+
+        const p = cargarProgreso();
+        const estadoUD = p[unidad.id] || 'locked';
+        if (estadoUD==='locked'){
+          if (!(typeof temaIndex==='number' && temaIndex===0)){
+            location.hash = `#/ud/${num}/tema/1`; return;
+          }
+        }
+
+        if (typeof temaIndex==='number' && temaIndex>=0){
+          const temas=cargarProgresoTemas(unidad.id);
+          const estTema=temas[temaIndex];
+          if (temaIndex!==0 && estTema==='locked'){
+            alert('Este tema está bloqueado. Completa el anterior para continuar.');
+            location.hash = `#/ud/${num}/tema/1`; return;
+          }
+        }
+
+        await renderUnidad(unidad, temaIndex);
+        inicializarUnidad(unidad.id, temaIndex);
+        construirTOC();
+        construirTemas(unidad.id, temaIndex);
+        inicializarNotas(unidad.id);
+
+        app.focus();
+        return;
+      }
+
+      // Fallback
+      app.innerHTML = '<p>Vista no disponible.</p>';
+    }
+
+    /******************************************************************
+     * Notas
+     ******************************************************************/
+    function inicializarNotas(unidadId){
+      const ta=document.getElementById('notas-ud'); if(!ta) return;
+      const key=`ifcd0110:notas:${unidadId}`;
+      ta.value=localStorage.getItem(key)||'';
+      const autoSave=(()=>{ let t; return ()=>{ clearTimeout(t); t=setTimeout(()=>localStorage.setItem(key,ta.value),300); };})();
+      ta.addEventListener('input', autoSave);
+    }
+
+    /******************************************************************
+     * Sincronización UD ⇄ Temas
+     ******************************************************************/
+    function recomputarProgresoDesdeTemas(){
+      const p=cargarProgreso();
+      UNIDADES.forEach((u,i)=>{
+        if(udTerminada(u.id)){
+          p[u.id]='done';
+          const siguiente=UNIDADES[i+1]?.id;
+          if(siguiente && p[siguiente]==='locked'){ p[siguiente]='unlocked'; }
+        }else if(i===0 && p[u.id]==='locked'){ p[u.id]='unlocked'; }
+      });
+      guardarProgreso(p);
+    }
+
+    /******************************************************************
+     * Arranque
+     ******************************************************************/
+    document.getElementById('btn-reiniciar').addEventListener('click', ()=>{
+      if(confirm('Esto borrará tu progreso local. ¿Continuar?')){
+        localStorage.removeItem(STORAGE_KEY);
+        Object.keys(TEMARIOS).forEach(udId=>localStorage.removeItem(`ifcd0110:temas:${udId}`));
+        recomputarProgresoDesdeTemas();
+        renderIndice();
+        location.hash = '#/index';
+        renderVista();
+      }
+    });
+
+    window.addEventListener('hashchange', ()=>{ renderVista(); renderIndice(); });
+
+    (function init(){
+      recomputarProgresoDesdeTemas();
+      renderIndice();
+      if(!location.hash) location.hash = '#/index';
+      renderVista();
+    })();
+  </script>
+
+  <footer>
+    <p>📌 <strong>María Inmaculada Contreras Iñíguez</strong> — Formadora en Tecnologías de la Información y Administración</p>
+    <p>&copy; 2025 | Todos los derechos reservados</p>
+    <p class="firma">Curso: IFCD0110 – Confección y Publicación de Páginas Web</p>
+  </footer>
+</body>
+</html>

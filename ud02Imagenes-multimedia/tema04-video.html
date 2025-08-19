@@ -1,0 +1,288 @@
+﻿
+
+  <!-- Título accesible para lectores de pantalla (oculto visualmente, visible para AT) -->
+  <h1 class="oculto-visualmente">Unidad Didáctica 04: Vídeo y programas embebidos</h1>
+
+ 
+
+  <!-- ===========================
+       UD04 — VÍDEO Y EMBEDS (VERSIÓN AMPLIADA)
+       =========================== -->
+  <section class="estructura-formativa" id="ud04" role="region" aria-labelledby="ud04-titulo">
+    <h2 id="ud04-titulo">UD04 · Vídeo y programas embebidos</h2>
+
+    <div class="bloque" id="intro-ud04">
+      <p><strong>Objetivo:</strong> Dominar la inserción y publicación de audio/vídeo en HTML5 con foco en <em>accesibilidad</em>, <em>rendimiento</em>, <em>compatibilidad</em> y <em>seguridad</em> al incrustar contenido externo. Incluye: códecs y contenedores, subtítulos/captions y audiodescripción, <span lang="en">autoplay policy</span>, <span lang="en">Media Capabilities</span>, <span lang="en">Picture-in-Picture</span>, atributos de privacidad, y <span lang="en">sandboxing</span> para <code>&lt;iframe&gt;</code>.</p>
+
+      <!-- Esquema textual -->
+      <div class="esquema-textual" aria-label="Esquema de contenidos">
+<pre><code>Epígrafes ampliados:
+– Inserción de elementos multimedia (audio, vídeo y programas) con buenas prácticas A11Y.
+– Propiedades críticas de &lt;audio&gt;/&lt;video&gt;: controls, autoplay+muted, loop, preload, playsinline, poster, track.
+– Recursos de publicación: códecs, contenedores, bitrates, MIME, CORS, caché/CDN, HLS/DASH (nociones).
+– Etiquetas y atributos de &lt;audio&gt;, &lt;video&gt;, &lt;source&gt;, &lt;track&gt;, &lt;iframe&gt;, &lt;embed&gt;, &lt;object&gt;.
+– Formatos y compatibilidad práctica: MP4(H.264+AAC), WebM(VP9/AV1+Opus), MP3/Opus/OGG, WAV.
+– Seguridad, privacidad y rendimiento en iframes: allow, sandbox, referrerpolicy, loading.
+– Responsive media: aspect-ratio, tamaños, lazy, poster, transcripciones.
+– Testing: Lighthouse, DevTools, accesibilidad (captions), rendimiento (bitrate) y fallback.
+</code></pre>
+      </div>
+
+      <div class="nota" role="note">
+        <strong>Nota para el alumno:</strong> este material está comentado como si fuese un capítulo de manual técnico. Observa los bloques <span class="ej-bien">“correcto”</span> y <span class="ej-mal">“incorrecto”</span> y prueba cada ejemplo.
+      </div>
+    </div>
+<section class="intro">
+      <img src="assets/libro.png" alt="Imagen introductoria del curso IFCD0110" class="intro-img">
+    </section>
+    <!-- Tarjetas-resumen de la unidad -->
+    <div class="bloque" aria-labelledby="ideas-clave-titulo">
+      <h3 id="ideas-clave-titulo">📌 Ideas clave de la unidad</h3>
+      <div class="card-grid" role="list">
+        <article class="card" role="listitem">
+          <h4>Vídeo nativo</h4>
+          <p><code>&lt;video&gt;</code> con múltiples <code>&lt;source&gt;</code>, <code>controls</code>, <code>poster</code>, <code>playsinline</code> y <code>&lt;track&gt;</code> para subtítulos.</p>
+        </article>
+        <article class="card" role="listitem">
+          <h4>Audio nativo</h4>
+          <p><code>&lt;audio&gt;</code> con <code>controls</code>; usa MP3/OGG/Opus para compatibilidad y calidad.</p>
+        </article>
+        <article class="card" role="listitem">
+          <h4>Embeds seguros</h4>
+          <p><code>&lt;iframe&gt;</code>/<code>&lt;embed&gt;</code>/<code>&lt;object&gt;</code> con <code>loading="lazy"</code>, <code>referrerpolicy</code>, <code>allow</code> y/o <code>sandbox</code>.</p>
+        </article>
+        <article class="card" role="listitem">
+          <h4>Rendimiento</h4>
+          <p><code>preload="metadata"</code> por defecto, evita <code>autoplay</code> con sonido; usa CDN y bitrate adecuado.</p>
+        </article>
+      </div>
+    </div>
+
+    <!-- Contenido por epígrafes con details/summary + ejemplos -->
+    <section class="bloque" id="tema4-video">
+      <h3>📚 Elementos multimedia. Ejemplos</h3>
+
+      <details open>
+        <summary>1) Inserción de elementos multimedia: audio, vídeo y programas</summary>
+        <p>HTML5 incorpora reproductores nativos que cubren la mayoría de casos sin dependencias externas. La regla general es: <em>primero lo nativo</em>, y si necesitas funciones avanzadas (capítulos visuales, speed controls personalizados, <abbr title="Digital Rights Management">DRM</abbr>, <abbr title="Live Streaming">HLS/DASH</abbr>), valora un reproductor JS especializado.</p>
+
+        <div class="ej-mal">
+<pre><code>&lt;!-- Incorrecto: un solo formato limita compatibilidad --&gt;
+&lt;video controls src="media/demo.mov"&gt;&lt;/video&gt;</code></pre>
+        </div>
+        <div class="ej-bien">
+<pre><code>&lt;!-- Correcto: múltiples fuentes y subtítulos --&gt;
+&lt;video controls preload="metadata" playsinline poster="img/poster.jpg" width="720"&gt;
+  &lt;source src="media/demo.webm" type="video/webm"&gt;
+  &lt;source src="media/demo.mp4"  type="video/mp4"&gt;
+  &lt;track src="media/demo-es.vtt" kind="captions" srclang="es" label="Español" default&gt;
+  Tu navegador no soporta vídeo HTML5.
+&lt;/video&gt;</code></pre>
+        </div>
+        <p class="ayuda">Puntos clave: <code>preload="metadata"</code> reduce descarga inicial; <code>playsinline</code> evita pantalla completa forzada en móvil; <code>poster</code> comunica contexto; <code>&lt;track&gt;</code> habilita subtítulos.</p>
+      </details>
+
+      <details>
+        <summary>2) Propiedades y comportamiento de &lt;audio&gt;/&lt;video&gt;</summary>
+        <ul>
+          <li><strong>controls</strong>: expone controles nativos accesibles.</li>
+          <li><strong>autoplay</strong>: bloqueado si hay audio; para permitirlo requiere <code>muted</code> y/o interacción previa.</li>
+          <li><strong>loop</strong>: repite el contenido; úsalo con moderación por accesibilidad.</li>
+          <li><strong>preload</strong>: <code>none</code> (no descarga), <code>metadata</code> (duración/miniatura), <code>auto</code> (intenta descargar).</li>
+          <li><strong>playsinline</strong>: reproduce sin forzar pantalla completa en iOS/Android.</li>
+          <li><strong>poster</strong> (vídeo): imagen de portada optimizada.</li>
+          <li><strong>track</strong>: <em>captions</em> (subtítulos), <em>descriptions</em> (audiodescripción textual), <em>subtitles</em> (traducciones), <em>chapters</em>, <em>metadata</em>.</li>
+        </ul>
+
+        <table aria-label="Resumen de atributos clave">
+          <thead><tr><th>Atributo</th><th>Uso</th><th>Consideraciones A11Y / Rendimiento</th></tr></thead>
+          <tbody>
+            <tr><td><code>autoplay</code></td><td>Intento de reproducción al cargar</td><td>Evítalo con sonido; si imprescindible, añade <code>muted</code> y control visible para activar audio.</td></tr>
+            <tr><td><code>preload</code></td><td>Estrategia de descarga</td><td><code>metadata</code> por defecto en catálogos; <code>none</code> en listados largos.</td></tr>
+            <tr><td><code>controls</code></td><td>Controles nativos</td><td>Accesibles por defecto, localizados, compatibles con AT.</td></tr>
+            <tr><td><code>crossorigin</code></td><td>Habilita CORS</td><td>Necesario para <code>canvas</code> o <code>MediaCapabilities</code> con contenido remoto.</td></tr>
+            <tr><td><code>disablepictureinpicture</code></td><td>Desactiva PiP</td><td>Solo si hay justificación (p. ej., evaluación). Por defecto, permite PiP.</td></tr>
+          </tbody>
+        </table>
+
+        <p><strong>Subtítulos y pistas</strong> con WebVTT:</p>
+<pre><code>WEBVTT
+
+00:00:00.000 --&gt; 00:00:02.500
+[INTRO] Bienvenidos a la unidad 04
+
+00:00:02.500 --&gt; 00:00:05.000
+Mostramos cómo insertar vídeo accesible.</code></pre>
+      </details>
+
+      <details>
+        <summary>3) Recursos necesarios para la publicación</summary>
+        <ul>
+          <li><strong>Códecs y contenedores</strong>: MP4/H.264+AAC (compatibilidad amplia); WebM/VP9+Opus (eficiencia); AV1 (más eficiente, soporte creciente).</li>
+          <li><strong>MIME Types correctos</strong> en el servidor (p. ej. <code>video/mp4</code>, <code>video/webm</code>, <code>audio/mpeg</code>, <code>text/vtt</code>).</li>
+          <li><strong>CORS</strong> cuando el origen de los medios difiera del sitio (cabeceras <code>Access-Control-Allow-Origin</code>).</li>
+          <li><strong>Caché/CDN</strong>: usa políticas de caché y versionado (<code>Cache-Control</code>, <code>ETag</code>).</li>
+          <li><strong>Bitrate/resolución</strong>: adapta a la audiencia (p. ej., 720p/2–4 Mbps para cursos generales).</li>
+          <li><strong>Streaming adaptativo</strong> (nociones): HLS/DASH para directos o catálogos grandes.</li>
+        </ul>
+        <div class="ayuda">Tip: valida compatibilidad con la API <code>MediaCapabilities</code> para elegir la mejor combinación códec/bitrate en clientes modernos.</div>
+      </details>
+
+      <details>
+        <summary>4) Etiquetas y propiedades para vídeo</summary>
+        <p>Ejemplo completo con <code>poster</code>, múltiples fuentes, subtítulos y pistas de capítulos:</p>
+<pre><code>&lt;video controls width="720" poster="img/poster-video.jpg" preload="metadata" playsinline crossorigin="anonymous"&gt;
+  &lt;source src="media/demo.av1.mp4" type="video/mp4; codecs=av01.0.05M.08"&gt;
+  &lt;source src="media/demo.webm" type="video/webm"&gt;
+  &lt;source src="media/demo.mp4"  type="video/mp4"&gt;
+  &lt;track src="media/demo-es.vtt" kind="captions" srclang="es" label="Español" default&gt;
+  &lt;track src="media/demo-cap.vtt" kind="chapters" srclang="es" label="Capítulos"&gt;
+  Tu navegador no soporta vídeo HTML5.
+&lt;/video&gt;</code></pre>
+        <p>Considera <code>crossorigin</code> cuando el vídeo esté en CDN y vayas a dibujarlo en <code>&lt;canvas&gt;</code> o usar APIs que requieran CORS.</p>
+      </details>
+
+      <details>
+        <summary>5) Audio: formatos y control</summary>
+<pre><code>&lt;audio controls preload="metadata"&gt;
+  &lt;source src="media/pista.opus" type="audio/ogg; codecs=opus"&gt;
+  &lt;source src="media/pista.ogg"  type="audio/ogg"&gt;
+  &lt;source src="media/pista.mp3"  type="audio/mpeg"&gt;
+  Tu navegador no soporta audio HTML5.
+&lt;/audio&gt;</code></pre>
+        <p>Para podcasts/clases habladas, <strong>Opus</strong> ofrece gran calidad a bitrates bajos; mantén MP3 por compatibilidad universal.</p>
+      </details>
+
+      <details>
+        <summary>6) Inserción de “programas” y contenido externo con &lt;iframe&gt;</summary>
+        <p>Cuando incrustes apps o reproductores externos, cuida <strong>seguridad</strong>, <strong>privacidad</strong> y <strong>rendimiento</strong>.</p>
+<pre><code>&lt;iframe
+  src="https://www.youtube-nocookie.com/embed/VIDEO_ID"
+  title="Reproductor de vídeo"
+  width="560" height="315"
+  loading="lazy"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  sandbox="allow-scripts allow-same-origin allow-presentation"
+  allowfullscreen&gt;&lt;/iframe&gt;</code></pre>
+        <ul>
+          <li><code>sandbox</code> restringe capacidades del contenido embebido; habilita solo lo necesario.</li>
+          <li><code>referrerpolicy</code> y dominios <code>nocookie</code> reducen filtrado de datos.</li>
+          <li><code>loading="lazy"</code> mejora tiempo de carga inicial.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>7) Formatos, compatibilidad y decisiones de publicación</summary>
+        <table aria-label="Decisiones prácticas de formato">
+          <thead><tr><th>Caso</th><th>Recomendación</th><th>Notas</th></tr></thead>
+          <tbody>
+            <tr><td>Curso general</td><td>MP4(H.264+AAC) + WebM(VP9+Opus)</td><td>Cubre la mayoría de navegadores, buena relación calidad/compatibilidad.</td></tr>
+            <tr><td>Móvil/red limitada</td><td>WebM/VP9 u AV1 si está disponible</td><td>Mejor eficiencia a bitrates bajos; evaluar soporte.</td></tr>
+            <tr><td>Audio voz</td><td>MP3 + Opus</td><td>MP3 universal; Opus excelente a 48–64 kbps.</td></tr>
+          </tbody>
+        </table>
+      </details>
+
+      <details>
+        <summary>8) Accesibilidad avanzada en multimedia</summary>
+        <ul>
+          <li><strong>Subtítulos</strong> (captions) obligatorios en material docente; incluye rótulos [MÚSICA], [APLAUSOS] cuando aporten contexto.</li>
+          <li><strong>Audiodescripción</strong>: versión de audio alternativa o pista de <em>descriptions</em> en <code>&lt;track&gt;</code>.</li>
+          <li><strong>Transcripción</strong> descargable en HTML/Markdown accesible.</li>
+          <li><strong>Controles visibles</strong> y accesibles por teclado; foco <em>visible</em> y orden lógico.</li>
+        </ul>
+
+        <div class="ej-mal">
+<pre><code>&lt;!-- Incorrecto: autoplay con sonido + sin controles --&gt;
+&lt;video autoplay src="media/intro.mp4"&gt;&lt;/video&gt;</code></pre>
+        </div>
+        <div class="ej-bien">
+<pre><code>&lt;!-- Correcto: inicio silencioso y controles accesibles --&gt;
+&lt;video muted autoplay playsinline controls preload="metadata"&gt;
+  &lt;source src="media/intro.mp4" type="video/mp4"&gt;
+  &lt;track src="media/intro-es.vtt" kind="captions" srclang="es" label="ES" default&gt;
+&lt;/video&gt;</code></pre>
+        </div>
+      </details>
+
+      <details>
+        <summary>9) Responsive media y rendimiento</summary>
+        <ul>
+          <li><strong>Aspect ratio</strong>: usa CSS <code>aspect-ratio</code> o contenedores intrínsecos para iframes/vídeos.</li>
+          <li><strong>Lazy loading</strong>: <code>loading="lazy"</code> para iframes fuera de viewport.</li>
+          <li><strong>Poster optimizado</strong>: WebP/AVIF si es viable; tamaño coherente con el reproductor.</li>
+          <li><strong>Preconexiones</strong>: <code>&lt;link rel="preconnect" href="https://cdn.example" crossorigin&gt;</code>.</li>
+        </ul>
+<pre><code>/* Contenedor 16:9 para iframe responsive */
+.embed { position: relative; width: 100%; aspect-ratio: 16 / 9; }
+.embed iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }</code></pre>
+      </details>
+
+      
+
+    <hr class="separador-verde" />
+
+    <!-- Apartado avanzado: API y JS de apoyo accesible -->
+    <section class="bloque" id="api-avanzado">
+      <h3>⚙️ Integraciones y APIs (nivel avanzado)</h3>
+      <p>En escenarios complejos, puedes consultar soporte de decodificación antes de elegir fuente usando <code>MediaCapabilities</code> y exponer controles de accesibilidad personalizados sin romper los nativos.</p>
+<pre><code>async function canPlayAv1(){
+  if (!('mediaCapabilities' in navigator)) return false;
+  const cfg = { type: 'file', video: { contentType: 'video/mp4; codecs=av01.0.05M.08', width:1280, height:720, bitrate:3000000, framerate:30 } };
+  try { const res = await navigator.mediaCapabilities.decodingInfo(cfg); return !!res.supported; } catch { return false; }
+}</code></pre>
+      <p class="ayuda">Usa el resultado para priorizar <code>source</code> AV1/WebM cuando el cliente lo soporte y retrocede a MP4 si no.</p>
+    </section>
+<section class="bloque" id="quiz-ud04-bloque">
+  <h3>Autoevaluación — UD04 (Multimedia)</h3>
+
+  <form id="quiz-ud04"
+        class="bloque"
+        data-quiz
+        data-respuestas='{
+          "q1":"b",
+          "q2":"a",
+          "q3":"b",
+          "q4":"a"
+        }'
+        novalidate>
+
+    <fieldset>
+      <legend>1) Para que <code>autoplay</code> funcione en la mayoría de navegadores es necesario…</legend>
+      <label><input type="radio" name="q1" value="a" required> usar <code>loop</code></label><br>
+      <label><input type="radio" name="q1" value="b"> iniciar en <code>muted</code></label><br>
+      <label><input type="radio" name="q1" value="c"> añadir <code>poster</code></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>2) ¿Qué API permite consultar si un códec es reproducible y su eficiencia?</legend>
+      <label><input type="radio" name="q2" value="a" required> <code>MediaCapabilities</code> (<code>navigator.mediaCapabilities</code>)</label><br>
+      <label><input type="radio" name="q2" value="b"> <code>HTMLMediaElement.canPlayType</code> (solo orientativo)</label><br>
+      <label><input type="radio" name="q2" value="c"> <code>DeviceMemory</code></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>3) Al incrustar contenido externo, ¿qué atributo reduce la superficie de ataque?</legend>
+      <label><input type="radio" name="q3" value="a" required> <code>referrerpolicy</code></label><br>
+      <label><input type="radio" name="q3" value="b"> <code>sandbox</code></label><br>
+      <label><input type="radio" name="q3" value="c"> <code>allowfullscreen</code></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>4) En un listado con muchos vídeos no críticos, ¿qué <code>preload</code> conviene por defecto?</legend>
+      <label><input type="radio" name="q4" value="a" required> <code>none</code></label><br>
+      <label><input type="radio" name="q4" value="b"> <code>auto</code></label><br>
+      <label><input type="radio" name="q4" value="c"> <code>metadata</code></label>
+    </fieldset>
+
+    <p id="quiz-ud04-msg" aria-live="polite"></p>
+    <button type="submit" class="boton-ir">Comprobar respuestas</button>
+  </form>
+
+  <!-- Opcional: si tu SPA muestra este bloque al aprobar -->
+  <div id="ud04-completar" style="display:none; margin-top:10px;">
+    <button class="boton-sigue" data-completar="ud04">✅ Marcar UD04 como completada</button>
+    <p class="nota">Se desbloqueará la siguiente unidad.</p>
+  </div>
+</section>

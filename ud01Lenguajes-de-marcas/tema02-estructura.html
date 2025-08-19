@@ -1,0 +1,301 @@
+
+
+<section class="bloque ancla" aria-labelledby="t-ud02">
+  <h2 id="t-ud02">📌 2. ¿Qué es la estructura de un documento HTML?</h2>
+  <div class="contenido">
+    <div class="texto">
+      <p>
+        Todo documento HTML debe construirse sobre una estructura mínima y ordenada que permita a los navegadores interpretar correctamente su contenido. Esta estructura garantiza la compatibilidad con los estándares web, la accesibilidad y la correcta visualización en diferentes dispositivos.
+      </p>
+
+      <!-- Antes era una tarjeta: lo dejamos como párrafos claros -->
+      <h3 data-no-toc>¿Por qué es importante la estructura HTML?</h3>
+      <p>Una estructura correcta mejora la <strong>accesibilidad</strong>, el <strong>SEO</strong>, la <strong>mantenibilidad</strong> del código y la <strong>compatibilidad</strong> entre navegadores.</p>
+      <p>Además, facilita el trabajo en equipo: es más fácil leer, depurar y ampliar cuando la página está bien organizada.</p>
+
+    </div>
+
+    <div class="foto">
+      <img src="assets/html2.png" alt="Estructura general del documento HTML" />
+    </div>
+  </div>
+
+  <details>
+    <summary>📖 Leer más sobre la estructura mínima</summary>
+    <p>
+      Un documento HTML bien estructurado debe comenzar con una declaración <code>&lt;!DOCTYPE html&gt;</code> y contener una jerarquía clara de elementos:
+    </p>
+    <ul>
+      <li><code>&lt;html&gt;</code>: elemento raíz que contiene todo el contenido.</li>
+      <li><code>&lt;head&gt;</code>: incluye metadatos como el título, codificación, enlaces a CSS o scripts.</li>
+      <li><code>&lt;body&gt;</code>: contiene el contenido visible: textos, imágenes, formularios, etc.</li>
+    </ul>
+  </details>
+
+  <pre class="esquema-textual"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Mi Página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hola Mundo&lt;/h1&gt;
+    &lt;p&gt;Este es un documento HTML básico.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+  <h3>🔍 Elementos imprescindibles en la estructura HTML</h3>
+
+  <h3>🔖 1. <code>&lt;html&gt; ... &lt;/html&gt;</code></h3>
+  <p>
+    Es la etiqueta raíz de todo documento HTML. Indica el inicio y el fin del documento, y engloba todos los elementos visibles y no visibles.
+    Esta etiqueta debe estar presente en todos los documentos, sin excepción.
+  </p>
+  <p>Puede incluir un atributo <code>lang</code> (muy recomendable):</p>
+  <pre class="esquema-textual"><code>&lt;html lang="es"&gt;</code></pre>
+  <p>🧠 Esto ayuda a los navegadores, motores de búsqueda y tecnologías de asistencia a entender el idioma del contenido.</p>
+
+  <h3>🧠 2. <code>&lt;head&gt; ... &lt;/head&gt;</code></h3>
+  <p>
+    El encabezado del documento HTML. No contiene contenido visible, pero incluye metadatos vitales que configuran el comportamiento, el estilo y la descripción del documento.
+  </p>
+  <p>Dentro del <code>&lt;head&gt;</code> encontramos etiquetas imprescindibles como:</p>
+
+  <ul>
+    <li>
+      ✅ <strong><code>&lt;title&gt; ... &lt;/title&gt;</code></strong><br>
+      Define el título que aparece en la pestaña del navegador.<br>
+      <pre class="esquema-textual"><code>&lt;title&gt;Mi primera página web&lt;/title&gt;</code></pre>
+      ⚠️ No incluir <code>&lt;title&gt;</code> perjudica el SEO y la accesibilidad.
+    </li>
+    <li>
+      ✅ <strong><code>&lt;meta charset="UTF-8"&gt;</code></strong><br>
+      Define la codificación de caracteres. Esencial para mostrar correctamente acentos y símbolos.<br>
+      <pre class="esquema-textual"><code>&lt;meta charset="UTF-8"&gt;</code></pre>
+      ⚠️ Sin esto, podrías ver letras mal codificadas (� ó ▯) en el navegador.
+    </li>
+    <li>
+      ✅ <strong><code>&lt;meta name="viewport" ...&gt;</code></strong><br>
+      Fundamental para el diseño responsive. Permite que el contenido se adapte a móviles y tablets.<br>
+      <pre class="esquema-textual"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+    </li>
+  </ul>
+
+  <h3>👁️ 3. <code>&lt;body&gt; ... &lt;/body&gt;</code></h3>
+  <p>Contiene todo lo que el usuario ve e interactúa: texto, imágenes, enlaces, formularios, vídeos, tablas, etc.</p>
+  <p>Este es el “cuerpo” real de la página. Dentro del <code>&lt;body&gt;</code> escribimos la estructura visual del documento.</p>
+  <pre class="esquema-textual"><code>&lt;body&gt;
+  &lt;h1&gt;Bienvenidos a mi web&lt;/h1&gt;
+  &lt;p&gt;Este es el contenido principal.&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+
+  <h3>🛑 ¿Qué etiquetas son imprescindibles?</h3>
+  <p>Si queremos crear un documento válido y funcional, estas etiquetas <strong>no pueden faltar</strong>:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Etiqueta</th>
+        <th>¿Obligatoria?</th>
+        <th>Función principal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><code>&lt;!DOCTYPE html&gt;</code></td><td>✅ Sí</td><td>Indica que usamos HTML5.</td></tr>
+      <tr><td><code>&lt;html&gt;</code></td><td>✅ Sí</td><td>Raíz del documento.</td></tr>
+      <tr><td><code>&lt;head&gt;</code></td><td>✅ Sí</td><td>Contiene metadatos del documento.</td></tr>
+      <tr><td><code>&lt;meta charset="UTF-8"&gt;</code></td><td>✅ Sí</td><td>Codificación correcta del texto.</td></tr>
+      <tr><td><code>&lt;title&gt;</code></td><td>✅ Sí</td><td>Título que aparece en la pestaña.</td></tr>
+      <tr><td><code>&lt;body&gt;</code></td><td>✅ Sí</td><td>Contenido visible del documento.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<h2 class="ancla" id="t-ud02-21">📂 2.1 Título y cuerpo</h2>
+<section class="bloque">
+  <h3>🎯 La importancia del título y del cuerpo en un documento HTML</h3>
+  <p>
+    Dos de las etiquetas más fundamentales en cualquier documento HTML son <code>&lt;title&gt;</code> y <code>&lt;body&gt;</code>. Aunque están en zonas diferentes del documento (cabecera y contenido), ambas son esenciales para que la página funcione correctamente y tenga sentido tanto para el usuario como para los motores de búsqueda.
+  </p>
+  <h3>🧠 El título: <code>&lt;title&gt;</code></h3>
+  <p>Esta etiqueta debe estar dentro de la sección <code>&lt;head&gt;</code> y define el texto que aparece en la pestaña del navegador, en los resultados de Google y al guardar un marcador.</p>
+  <pre class="esquema-textual"><code>&lt;head&gt;
+  &lt;title&gt;Bienvenido a mi web&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+  <p>Sin un título adecuado, tu página pierde visibilidad en buscadores (SEO), resulta menos accesible y no transmite profesionalidad.</p>
+  <h3>👁️ El cuerpo: <code>&lt;body&gt;</code></h3>
+  <p>El cuerpo contiene todo lo que el usuario ve en pantalla: textos, imágenes, menús, formularios, enlaces, vídeos… Es la parte <strong>más extensa</strong> y dinámica del documento.</p>
+  <pre class="esquema-textual"><code>&lt;body&gt;
+  &lt;h1&gt;Hola mundo&lt;/h1&gt;
+  &lt;p&gt;Esta es una página HTML completa.&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+  <h3>📌 Cabecera y pie de página: <code>&lt;header&gt;</code> y <code>&lt;footer&gt;</code></h3>
+  <p>Dentro del <code>&lt;body&gt;</code> se suelen incluir estructuras semánticas como la cabecera y el pie:</p>
+  <ul>
+    <li><strong><code>&lt;header&gt;</code></strong>: contiene el logotipo, título principal, menú de navegación o slogan.</li>
+    <li><strong><code>&lt;footer&gt;</code></strong>: al final del documento, con derechos de autor, enlaces legales o contacto.</li>
+  </ul>
+  <pre class="esquema-textual"><code>&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Mi sitio web&lt;/h1&gt;
+    &lt;nav&gt;...&lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;p&gt;Contenido principal...&lt;/p&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;© 2025 Mi sitio web&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+
+  <!-- Tarjeta útil conservada -->
+  <details class="tarjeta">
+    <summary class="tarjeta-toggle">
+      <span>🔎 Saber más sobre HEAD y HEADER</span>
+      <span class="indicador" aria-hidden="true">▸</span>
+    </summary>
+    <div class="tarjeta-contenido">
+      <h3 id="head-header-titulo" data-no-toc>¿Diferencia entre &lt;head&gt; y &lt;header&gt;?</h3>
+      <p><strong><code>&lt;head&gt;</code></strong> es una sección invisible (metadatos, CSS, scripts, título, codificación…).</p>
+      <p><strong><code>&lt;header&gt;</code></strong> es una sección visible dentro del <code>&lt;body&gt;</code> (branding, navegación…).</p>
+      <p><strong>NO son lo mismo</strong>. Uno configura, el otro presenta.</p>
+      <table>
+        <thead><tr><th>Etiqueta</th><th>Función</th><th>¿Es visible?</th></tr></thead>
+        <tbody>
+          <tr><td><code>&lt;head&gt;</code></td><td>Metadatos y configuración</td><td>❌ No</td></tr>
+          <tr><td><code>&lt;header&gt;</code></td><td>Cabecera visual de la página</td><td>✅ Sí</td></tr>
+        </tbody>
+      </table>
+      <button type="button" class="tarjeta-cerrar" onclick="this.closest('details').open=false">Cerrar</button>
+    </div>
+  </details>
+
+  <details>
+    <summary>📖 Leer más sobre buenas prácticas con título y cuerpo</summary>
+    <ul>
+      <li>✔️ El título debe ser único, descriptivo y contener palabras clave relevantes.</li>
+      <li>✔️ El cuerpo debe estructurarse con encabezados (<code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>...), secciones y contenido semántico.</li>
+      <li>✔️ Incluye siempre un <code>&lt;footer&gt;</code> con información legal o de contacto.</li>
+      <li>✔️ Valida tu documento en el <a href="https://validator.w3.org/" target="_blank" rel="noopener">validador del W3C</a>.</li>
+    </ul>
+  </details>
+</section>
+
+<section class="bloque ancla" id="t-ud02-22">
+  <h2>📌 2.2 Secciones y semántica</h2>
+  <p>Con la llegada de HTML5, se introdujeron nuevas etiquetas semánticas que permiten una mejor estructuración del contenido y una interpretación más clara por parte de los navegadores, motores de búsqueda y tecnologías de asistencia.</p>
+  <p>Estas etiquetas ayudan a dividir la página en partes significativas, mejorando tanto el SEO como la accesibilidad. Ya no se recomienda usar sólo <code>&lt;div&gt;</code> para todo: ahora usamos etiquetas con significado propio.</p>
+
+  <!-- Antes había una tarjeta “📚 semántica”: lo dejamos en un párrafo claro -->
+  <p><strong>¿Qué son las etiquetas semánticas?</strong> Son etiquetas que describen el significado del contenido que contienen (por ejemplo: <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>). Hacen el documento más comprensible para buscadores y lectores de pantalla.</p>
+
+  <details>
+    <summary>📖 Leer más sobre etiquetas semánticas</summary>
+    <ul>
+      <li><code>&lt;header&gt;</code>: Define la cabecera de una página o de una sección.</li>
+      <li><code>&lt;nav&gt;</code>: Agrupa enlaces de navegación.</li>
+      <li><code>&lt;main&gt;</code>: Contiene el contenido principal (único por página).</li>
+      <li><code>&lt;section&gt;</code>: Sección temática.</li>
+      <li><code>&lt;article&gt;</code>: Contenido independiente (post, noticia…).</li>
+      <li><code>&lt;aside&gt;</code>: Contenido complementario.</li>
+      <li><code>&lt;footer&gt;</code>: Pie de página.</li>
+    </ul>
+    <p>Ejemplo básico:</p>
+    <pre class="esquema-textual"><code>&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Blog de Tecnología&lt;/h1&gt;
+    &lt;nav&gt;...&lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;section&gt;
+      &lt;article&gt;
+        &lt;h2&gt;Nueva actualización de HTML&lt;/h2&gt;
+        &lt;p&gt;Hoy se ha publicado...&lt;/p&gt;
+      &lt;/article&gt;
+    &lt;/section&gt;
+    &lt;aside&gt;
+      &lt;p&gt;Artículos relacionados...&lt;/p&gt;
+    &lt;/aside&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;© 2025. Todos los derechos reservados.&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+  </details>
+
+  <ul>
+    <li>✅ Mejor comprensión para Google.</li>
+    <li>✅ Mejor accesibilidad.</li>
+    <li>✅ Mejor mantenibilidad del código.</li>
+    <li>✅ Estructura lógica y profesional.</li>
+  </ul>
+</section>
+
+<section class="bloque ancla" id="t-ud02-23">
+  <h2>✅ 2.3 Buenas prácticas en estructura HTML</h2>
+  <p>
+    Escribir HTML no consiste solo en que la página "funcione", sino en que esté construida de forma <strong>correcta, semántica, accesible y mantenible</strong>. Las buenas prácticas no son opcionales: son una herramienta clave para cualquier desarrollador profesional.
+  </p>
+  <ul>
+    <li>✔️ Declarar correctamente el <code>&lt;!DOCTYPE&gt;</code> al principio del documento.</li>
+    <li>✔️ Incluir <code>&lt;meta charset="UTF-8"&gt;</code>.</li>
+    <li>✔️ Usar etiquetas <strong>semánticas</strong> en lugar de abusar de <code>&lt;div&gt;</code>.</li>
+    <li>✔️ Jerarquía lógica de encabezados.</li>
+    <li>✔️ Validar en el <a href="https://validator.w3.org/" target="_blank" rel="noopener">W3C Validator</a>.</li>
+  </ul>
+
+  <details>
+    <summary>📖 Leer más sobre buenas prácticas</summary>
+    <ul>
+      <li>🔍 Nombres de clases/archivos claros (<code>menu-principal</code>, <code>footer.html</code>…).</li>
+      <li>🔍 Agrupa el contenido en secciones lógicas.</li>
+      <li>🔍 Imágenes siempre con <code>alt</code>.</li>
+      <li>🔍 Indentación consistente.</li>
+      <li>🔍 Comentarios en zonas complejas.</li>
+    </ul>
+  </details>
+</section>
+
+<hr class="separador-verde">
+
+<section id="ud02-autoevaluacion" class="bloque ancla" aria-labelledby="t-ud02-autoevaluacion">
+  <h2 id="t-ud02-autoevaluacion">📝 Autoevaluación UD02</h2>
+  <div class="solucion-quiz" style="font-size: 0.9em;">
+    <h4>Respuestas del Quiz:</h4>
+    <ul style="padding-left: 20px;">
+        <li style="margin-bottom: 5px;">Pregunta 1: La respuesta correcta es la opción **A** (Dentro de <code>&lt;head&gt;</code>).</li>
+        <li style="margin-bottom: 5px;">Pregunta 2: La respuesta correcta es la opción **C** (<code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>).</li>
+        <li>Pregunta 3: La respuesta correcta es la opción **B** (Debe haber como máximo uno y contiene el contenido principal).</li>
+    </ul>
+</div>
+    <form id="quiz-ud01" class="bloque" novalidate data-quiz data-respuestas='{"q1":"a","q2":"c","q3":"b"}'>
+    <fieldset>
+    <legend>1) ¿Dónde debe ir la etiqueta <code>&lt;title&gt;</code>?</legend>
+    <label><input type="radio" name="q1" value="a" required data-correcta> Dentro de <code>&lt;head&gt;</code></label><br>
+    <label><input type="radio" name="q1" value="b"> Dentro de <code>&lt;body&gt;</code></label><br>
+    <label><input type="radio" name="q1" value="c"> En cualquier parte</label>
+<fieldset>
+ <legend>2) ¿Qué meta es recomendable para diseño responsive?</legend>
+ <label><input type="radio" name="q2" value="a" required> <code>&lt;meta charset="UTF-8"&gt;</code></label><br>
+<label><input type="radio" name="q2" value="b"> <code>&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;</code></label><br>
+ <label><input type="radio" name="q2" value="c" data-correcta> <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></label>
+    </fieldset>
+
+    <fieldset>
+<legend>3) Sobre <code>&lt;main&gt;</code>, indica la opción correcta</legend>
+ <label><input type="radio" name="q3" value="a" required> Puede haber varios por documento</label><br>
+ <label><input type="radio" name="q3" value="b" data-correcta> Debe haber como máximo uno y contiene el contenido principal</label><br>
+ <label><input type="radio" name="q3" value="c"> Debe ir dentro del <code>&lt;head&gt;</code></label>
+    </fieldset>
+
+    <div id="quiz-ud01-msg" aria-live="polite"></div>
+
+    <button type="submit" class="boton-ir">Comprobar respuestas</button>
+  </form>
+  
+  <div id="ud01-completar" style="display:none; margin-top:10px;"></div>
+</section>

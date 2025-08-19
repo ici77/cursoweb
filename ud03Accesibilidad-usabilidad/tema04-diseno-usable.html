@@ -1,0 +1,311 @@
+
+  <h2> Diseño de sitios web usables</h2>
+
+    <section class="estructura-formativa" id="ud-diseno-usables" data-ud="ud-diseno-usables">
+      <div class="bloque">
+        <h3>🎯 Objetivos de aprendizaje</h3>
+        <ul>
+          <li>Dominar la triada de usabilidad (eficacia, eficiencia, satisfacción) y su medición.</li>
+          <li>Analizar <strong>estructura</strong> y <strong>diseño</strong> para detectar facilitadores/barreras.</li>
+          <li>Aplicar patrones de navegación, formularios, feedback, búsqueda y rendimiento percibido.</li>
+          <li>Planificar y ejecutar <strong>pruebas de usabilidad</strong> con iteración basada en evidencias.</li>
+        </ul>
+      </div>
+
+      <!-- 1) Descripción de sitios web usables -->
+      <div class="bloque" id="descripcion">
+        <h3>1) Descripción de sitios web usables</h3>
+        <p>
+          Un <strong>sitio usable</strong> permite a personas diversas cumplir sus objetivos con
+          <em>eficacia</em>, <em>eficiencia</em> y <em>satisfacción</em> (ISO 9241-11). Preguntas guía:
+        </p>
+        <ul>
+          <li><strong>Eficacia:</strong> ¿se completa la tarea (p. ej., pedir cita, comprar, registrarse)?</li>
+          <li><strong>Eficiencia:</strong> ¿en cuántos pasos/tiempo? ¿hay fricción evitable?</li>
+          <li><strong>Satisfacción:</strong> ¿la experiencia es clara, fluida y bajo control?</li>
+        </ul>
+
+        <details>
+          <summary>📏 Métricas y metas orientativas</summary>
+          <ul>
+            <li><strong>Tasa de éxito</strong> ≥ 85% en tareas clave.</li>
+            <li><strong>Tiempo en tarea</strong> vs. benchmark (o prototipo mínimo).</li>
+            <li><strong>Tasa de error</strong> ≤ 5% en flujos críticos; severos ≈ 0.</li>
+            <li><strong>SUS</strong> ≥ 80 indica excelente usabilidad percibida.</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>🧩 Sistemas de diseño y <em>design tokens</em></summary>
+          <p>Estandariza tipografía, espaciados, color y estados como tokens para coherencia:</p>
+<pre><code>:root{
+  --space-1: .25rem; --space-2: .5rem; --radius: .625rem;
+  --brand: #0ea5e9; --ink: #0f172a; --ok: #16a34a; --bad: #e11d48;
+}
+.btn{border-radius:var(--radius); padding:var(--space-2) .9rem; background:var(--brand); color:#fff}</code></pre>
+        </details>
+
+        <div class="ej">
+          <strong>Ejemplo:</strong> En la portada, responde rápido a ¿qué ofreces?, ¿para quién?, ¿qué gano? + CTA visible. Reduce objeciones con un subtítulo claro y señales de confianza.
+        </div>
+      </div>
+
+      <!-- 2) Estructura -->
+      <div class="bloque" id="estructura">
+        <h3>2) Estudio de la <em>estructura</em> de sitios usables</h3>
+        <p>Una buena <strong>arquitectura de información</strong> reduce carga cognitiva: etiquetas en lenguaje del usuario, profundidad razonable y navegación predecible.</p>
+
+        <h4>2.1 Arquitectura de la Información (AI)</h4>
+        <ul>
+          <li><strong>Inventario</strong> y propósito (informar, decidir, actuar).</li>
+          <li><strong>Taxonomía</strong> en lenguaje del usuario (evita jergas internas).</li>
+          <li><strong>Estructura</strong> preferentemente ancha y poco profunda.</li>
+          <li><strong>Conexiones</strong> (relacionados, “ver también”, búsqueda interna útil).</li>
+        </ul>
+
+        <h4>2.2 Navegación y jerarquía</h4>
+        <ul>
+          <li>Menú global estable, submenús consistentes y estado activo claro.</li>
+          <li>Migas de pan a partir de dos niveles.</li>
+          <li>Jerarquía visible: título, propósito, CTA; luego evidencias y detalles.</li>
+        </ul>
+
+        <details>
+          <summary>🧭 Patrón recomendado para páginas de contenido</summary>
+          <ol>
+            <li>H1 claro (valor + contexto) y resumen.</li>
+            <li>Secciones con H2/H3, listas y párrafos cortos.</li>
+            <li>CTA contextual no intrusivo.</li>
+            <li>FAQs y enlaces relacionados.</li>
+          </ol>
+        </details>
+      </div>
+
+      <!-- 3) Diseño -->
+      <div class="bloque" id="diseno">
+        <h3>3) Estudio del <em>diseño</em> (visual + interacción)</h3>
+        <div class="grid-2">
+          <div>
+            <h4>Principios</h4>
+            <ul>
+              <li><strong>Consistencia:</strong> mismos componentes, mismas conductas.</li>
+              <li><strong>Visibilidad de estados:</strong> hover/focus/active/loading claros.</li>
+              <li><strong>Prevención de errores</strong> y deshacer.</li>
+              <li><strong>Minimalismo funcional:</strong> elimina lo que no ayuda a decidir/actuar.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Fundamentos visuales</h4>
+            <ul>
+              <li>Tipografía base 16–18px; línea 1.5–1.7; contraste suficiente.</li>
+              <li>Color como refuerzo, nunca único canal.</li>
+              <li>Composición con cuadrículas, ritmo y espacios generosos.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4>Snippets prácticos</h4>
+<pre><code>/* Botón accesible con foco visible */
+.boton{display:inline-flex;gap:.5rem;align-items:center;padding:.6rem 1rem;border-radius:10px;border:1px solid #0ea5e9;background:#0ea5e9;color:#fff;font-weight:600}
+.boton:hover{filter:brightness(1.05)} .boton:active{transform:translateY(1px)}
+.boton:focus-visible{outline:3px solid #93c5fd;outline-offset:2px}
+.boton[aria-busy="true"]{opacity:.6;pointer-events:none}</code></pre>
+      </div>
+
+      <!-- 4) Responsive -->
+      <div class="bloque" id="responsive">
+        <h3>4) Diseño responsive y adaptabilidad</h3>
+        <ul>
+          <li><strong>Breakpoints por contenido</strong> (no por dispositivo).</li>
+          <li><strong>Objetivos táctiles</strong> ≥ 44px y separación suficiente.</li>
+          <li>Orden lógico de foco; saltos “ir al contenido”.</li>
+          <li>Estados offline/intermitente con recuperación.</li>
+        </ul>
+
+        <details>
+          <summary>📦 Cabecera adaptable con control ARIA</summary>
+<pre><code>&lt;header class="site-header"&gt;
+  &lt;a class="logo" href="/"&gt;Marca&lt;/a&gt;
+  &lt;button class="menu" aria-expanded="false" aria-controls="nav"&gt;Menú&lt;/button&gt;
+  &lt;nav id="nav" hidden&gt;...&lt;/nav&gt;
+&lt;/header&gt;
+&lt;script&gt;
+  const btn = document.querySelector('.menu'), nav = document.getElementById('nav');
+  btn.addEventListener('click', ()=>{ const open = btn.getAttribute('aria-expanded')==='true';
+    btn.setAttribute('aria-expanded', String(!open)); nav.hidden = open; });
+&lt;/script&gt;</code></pre>
+        </details>
+      </div>
+
+      <!-- 5) Formularios -->
+      <div class="bloque" id="formularios">
+        <h3>5) Formularios y flujos críticos</h3>
+        <ul>
+          <li>Una meta por pantalla (o secciones cortas con progreso real).</li>
+          <li>Etiquetas visibles; placeholders como ejemplos.</li>
+          <li>Validación en línea y mensajes accionables.</li>
+          <li>Opciones seguras por defecto; deshacer en acciones destructivas.</li>
+        </ul>
+
+<pre><code>&lt;label for="dni"&gt;DNI&lt;/label&gt;
+&lt;input id="dni" name="dni" pattern="^[0-9]{8}[A-Za-z]$" aria-describedby="dni-help dni-err"&gt;
+&lt;small id="dni-help" class="muted"&gt;Formato: 8 dígitos + letra.&lt;/small&gt;
+&lt;div id="dni-err" role="alert" hidden&gt;Revisa el formato (ej. 12345678Z).&lt;/div&gt;
+&lt;script&gt;
+  const dni=document.getElementById('dni'), err=document.getElementById('dni-err');
+  dni.addEventListener('input',()=>{ const ok=dni.checkValidity(); err.hidden=ok; dni.setAttribute('aria-invalid', ok?'false':'true'); });
+&lt;/script&gt;</code></pre>
+      </div>
+
+      <!-- 6) Búsqueda -->
+      <div class="bloque" id="busqueda">
+        <h3>6) Búsqueda y descubrimiento</h3>
+        <ul>
+          <li>Entrada tolerante (errores, sinónimos, sugerencias).</li>
+          <li>Resultados con título, fragmento y metadatos clave.</li>
+          <li>Facetas comprensibles; pocas y relevantes.</li>
+          <li>Vacío elegante con alternativas y soporte.</li>
+        </ul>
+      </div>
+
+      <!-- 7) Feedback -->
+      <div class="bloque" id="feedback">
+        <h3>7) Estados, errores y feedback</h3>
+        <ul>
+          <li>Skeletons para listas/tablas; spinners breves en acciones cortas.</li>
+          <li>Toasts con acción de deshacer.</li>
+          <li>Errores con qué, por qué (si procede) y cómo resolver.</li>
+        </ul>
+<pre><code>&lt;div class="alerta" role="status" aria-live="polite"&gt;Guardado.&lt;/div&gt;
+&lt;div class="alerta" role="alert"&gt;No se pudo enviar. Reintenta o guarda borrador.&lt;/div&gt;</code></pre>
+      </div>
+
+      <!-- 8) Metodología -->
+      <div class="bloque" id="metodologia">
+        <h3>8) Metodología: diseñar con evidencia</h3>
+        <ol>
+          <li>Investigación ligera: entrevistas, tareas, analítica.</li>
+          <li>Modelado: personas proto y journeys.</li>
+          <li>Prototipado: wireframes → prototipo navegable.</li>
+          <li>Evaluación: heurística + test por tareas (pensamiento en voz alta).</li>
+          <li>Iteración: prioriza por impacto/esfuerzo; mide y repite.</li>
+        </ol>
+      </div>
+
+      <!-- 9) Caso práctico -->
+      <div class="bloque" id="caso">
+        <h3>9) Caso práctico guiado (mini-rediseño)</h3>
+        <p><strong>Contexto:</strong> “Solicitar cita” con abandono alto.</p>
+        <ol>
+          <li><strong>Diagnóstico:</strong> título genérico, formulario largo, mensajes confusos.</li>
+          <li><strong>Solución:</strong> 3 pasos, estados claros, resumen editable, autocompletar, validación en línea.</li>
+          <li><strong>Métrica:</strong> +20% éxito; −30% tiempo total.</li>
+        </ol>
+      </div>
+
+      <!-- 10) Actividades -->
+      <div class="bloque" id="ejercicios">
+        <h3>10) Actividades</h3>
+        <h4>Individual</h4>
+        <ol>
+          <li>Heurística express: 5 problemas + severidad + mejora propuesta.</li>
+          <li>Rediseña un formulario (6–10 campos) con validación en línea.</li>
+          <li>Diseña “sin resultados” con ayudas y CTA.</li>
+        </ol>
+        <h4>En parejas</h4>
+        <ol>
+          <li>Test guerrilla: 3 tareas, 2 participantes, registra éxito/tiempo/errores; prioriza 3 mejoras.</li>
+          <li>Card sorting con 20 contenidos; nombra categorías en lenguaje del usuario.</li>
+        </ol>
+      </div>
+
+      <!-- 11) Recursos -->
+      <div class="bloque recursos" id="recursos">
+        <h3>11) Recursos y lecturas recomendadas</h3>
+        <a href="https://www.nngroup.com/articles/ten-usability-heuristics/" target="_blank" rel="noopener">Nielsen Norman Group · 10 heurísticas</a>
+        <a href="https://www.w3.org/WAI/" target="_blank" rel="noopener">W3C WAI · Accesibilidad</a>
+        <a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener">WebAIM · Contrast Checker</a>
+        <a href="https://design-system.service.gov.uk/" target="_blank" rel="noopener">GOV.UK Design System</a>
+        <a href="https://material.io/design" target="_blank" rel="noopener">Material Design</a>
+      </div>
+       <!-- 12) Listas de comprobación rápidas -->
+      <div class="bloque" id="checklists">
+        <h3>12) Listas de comprobación rápidas</h3>
+        <div class="grid-3">
+          <div>
+            <h4>Portadas</h4>
+            <ul>
+              <li>Propósito claro en 5–8 s</li>
+              <li>CTA principal visible</li>
+              <li>Prueba social/autoridad</li>
+              <li>Rutas de inicio claras</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Navegación</h4>
+            <ul>
+              <li>Menú global estable</li>
+              <li>Migas en ≥ 2 niveles</li>
+              <li>Buscador visible y útil</li>
+              <li>Estado activo consistente</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Formularios</h4>
+            <ul>
+              <li>Etiquetas visibles</li>
+              <li>Validación en línea</li>
+              <li>Mensajes accionables</li>
+              <li>Deshacer/confirmar</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Autoevaluación (4 preguntas) -->
+<section class="bloque" id="quiz-usab-bloque">
+  <h3>🧩 Autoevaluación · Usabilidad</h3>
+
+  <form id="quiz-usabilidad"
+        class="bloque"
+        data-quiz
+        data-respuestas='{
+          "q1":"c",
+          "q2":"a",
+          "q3":"b",
+          "q4":"a"
+        }'
+        novalidate>
+
+    <fieldset>
+      <legend>1) ¿Cuál NO es componente clásico de la definición de usabilidad?</legend>
+      <label><input type="radio" name="q1" value="a" required> Eficacia</label><br>
+      <label><input type="radio" name="q1" value="b"> Eficiencia</label><br>
+      <label><input type="radio" name="q1" value="c"> Estética visual</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>2) ¿Qué patrón mejora la “encontrabilidad” del contenido?</legend>
+      <label><input type="radio" name="q2" value="a" required> Menú global estable + migas coherentes</label><br>
+      <label><input type="radio" name="q2" value="b"> Menús que cambian según la página</label><br>
+      <label><input type="radio" name="q2" value="c"> Ocultar el buscador para “limpiar” la interfaz</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>3) Mejor práctica en formularios:</legend>
+      <label><input type="radio" name="q3" value="a" required> Placeholder como única etiqueta.</label><br>
+      <label><input type="radio" name="q3" value="b"> Etiquetas visibles, ayudas y validación en línea.</label><br>
+      <label><input type="radio" name="q3" value="c"> Pedir más campos “por si acaso”.</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>4) ¿Qué mejora la velocidad percibida?</legend>
+      <label><input type="radio" name="q4" value="a" required> Skeletons y <em>lazy loading</em></label><br>
+      <label><input type="radio" name="q4" value="b"> Animaciones largas en todas las pantallas</label><br>
+      <label><input type="radio" name="q4" value="c"> Bloquear la UI hasta cargar todo</label>
+    </fieldset>
+
+    <p id="quiz-usabilidad-msg" aria-live="polite"></p>
+    <button type="submit" class="boton-ir">Comprobar respuestas</button>
+  </form>
+</section>

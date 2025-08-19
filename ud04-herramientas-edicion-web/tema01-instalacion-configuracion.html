@@ -1,0 +1,250 @@
+
+<title>Herramientas de Edicion</title>
+
+
+
+<div class="bloque" id="herramientas-edicion">
+  <h2>Herramientas de Edición Web</h2>
+  <p><strong>Objetivo:</strong> Dominar la instalación, configuración y uso profesional de las herramientas de edición web, optimizando flujo de trabajo, productividad y buenas prácticas en el desarrollo de sitios web y aplicaciones interactivas.</p>
+
+  <div class="esquema-textual">
+<pre><code>Epígrafes:
+– Instalación de herramientas de edición web
+– Configuración avanzada de editores
+– Integración de control de versiones
+– Uso de extensiones y plugins
+– Ejemplos prácticos de proyectos web
+– Ejercicios aplicados
+– Buenas prácticas profesionales
+– Automatización y testing
+– Flujo de trabajo profesional
+– Ejemplos de proyectos colaborativos
+</code></pre>
+  </div>
+
+  <!-- 1) Instalación de herramientas -->
+  <h3>1) Instalación de herramientas de edición web</h3>
+  <p>Los entornos de desarrollo (IDEs) y editores de código son fundamentales. Su correcta instalación permite un entorno estable y profesional.</p>
+
+  <h4>1.1 Visual Studio Code (VS Code)</h4>
+  <p>VS Code es gratuito, multiplataforma y con un ecosistema de extensiones muy amplio. Ideal para proyectos grandes y pequeños.</p>
+  <details>
+    <summary>Pasos de instalación y configuración inicial</summary>
+    <pre><code>1. Descargar desde https://code.visualstudio.com/.
+2. Ejecutar el instalador.
+3. Marcar "Add to PATH" para terminal integrada.
+4. Abrir VS Code y acceder a "Extensions":
+   - Live Server: vista previa en tiempo real
+   - Prettier: formateo de código automático
+   - ESLint: validación de JS
+5. Configurar tema y tipografía.
+6. Reiniciar para aplicar la configuración.
+</code></pre>
+  </details>
+  <img src="assets/vscode-interfaz.png" alt="Interfaz de VS Code">
+
+  <h4>1.2 Atom</h4>
+  <p>Atom es open source y muy personalizable.</p>
+  <details>
+    <summary>Instalación y paquetes recomendados</summary>
+    <pre><code>1. Descargar desde https://atom.io/
+2. Instalar y abrir
+3. Instalar paquetes:
+   - atom-beautify
+   - emmet
+   - linter
+4. Configurar tema y minimap
+5. Reiniciar
+</code></pre>
+  </details>
+  <img src="assets/atom-interfaz.png" alt="Interfaz de Atom">
+
+  <h4>1.3 Sublime Text</h4>
+  <p>Editor ligero y rápido.</p>
+  <details>
+    <summary>Instalación y configuración básica</summary>
+    <pre><code>1. Descargar desde https://www.sublimetext.com/
+2. Instalar y abrir
+3. Configurar Package Control
+4. Instalar extensiones:
+   - Emmet
+   - SideBarEnhancements
+5. Configurar preferencias (tema, tab size)
+6. Probar edición HTML/CSS/JS
+</code></pre>
+  </details>
+  <img src="assets/sublime-interfaz.png" alt="Interfaz de Sublime Text">
+
+  <!-- 2) Configuración avanzada -->
+  <h3>2) Configuración avanzada de editores</h3>
+  <p>Configurar el editor correctamente aumenta la productividad y reduce errores.</p>
+  <ul>
+    <li>Snippets y plantillas para HTML, CSS, JS.</li>
+    <li>Linting: validación automática de errores.</li>
+    <li>Live Preview para ver cambios al instante.</li>
+    <li>Temas y tipografía: ergonomía y legibilidad.</li>
+    <li>Terminal integrada: ejecutar scripts y controlar Git.</li>
+  </ul>
+
+  <details>
+    <summary>Ejemplo de configuración avanzada en VS Code</summary>
+    <pre><code>{
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "files.autoSave": "afterDelay",
+  "prettier.singleQuote": true,
+  "eslint.validate": ["javascript","html","vue"],
+  "liveServer.settings.port": 5500
+}
+</code></pre>
+  </details>
+
+  <!-- 3) Integración de control de versiones -->
+  <h3>3) Integración de control de versiones</h3>
+  <p>Git y GitHub permiten gestionar versiones y colaboración profesional. Integración con el editor:</p>
+  <ul>
+    <li>Crear repositorios locales y remotos.</li>
+    <li>Commits, push y pull desde el editor.</li>
+    <li>Visualizar cambios, ramas y conflictos sin salir del IDE.</li>
+  </ul>
+
+  <details>
+    <summary>Ejemplo: crear repositorio en VS Code</summary>
+    <pre><code>1. Abrir proyecto
+2. Terminal integrada: git init
+3. Añadir archivos: git add .
+4. Commit: git commit -m "Proyecto inicial"
+5. Conectar a GitHub y hacer push
+6. Visualizar cambios en "Source Control"
+</code></pre>
+  </details>
+
+  <h3>4) Uso de extensiones y plugins</h3>
+  <p>Extensiones mejoran calidad y productividad.</p>
+  <ul>
+    <li>Prettier: formateo automático.</li>
+    <li>ESLint: validación de JS.</li>
+    <li>Live Server: actualizaciones en tiempo real.</li>
+    <li>Emmet: abreviaturas HTML/CSS.</li>
+  </ul>
+
+  <details>
+    <summary>Ejemplo snippet HTML5 en VS Code</summary>
+    <pre><code>{
+  "html5-snippet": {
+    "prefix": "html5",
+    "body": [
+      "<!DOCTYPE html>",
+      "<html lang='es'>",
+      "<head>",
+      "  <meta charset='UTF-8'>",
+      "  <meta name='viewport' content='width=device-width, initial-scale=1.0'>",
+      "  <title>${1:Título}</title>",
+      "</head>",
+      "<body>",
+      "  ${0}",
+      "</body>",
+      "</html>"
+    ],
+    "description": "Estructura básica HTML5"
+  }
+}
+</code></pre>
+  </details>
+
+  <h3>5) Ejemplos de proyectos web profesionales</h3>
+  <ul>
+    <li>Portfolio personal HTML/CSS/JS.</li>
+    <li>Landing page responsive con Bootstrap.</li>
+    <li>Blog con HTML semántico, CSS Grid y Flexbox.</li>
+    <li>Aplicaciones JS interactivas: calculadora, conversor, juego simple.</li>
+  </ul>
+
+  <div class="ejercicio">
+    <h3>Ejercicio 1: Proyecto inicial</h3>
+    <p>Crear un proyecto web con estructura HTML5, CSS y JS. Configurar editor con live preview y Prettier.</p>
+  </div>
+
+  <div class="ejercicio">
+    <h3>Ejercicio 2: Control de versiones</h3>
+    <p>Inicializar repositorio Git, hacer commits de avances y subirlo a GitHub. Verificar integración desde el editor.</p>
+  </div>
+
+  <div class="ejercicio">
+    <h3>Ejercicio 3: Extensiones y productividad</h3>
+    <p>Instalar y configurar al menos 3 extensiones para mejorar flujo de trabajo. Documentar utilidad de cada una.</p>
+  </div>
+
+  <h3>6) Automatización y testing</h3>
+  <p>Usar tareas automatizadas (Gulp, Webpack) y testing de código (Jest, Cypress) profesionaliza el flujo de trabajo.</p>
+  <details>
+    <summary>Ejemplo Gulp para compilación CSS</summary>
+    <pre><code>const gulp = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+
+gulp.task('sass', function() {
+  return gulp.src('src/scss/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('dist/css'));
+});
+
+gulp.task('watch', function() {
+  gulp.watch('src/scss/**/*.scss', gulp.series('sass'));
+});
+</code></pre>
+  </details>
+
+  <h3>7) Buenas prácticas profesionales</h3>
+  <ul>
+    <li>Mantener código limpio y comentado.</li>
+    <li>Seguir guías de estilo y convenciones.</li>
+    <li>Versionado frecuente y descriptivo.</li>
+    <li>Pruebas constantes y revisión de errores.</li>
+  </ul>
+
+<h3>🧩 Autoevaluación · Usabilidad</h3>
+<form id="quiz-usabilidad"
+      class="bloque"
+      data-quiz
+      data-respuestas='{
+        "q1":"b",
+        "q2":"c",
+        "q3":"c",
+        "q4":"b"
+      }'
+      novalidate>
+  
+  <fieldset>
+    <legend>1) ¿Qué editor gratuito, multiplataforma y extensible es el estándar de facto para front-end?</legend>
+    <label><input type="radio" name="q1" value="a" required> Notepad++</label><br>
+    <label><input type="radio" name="q1" value="b"> Visual Studio Code</label><br>
+    <label><input type="radio" name="q1" value="c"> Adobe Dreamweaver</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>2) ¿Qué extensión permite vista previa local en tiempo real desde el editor?</legend>
+    <label><input type="radio" name="q2" value="a" required> Git</label><br>
+    <label><input type="radio" name="q2" value="b"> Prettier</label><br>
+    <label><input type="radio" name="q2" value="c"> Live Server</label>
+  </fieldset>
+  
+  <fieldset>
+    <legend>3) ¿Qué herramienta se usa para control de versiones y colaboración profesional?</legend>
+    <label><input type="radio" name="q3" value="a" required> Emmet</label><br>
+    <label><input type="radio" name="q3" value="b"> Live Server</label><br>
+    <label><input type="radio" name="q3" value="c"> Git/GitHub</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>4) ¿Qué herramienta formatea el código automáticamente según reglas definidas?</legend>
+    <label><input type="radio" name="q4" value="a" required> ESLint</label><br>
+    <label><input type="radio" name="q4" value="b"> Prettier</label><br>
+    <label><input type="radio" name="q4" value="c"> Live Server</label>
+  </fieldset>
+
+  <p id="quiz-usabilidad-msg" aria-live="polite"></p>
+  <button type="submit" class="boton-ir">Comprobar respuestas</button>
+  <span class="quiz-result"></span>
+</form>
+
+</div>

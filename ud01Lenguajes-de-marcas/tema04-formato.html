@@ -1,0 +1,240 @@
+
+
+    <!-- ====== 1.4 Marcas para dar formato ====== -->
+    <section class="bloque ancla" aria-labelledby="t-ud01-14-formato">
+      <h2 id="t-ud01-14-formato">📝 1.4 Marcas para dar formato al documento</h2>
+
+      <p>
+        En HTML, las <strong>marcas para dar formato</strong> son etiquetas que aportan estructura
+        y significado al texto. Aunque el estilo visual lo gestiona principalmente <strong>CSS</strong>,
+        HTML ofrece marcas <em>semánticas</em> esenciales para una buena accesibilidad y SEO.
+      </p>
+      <p>Estas marcas definen el <strong>inicio y el final</strong> del contenido afectado y pueden actuar
+        sobre texto, párrafos o listas.</p>
+
+      <!-- Tarjeta: ¿Qué son las marcas de formato? -->
+      <details class="tarjeta" id="t-ud01-14-formato-que-es">
+        <summary>❓ ¿Qué son las marcas de formato?</summary>
+        <button type="button" class="tarjeta-cerrar" aria-label="Cerrar"
+                onclick="this.closest('details').open=false">
+          <span aria-hidden="true">✕</span>
+        </button>
+        <div class="tarjeta-body">
+          <h3 data-no-toc>¿Qué son las marcas de formato?</h3>
+          <p>
+            Son etiquetas HTML que estructuran y enfatizan partes del texto. El aspecto visual se recomienda
+            resolver con CSS, pero la semántica viene dada por etiquetas como <code>&lt;strong&gt;</code>,
+            <code>&lt;em&gt;</code>, <code>&lt;blockquote&gt;</code>, etc.
+          </p>
+          <ul>
+            <li>💡 Aportan <strong>significado</strong> al contenido.</li>
+            <li>📚 Clave para <strong>accesibilidad</strong> y SEO.</li>
+            <li>🔧 Etiquetas obsoletas como <code>&lt;font&gt;</code> fueron reemplazadas por CSS moderno.</li>
+          </ul>
+        </div>
+      </details>
+
+      <div class="imagen centrado">
+        <img src="assets/formatomarca.png" alt="Marcas de formato HTML" />
+      </div>
+
+      <details>
+        <summary>📖 Leer más sobre tipos de marcas</summary>
+
+        <h3>🔹 Marcas de inicio y final</h3>
+        <p>La mayoría de etiquetas tienen <code>apertura</code> y <code>cierre</code> (p. ej. <code>&lt;b&gt;...&lt;/b&gt;</code>).</p>
+
+        <h3>🎨 Marcas de aspecto (énfasis semántico)</h3>
+        <ul>
+          <li><code>&lt;strong&gt;</code> / <code>&lt;b&gt;</code>: énfasis o negrita.</li>
+          <li><code>&lt;em&gt;</code> / <code>&lt;i&gt;</code>: énfasis o cursiva.</li>
+          <li><code>&lt;u&gt;</code>: subrayado.</li>
+          <li><code>&lt;mark&gt;</code>: resaltado.</li>
+        </ul>
+
+        <h3>📄 Marcas de párrafo</h3>
+        <ul>
+          <li><code>&lt;p&gt;</code>: párrafo.</li>
+          <li><code>&lt;br&gt;</code>: salto de línea (vacía, sin cierre).</li>
+          <li><code>&lt;blockquote&gt;</code>: cita destacada en bloque.</li>
+        </ul>
+
+        <h3>🔤 Fuentes y colores</h3>
+        <ul>
+          <li><code>&lt;font&gt;</code> (obsoleta) → usar <strong>CSS</strong>.</li>
+          <li>Para destacar sin semántica, usar <code>&lt;span&gt;</code> con clases CSS.</li>
+        </ul>
+
+        <h3>🔢 Listas</h3>
+        <ul>
+          <li><code>&lt;ol&gt;</code>: lista ordenada (números).</li>
+          <li><code>&lt;ul&gt;</code>: lista sin orden (viñetas).</li>
+          <li><code>&lt;li&gt;</code>: ítem de lista.</li>
+        </ul>
+
+        <h3>✅ Ejemplo</h3>
+<pre class="esquema-textual"><code>&lt;p&gt;Texto con &lt;strong&gt;énfasis&lt;/strong&gt; y un &lt;br&gt; salto de línea.&lt;/p&gt;
+
+&lt;blockquote&gt;Cita en bloque con significado.&lt;/blockquote&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Primer elemento&lt;/li&gt;
+  &lt;li&gt;Segundo elemento&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+      </details>
+    </section>
+
+    <!-- ====== Accesibilidad ====== -->
+    <section class="bloque ancla" aria-labelledby="t-ud01-14-accesibilidad">
+      <h2 id="t-ud01-14-accesibilidad">🔎 Accesibilidad: Marcas que ayudan a todos</h2>
+      <p>
+        Un marcado correcto facilita la comprensión del contenido por lectores de pantalla y mejora
+        la navegación por teclado. Usa etiquetas semánticas y atributos como <code>alt</code>,
+        <code>aria-label</code> o <code>role</code>.
+      </p>
+
+      <details class="tarjeta" id="t-ud01-14-accesibilidad-mas">
+        <summary>📚 Saber más sobre accesibilidad</summary>
+        <button type="button" class="tarjeta-cerrar" aria-label="Cerrar"
+                onclick="this.closest('details').open=false">
+          <span aria-hidden="true">✕</span>
+        </button>
+        <div class="tarjeta-body">
+          <h3 data-no-toc>Accesibilidad y etiquetas HTML</h3>
+          <p>Una jerarquía correcta de encabezados y formularios bien asociados es clave.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>📖 Etiquetas accesibles útiles</summary>
+        <ul>
+          <li>
+            <strong><code>&lt;img alt="..."&gt;</code></strong> – Describe la imagen.
+<pre class="esquema-textual"><code>&lt;img src="logo.png" alt="Logo de la empresa"&gt;</code></pre>
+          </li>
+          <li>
+            <strong><code>&lt;label for="id"&gt;</code></strong> – Asocia controles de formulario.
+<pre class="esquema-textual"><code>&lt;label for="email"&gt;Correo:&lt;/label&gt;
+&lt;input type="email" id="email" name="email"&gt;</code></pre>
+          </li>
+          <li>
+            <strong>Encabezados jerárquicos</strong> – <code>&lt;h1&gt;..&lt;h6&gt;</code>.
+<pre class="esquema-textual"><code>&lt;h1&gt;Sección principal&lt;/h1&gt;
+&lt;h2&gt;Subsección&lt;/h2&gt;
+&lt;h3&gt;Detalle&lt;/h3&gt;</code></pre>
+          </li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- ====== Bonus: Inspector ====== -->
+    <section class="bloque ancla" aria-labelledby="t-ud01-14-inspector">
+      <h2 id="t-ud01-14-inspector">🟡 Bonus: Cómo ver las marcas en el navegador</h2>
+      <p>
+        El <strong>inspector del navegador</strong> (Chrome, Firefox, Edge…) permite ver y probar
+        el HTML/CSS real de cualquier página en tiempo real.
+      </p>
+
+      <details class="tarjeta" id="t-ud01-14-inspector-mas">
+        <summary>🔍 ¿Qué es el inspector?</summary>
+        <button type="button" class="tarjeta-cerrar" aria-label="Cerrar"
+                onclick="this.closest('details').open=false">
+          <span aria-hidden="true">✕</span>
+        </button>
+        <div class="tarjeta-body">
+          <p>Ideal para aprender, depurar y experimentar. Los cambios no se guardan al recargar.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>📖 Curiosidades útiles</summary>
+        <ul>
+          <li>Editar etiquetas y ver cambios al instante.</li>
+          <li>Probar estilos CSS al vuelo.</li>
+          <li>Simular vistas móvil/tablet/escritorio.</li>
+          <li>Detectar errores en el código.</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- ====== Actividad práctica ====== -->
+    <section class="bloque actividad ancla" aria-labelledby="t-ud01-14-actividad">
+      <h2 id="t-ud01-14-actividad">🧪 Aprendemos haciendo: explora y edita HTML y CSS en vivo</h2>
+      <details>
+        <summary>🎯 Paso a paso</summary>
+
+        <h3>🔧 Abrir el inspector</h3>
+        <ol>
+          <li>Abre cualquier página web.</li>
+          <li>Clic derecho → <strong>Inspeccionar</strong>.</li>
+          <li>Explora el panel de HTML y CSS.</li>
+        </ol>
+
+        <h3>✨ Editar etiquetas HTML</h3>
+        <ul>
+          <li>En “Elements”, localiza una etiqueta y edítala (doble clic).</li>
+        </ul>
+
+        <h3>🎨 Cambiar estilos CSS</h3>
+        <ul>
+          <li>Prueba propiedades como <code>color</code>, <code>font-size</code> o <code>border</code>.</li>
+        </ul>
+      </details>
+    </section>
+
+    <hr class="separador-verde">
+
+    <!-- ====== Autoevaluación (data-quiz + data-respuestas) ====== -->
+    <section class="bloque ancla" aria-labelledby="t-ud01-14-quiz">
+      <h3 id="t-ud01-14-quiz">Autoevaluación · Tema 4 (UD01)</h3>
+
+      <!-- Importante: data-quiz + data-respuestas para que el validador global lo detecte -->
+      <form
+        data-quiz
+        id="quiz-ud01-t4"
+        data-respuestas='{"q1":"c","q2":"b","q3":"a"}'
+        class="bloque"
+        novalidate
+      >
+        <fieldset>
+          <legend>1) ¿Cuál de estas <em>no</em> requiere etiqueta de cierre?</legend>
+          <label><input type="radio" name="q1" value="a" required> <code>&lt;b&gt;</code></label><br>
+          <label><input type="radio" name="q1" value="b"> <code>&lt;p&gt;</code></label><br>
+          <label><input type="radio" name="q1" value="c"> <code>&lt;br&gt;</code></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>2) ¿Qué etiqueta se usa para una cita en bloque (destacada)?</legend>
+          <label><input type="radio" name="q2" value="a" required> <code>&lt;p&gt;</code></label><br>
+          <label><input type="radio" name="q2" value="b"> <code>&lt;blockquote&gt;</code></label><br>
+          <label><input type="radio" name="q2" value="c"> <code>&lt;mark&gt;</code></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>3) Hoy en día, ¿cómo se recomienda cambiar color/tamaño de fuente?</legend>
+          <label><input type="radio" name="q3" value="a" required> Con CSS (clases/estilos), p. ej. en un <code>&lt;span&gt;</code></label><br>
+          <label><input type="radio" name="q3" value="b"> Con la etiqueta <code>&lt;font&gt;</code> (obsoleta)</label><br>
+          <label><input type="radio" name="q3" value="c"> Con <code>&lt;u&gt;</code></label>
+        </fieldset>
+
+        <p id="quiz-ud01-t4-msg" aria-live="polite"></p>
+        <button type="submit" class="boton-ir">Comprobar respuestas</button>
+      </form>
+    </section>
+
+  </main>
+
+  <script>
+    // Usabilidad: solo un <details> abierto por sección
+    document.addEventListener('click', (ev) => {
+      const det = ev.target?.closest('details');
+      if (!det) return;
+      if (det.open) return;
+      const cont = det.closest('section');
+      if (!cont) return;
+      cont.querySelectorAll('details[open]').forEach(d => {
+        if (d !== det) d.removeAttribute('open');
+      });
+    });
+  </script>
+

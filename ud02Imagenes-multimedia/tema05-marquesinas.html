@@ -1,0 +1,262 @@
+﻿<div class="bloque" id="tema5-marquesinas">
+    <h2>Tema 5. Marquesinas y textos con movimiento</h2>
+    <p><strong>Objetivo:</strong> comprender qué son las marquesinas, por qué la etiqueta <code>&lt;marquee&gt;</code> está obsoleta, y cómo recrear efectos de texto en movimiento con CSS/JS de forma accesible y compatible.</p>
+
+    <div class="esquema-textual">
+<pre><code>Epígrafes:
+– Marquesinas.
+– Los textos con movimiento.
+– Utilización de las etiquetas para incluir marquesinas.
+– Las marquesinas y los distintos navegadores.</code></pre>
+    </div>
+
+    <h3>1) Marquesinas</h3>
+    <p>Una <strong>marquesina</strong> es un efecto de texto en movimiento, generalmente en desplazamiento horizontal o vertical, usado para mostrar mensajes continuos, anuncios o titulares.</p>
+    <p>En HTML, la etiqueta <code>&lt;marquee&gt;</code> se utilizaba para lograr este efecto, pero está <strong>obsoleta</strong> y no forma parte del estándar HTML5 debido a problemas de accesibilidad, usabilidad y consistencia entre navegadores.</p>
+
+    <h3>2) Los textos con movimiento</h3>
+    <p>El movimiento de texto puede lograrse de varias formas:</p>
+    <ul>
+        <li>Con <strong>CSS</strong> usando <code>@keyframes</code> y <code>animation</code>.</li>
+        <li>Con <strong>JavaScript</strong> para controlar velocidad, pausa, sentido, etc.</li>
+        <li>Mediante componentes o librerías que simulan marquesinas y permiten interacción.</li>
+    </ul>
+
+    <h3>3) Utilización de las etiquetas para incluir marquesinas</h3>
+    <p><code>&lt;marquee&gt;</code> se sigue reconociendo en algunos navegadores antiguos, pero no se recomienda usarla.</p>
+    <details>
+        <summary>Ejemplo de uso de &lt;marquee&gt; (obsoleto)</summary>
+<pre><code>&lt;marquee direction="left" scrollamount="5"&gt;
+  Texto en movimiento de ejemplo
+&lt;/marquee&gt;</code></pre>
+        <p>⚠️ No se recomienda: su comportamiento es inconsistente y carece de soporte en navegadores modernos.</p>
+    </details>
+    <p>En su lugar, utiliza <code>&lt;div&gt;</code> u otros contenedores HTML estándar con animaciones CSS o scripts.</p>
+
+    <h3>4) Las marquesinas y los distintos navegadores</h3>
+    <ul>
+        <li><strong>Compatibilidad antigua:</strong> <code>&lt;marquee&gt;</code> funcionaba en IE, Netscape y versiones antiguas de Chrome/Firefox.</li>
+        <li><strong>HTML5:</strong> no soporta <code>&lt;marquee&gt;</code> oficialmente.</li>
+        <li><strong>Solución moderna:</strong> animaciones CSS y librerías JS, compatibles con todos los navegadores actuales.</li>
+    </ul>
+
+    <details>
+        <summary>📖 Buenas prácticas de accesibilidad</summary>
+        <ul>
+            <li>Evita textos en movimiento que no se puedan pausar o detener.</li>
+            <li>Usa <code>aria-label</code> o <code>aria-live</code> si el contenido cambia dinámicamente.</li>
+            <li>Respeta la preferencia del usuario <code>prefers-reduced-motion</code>.</li>
+        </ul>
+    </details>
+
+    <hr>
+    <<section class="intro">
+      <img src="assets/marquesina.png" alt="Imagen introductoria del curso IFCD0110" class="intro-img">
+    </section>
+    <h3>¿Por qué la etiqueta <code>&lt;marquee&gt;</code> es un problema grave?</h3>
+    <p>Como desarrolladores que aspiran a la maestría, es fundamental entender no solo "qué no usar", sino "por qué no usarlo". La obsolescencia de <code>&lt;marquee&gt;</code> va más allá de la falta de soporte, tocando tres pilares fundamentales del desarrollo web moderno: la <strong>accesibilidad</strong>, el <strong>rendimiento</strong> y el <strong>control</strong>.</p>
+    
+    <h4>1. Problemas de Accesibilidad y Usabilidad</h4>
+    <p>El movimiento constante es uno de los mayores obstáculos para muchos usuarios. Piensa en personas con:</p>
+    <ul>
+        <li><strong>Trastornos de atención:</strong> El texto en movimiento capta la atención de forma incontrolable, dificultando la lectura del resto del contenido de la página.</li>
+        <li><strong>Discapacidad visual:</strong> Los lectores de pantalla no pueden "ver" ni seguir el texto que se desplaza. Además, el movimiento rápido puede ser imposible de leer para personas con baja visión.</li>
+        <li><strong>Trastornos del espectro autista o epilepsia fotosensible:</strong> Los movimientos inesperados o patrones repetitivos pueden causar distracciones severas, ansiedad o incluso convulsiones.</li>
+    </ul>
+    <p>La usabilidad también se ve afectada: ¿cómo puede un usuario hacer clic en un enlace que se está moviendo constantemente? La etiqueta <code>&lt;marquee&gt;</code> no ofrecía una forma nativa de pausar el movimiento con el ratón, forzando al usuario a "cazar" el enlace. Esta experiencia de usuario deficiente es inaceptable en el desarrollo web profesional.</p>
+
+    <h4>2. Ineficiencia y Rendimiento</h4>
+    <p>La etiqueta <code>&lt;marquee&gt;</code> no era eficiente. Su animación se basaba en cambiar la posición del elemento pixel a pixel, lo que podía causar un "salto de maquetación" o "jank" en la página, consumiendo recursos de la CPU y la batería del dispositivo. En contraste, las animaciones CSS modernas aprovechan la GPU (Unidad de Procesamiento Gráfico) para una ejecución más fluida y eficiente, sin afectar el rendimiento general de la página.</p>
+
+    <hr>
+
+    <h3>El Renacimiento del Movimiento: Animaciones CSS</h3>
+    <p>La solución moderna y estandarizada para el texto en movimiento es el uso de **animaciones CSS**. Esto te da un control total sobre el comportamiento del texto, garantizando que el efecto sea fluido, compatible y, lo más importante, accesible.</p>
+    
+    <h4>Entendiendo los <code>@keyframes</code></h4>
+    <p>Los <code>@keyframes</code> son la parte fundamental de cualquier animación CSS. Definen los "fotogramas clave" de la animación, es decir, el estado inicial, final e intermedio del elemento. Imagina que estás creando una película fotograma a fotograma; <code>@keyframes</code> te permite definir el estado del elemento en puntos específicos de la línea de tiempo.</p>
+
+    <pre><code>/* 1. Definimos los @keyframes */
+@keyframes scrollearTexto {
+  /* Estado inicial (al 0% del tiempo de la animación) */
+  0% {
+    transform: translateX(100%);
+    opacity: 0.5; /* Propiedades adicionales si las necesitas */
+  }
+
+  /* Estado final (al 100% del tiempo de la animación) */
+  100% {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+}</code></pre>
+    <p>En este ejemplo, la animación se llama <code>scrollearTexto</code> y mueve el elemento desde fuera de la pantalla por la derecha (100%) hasta fuera de la pantalla por la izquierda (-100%).</p>
+
+    <h4>La Propiedad <code>animation</code>: El Director de la Orquesta</h4>
+    <p>Una vez definidos los <code>@keyframes</code>, la propiedad <code>animation</code> se encarga de "ejecutar" esa secuencia de movimientos sobre un elemento HTML. Es una propiedad de atajo que te permite controlar todos los aspectos de la animación en una sola línea:</p>
+
+    <pre><code>.contenedor-marquesina {
+  /* 2. Aplicamos la animación al elemento */
+  animation: scrollearTexto 15s linear infinite;
+  white-space: nowrap; /* Evita que el texto salte de línea */
+}</code></pre>
+
+    <p>Analicemos la línea anterior, que es una abreviatura de varias propiedades individuales:</p>
+    <ul>
+        <li><code>animation-name: scrollearTexto;</code> (nombre de la animación)</li>
+        <li><code>animation-duration: 15s;</code> (duración de un ciclo)</li>
+        <li><code>animation-timing-function: linear;</code> (velocidad constante)</li>
+        <li><code>animation-delay: 0s;</code> (tiempo de espera antes de empezar)</li>
+        <li><code>animation-iteration-count: infinite;</code> (número de veces que se repite)</li>
+        <li><code>animation-direction: normal;</code> (dirección del movimiento)</li>
+        <li><code>animation-fill-mode: forwards;</code> (qué pasa al final de la animación)</li>
+        <li><code>animation-play-state: running;</code> (si la animación está en marcha o pausada)</li>
+    </ul>
+
+    <hr>
+
+    <h3>Un Ejemplo Completo y Accesible con CSS</h3>
+    <p>A continuación, un ejemplo práctico que puedes usar y modificar. En este caso, crearemos una marquesina moderna y controlable.</p>
+
+    <div class="esquema-textual">
+<pre><code>&lt;!-- HTML --&gt;
+&lt;div class="marquesina-css"&gt;
+  &lt;p class="texto-movimiento"&gt;¡Ofertas especiales! - 20% de descuento en todos nuestros productos. ¡Aprovecha ya!&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+<pre><code>/* CSS */
+.marquesina-css {
+  width: 100%;
+  overflow: hidden; /* Oculta el texto que se sale del contenedor */
+  white-space: nowrap;
+}
+
+.texto-movimiento {
+  /* Aplicamos la animación */
+  animation: scroll-derecha-a-izquierda 20s linear infinite;
+  display: inline-block; /* Para que funcione la animación */
+}
+
+/* Pausar la animación al pasar el ratón por encima */
+.texto-movimiento:hover {
+  animation-play-state: paused;
+}
+
+/* @keyframes para el desplazamiento */
+@keyframes scroll-derecha-a-izquierda {
+  from {
+    transform: translateX(100%); /* Empieza fuera del contenedor por la derecha */
+  }
+  to {
+    transform: translateX(-100%); /* Termina fuera del contenedor por la izquierda */
+  }
+}</code></pre>
+    </div>
+    <p>Este ejemplo es superior a <code>&lt;marquee&gt;</code> porque es más ligero, más controlable (puedes pausarlo con CSS) y su comportamiento es predecible en todos los navegadores modernos.</p>
+
+    <hr>
+
+    <h3>Control Avanzado con JavaScript</h3>
+    <p>Mientras que CSS es ideal para animaciones simples, JavaScript te da el control absoluto. Puedes crear botones para detener y reanudar la animación, cambiar la dirección en tiempo real o incluso controlar la velocidad basándote en la interacción del usuario.</p>
+    
+    <p>El siguiente ejemplo te muestra cómo añadir un botón de pausa/reproducir a la marquesina CSS anterior. Esta es una buena práctica de accesibilidad, permitiendo al usuario tomar el control del movimiento.</p>
+
+    <div class="esquema-textual">
+<pre><code>&lt;!-- HTML con el botón de control --&gt;
+&lt;div class="marquesina-css-js"&gt;
+  &lt;p class="texto-movimiento"&gt;¡Atención! Este es un mensaje importante y accesible.&lt;/p&gt;
+  &lt;button id="toggleButton" aria-controls="texto-movimiento" aria-label="Pausar y reproducir la marquesina"&gt;⏸️</button&gt;
+&lt;/div&gt;</code></pre>
+<pre><code>// JavaScript
+const texto = document.querySelector('.texto-movimiento');
+const boton = document.getElementById('toggleButton');
+let estaPausado = false;
+
+boton.addEventListener('click', () => {
+    if (estaPausado) {
+        texto.style.animationPlayState = 'running';
+        boton.innerHTML = '⏸️'; // Símbolo de pausa
+        estaPausado = false;
+    } else {
+        texto.style.animationPlayState = 'paused';
+        boton.innerHTML = '▶️'; // Símbolo de reproducir
+        estaPausado = true;
+    }
+});</code></pre>
+    </div>
+    <p>Con este código, hemos creado una marquesina profesional y accesible. El usuario tiene el control total, cumpliendo con las buenas prácticas de usabilidad.</p>
+
+    <hr>
+
+    <h3>Buenas Prácticas Avanzadas de Accesibilidad</h3>
+    <p>Como futuro experto, debes ir un paso más allá. Las animaciones deben ser una elección del usuario, no una imposición. Aquí es donde entra la media query <code>prefers-reduced-motion</code>.</p>
+    
+    <h4><code>@media (prefers-reduced-motion: reduce)</code></h4>
+    <p>Muchos sistemas operativos tienen una configuración para "reducir el movimiento" en la interfaz. Esta media query te permite detectar si el usuario ha activado esa opción. Si es así, debes desactivar o reducir tus animaciones para no causar molestias.</p>
+
+    <pre><code>/* CSS */
+.texto-movimiento {
+    animation: scroll-derecha-a-izquierda 20s linear infinite;
+}
+
+/* Si el usuario ha pedido reducir el movimiento... */
+@media (prefers-reduced-motion: reduce) {
+    .texto-movimiento {
+        /* Desactivamos la animación por completo */
+        animation: none;
+        /* Y mostramos el texto en un estado estático */
+        transform: translateX(0);
+        text-align: center;
+        width: 100%;
+    }
+}</code></pre>
+    <p>Implementar esta simple regla de CSS demuestra un compromiso real con la accesibilidad, haciendo que tu sitio web sea usable para una audiencia mucho más amplia. La experiencia del usuario es la prioridad, y como expertos en HTML, nuestro trabajo es construir una web inclusiva para todos.</p>
+    
+    <p>En conclusión, el camino a seguir es claro: dejar atrás las etiquetas obsoletas como <code>&lt;marquee&gt;</code> y abrazar las potentes herramientas de animación de CSS y la flexibilidad de JavaScript. No solo crearás efectos visualmente atractivos, sino que también construirás una web más rápida, eficiente y, sobre todo, accesible y profesional.</p>
+</div>
+
+<section class="bloque" id="quiz-t05-marquesinas-bloque">
+  <h3>Autoevaluación — Tema 5 (Marquesinas y texto en movimiento)</h3>
+
+  <form id="quiz-t05-marquesinas"
+        class="bloque"
+        data-quiz
+        data-respuestas='{
+          "q1":"a",
+          "q2":"b",
+          "q3":"b",
+          "q4":"a"
+        }'
+        novalidate>
+
+    <fieldset>
+      <legend>1) ¿Por qué <code>&lt;marquee&gt;</code> está obsoleta y no debe usarse?</legend>
+      <label><input type="radio" name="q1" value="a" required> Porque no forma parte de HTML5 y presenta problemas de accesibilidad/UX y compatibilidad.</label><br>
+      <label><input type="radio" name="q1" value="b"> Porque es más lenta que cualquier CSS en todos los casos.</label><br>
+      <label><input type="radio" name="q1" value="c"> Porque fue reemplazada por <code>&lt;blink&gt;</code>.</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>2) ¿Cuál es la alternativa moderna recomendada para recrear una marquesina?</legend>
+      <label><input type="radio" name="q2" value="a" required> Mover el texto con <code>setInterval()</code> y estilos inline.</label><br>
+      <label><input type="radio" name="q2" value="b"> Animaciones CSS con <code>@keyframes</code> + <code>animation</code>.</label><br>
+      <label><input type="radio" name="q2" value="c"> Incrustar un <code>&lt;object&gt;</code> con Flash.</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>3) ¿Cómo pausar la animación cuando el usuario pasa el ratón por encima?</legend>
+      <label><input type="radio" name="q3" value="a" required> Con <code>animation-fill-mode: forwards;</code>.</label><br>
+      <label><input type="radio" name="q3" value="b"> Con <code>.elemento:hover { animation-play-state: paused; }</code>.</label><br>
+      <label><input type="radio" name="q3" value="c"> Con <code>will-change: transform;</code>.</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>4) ¿Cómo respetar la preferencia del usuario de “reducir movimiento”?</legend>
+      <label><input type="radio" name="q4" value="a" required> Usando <code>@media (prefers-reduced-motion: reduce)</code> para desactivar o simplificar la animación.</label><br>
+      <label><input type="radio" name="q4" value="b"> Añadiendo <code>aria-live="polite"</code> al texto animado.</label><br>
+      <label><input type="radio" name="q4" value="c"> Estableciendo <code>loop</code> en la animación.</label>
+    </fieldset>
+
+    <p id="quiz-t05-marquesinas-msg" aria-live="polite"></p>
+    <button type="submit" class="boton-ir">Comprobar respuestas</button>
+  </form>
+</section>

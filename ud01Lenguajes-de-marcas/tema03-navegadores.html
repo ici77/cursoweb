@@ -1,0 +1,225 @@
+
+
+
+<!-- ====== SECCIÓN 1 ====== -->
+<section class="bloque">
+  <div class="contenido">
+    <div class="foto">
+      <img src="assets/navegadores.png" alt="Imagen navegadores web" />
+    </div>
+
+    <div class="texto">
+      <h2>🧭 1.3 Navegadores Web</h2>
+      <p>
+        Los navegadores web (también llamados <strong>web browsers</strong>) son aplicaciones software que permiten a los usuarios visualizar e interactuar con documentos y recursos alojados en la World Wide Web. Funcionan interpretando el <strong>código HTML, CSS y JavaScript</strong>, transformándolo en una interfaz visual comprensible y navegable.
+      </p>
+      <p>
+        Desde una perspectiva técnica, un navegador es un <strong>cliente HTTP</strong> que realiza peticiones a servidores web y representa las respuestas recibidas en forma de páginas web. Su correcto funcionamiento es fundamental para garantizar la <strong>accesibilidad, usabilidad y compatibilidad</strong> de los sitios web.
+      </p>
+
+      <!-- Tarjeta 1: ¿Qué es un navegador? -->
+      <details class="tarjeta" id="t-nav-que-es">
+        <summary>❓ ¿Qué es un navegador web?</summary>
+        <button type="button" class="tarjeta-cerrar" aria-label="Cerrar"
+                onclick="this.closest('details').open=false"><span aria-hidden="true">✕</span></button>
+        <div class="tarjeta-body">
+          <p>Es una aplicación cliente que permite acceder a sitios web, interpretando los lenguajes <strong>HTML</strong>, <strong>CSS</strong> y <strong>JavaScript</strong>.</p>
+          <p>Los navegadores modernos incluyen funciones de seguridad, herramientas de desarrollo, sincronización entre dispositivos y más.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <details>
+    <summary>📖 Leer más sobre navegadores web</summary>
+
+    <h3>🔹 1.3.1 Navegadores en modo texto</h3>
+    <p>Los navegadores en <strong>modo texto</strong> muestran únicamente el texto plano de las etiquetas HTML, ignorando CSS, imágenes o scripts.</p>
+
+    <h4>🧰 Características técnicas:</h4>
+    <ul>
+      <li>Funcionan en <strong>modo consola</strong>.</li>
+      <li>Ignoran recursos multimedia.</li>
+      <li>Navegación por teclado.</li>
+      <li>Ligeros y rápidos.</li>
+    </ul>
+
+    <h4>📌 Usos habituales:</h4>
+    <ul>
+      <li>Acceso desde sistemas sin entorno gráfico.</li>
+      <li>Pruebas de <strong>accesibilidad</strong>.</li>
+      <li>Entornos con recursos limitados.</li>
+      <li>Comprobación de estructura semántica.</li>
+    </ul>
+
+    <h4>🧪 Ejemplos:</h4>
+    <ul>
+      <li><code>Lynx</code>, <code>w3m</code>, <code>Links</code>, <code>ELinks</code>.</li>
+    </ul>
+
+    <h3>🔹 1.3.2 Los navegadores más utilizados</h3>
+    <p>Los más populares se han consolidado por rendimiento, compatibilidad, extensiones y sincronización.</p>
+
+    <table>
+      <thead>
+        <tr><th>Navegador</th><th>Motor</th><th>Fabricante</th><th>Sistema</th><th>Observaciones</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Google Chrome</td><td>Blink</td><td>Google</td><td>Sí</td><td>Más usado globalmente</td></tr>
+        <tr><td>Mozilla Firefox</td><td>Gecko</td><td>Mozilla</td><td>Sí</td><td>Código abierto y privado</td></tr>
+        <tr><td>Safari</td><td>WebKit</td><td>Apple</td><td>macOS/iOS</td><td>Optimizado para Apple</td></tr>
+        <tr><td>Microsoft Edge</td><td>Blink</td><td>Microsoft</td><td>Sí</td><td>Basado en Chromium</td></tr>
+        <tr><td>Opera</td><td>Blink</td><td>Opera Software</td><td>Sí</td><td>Con VPN y bloqueador</td></tr>
+        <tr><td>Brave</td><td>Blink</td><td>Brave Software</td><td>Sí</td><td>Enfoque en privacidad</td></tr>
+      </tbody>
+    </table>
+
+    <h3>🔹 1.3.2.1 Explorer, Mozilla, Opera, etc.</h3>
+    <ul>
+      <li><strong>Internet Explorer</strong>: dominó en los 2000, ya obsoleto.</li>
+      <li><strong>Mozilla Firefox</strong>: alternativa libre, gran soporte de estándares.</li>
+      <li><strong>Opera</strong>: innovador, precursor de pestañas y gestos.</li>
+      <li><strong>Otros históricos</strong>: Netscape Navigator, Konqueror, Chromium.</li>
+    </ul>
+
+    <h3>🔹 1.3.3 Diferencias de visualización</h3>
+    <p>Los navegadores pueden mostrar páginas distinto por su motor de renderizado y configuración.</p>
+
+    <h4>💡 Causas comunes:</h4>
+    <ul>
+      <li>Distinto <strong>motor</strong>.</li>
+      <li>Soporte desigual de CSS moderno.</li>
+      <li>Estilos por defecto nativos.</li>
+      <li>Rendimiento JS variado y extensiones.</li>
+    </ul>
+
+    <h4>🛠️ Recomendaciones:</h4>
+    <ul>
+      <li>Usar <code>normalize.css</code> o reset.</li>
+      <li>Validar HTML con W3C.</li>
+      <li>Testing multi-navegador.</li>
+      <li>Diseño responsive con <code>@media</code>.</li>
+    </ul>
+  </details>
+</section>
+
+<!-- ====== SECCIÓN 2 ====== -->
+<section class="bloque">
+  <div class="contenido">
+    <div class="texto">
+      <h2>🧭 Navegadores alternativos y éticos</h2>
+      <p>
+        Además de los navegadores más conocidos (Chrome, Firefox, Safari...), existen opciones menos populares que apuestan por la privacidad, el código abierto o el bajo consumo de recursos.
+      </p>
+      <ul>
+        <li><strong>Brave:</strong> bloquea rastreadores y anuncios intrusivos.</li>
+        <li><strong>Tor Browser:</strong> navegación anónima sobre la red Tor.</li>
+        <li><strong>Vivaldi:</strong> altamente personalizable.</li>
+        <li><strong>QuteBrowser:</strong> minimalista y controlado por teclado.</li>
+        <li><strong>GNOME Web (Epiphany):</strong> simple y limpio en Linux.</li>
+      </ul>
+
+      <p>
+        Estos navegadores pueden ofrecer una experiencia diferente, priorizando la privacidad, la personalización o el rendimiento sobre la popularidad.
+    </div>
+
+    <div class="foto-izq">
+      <img src="assets/navegadoreseticos.png" alt="Navegadores alternativos y éticos" />
+    </div>
+  </div>
+</section>
+
+<!-- ====== SECCIÓN 3 ====== -->
+<section class="bloque">
+  <div class="contenido">
+    <div class="texto">
+      <h2>✅ Navegadores móviles vs de escritorio</h2>
+      <p>
+        Comparten objetivos, pero difieren en interfaz, rendimiento y compatibilidad. Un buen diseño debe adaptarse a ambos para ofrecer una experiencia fluida en cualquier dispositivo.
+      </p>
+
+      <details>
+        <summary>📖 Leer más sobre navegadores móviles y de escritorio</summary>
+
+        <p><strong>📱 Navegadores móviles:</strong> optimizados para pantallas pequeñas, tacto y ahorro de recursos.</p>
+        <ul>
+          <li><strong>Samsung Internet</strong>, <strong>Brave móvil</strong>, <strong>Firefox Focus</strong>, <strong>UC Browser</strong>…</li>
+        </ul>
+
+        <p><strong>🖥️ Navegadores de escritorio:</strong> más recursos, herramientas de desarrollo y soporte de APIs avanzadas.</p>
+        <ul>
+          <li>Chrome, Firefox, Edge…</li>
+        </ul>
+
+        <p><strong>🔄 Diferencias clave:</strong></p>
+        <table>
+          <thead>
+            <tr><th>Aspecto</th><th>Escritorio</th><th>Móvil</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Interfaz</td><td>Completa, con herramientas</td><td>Simplificada y táctil</td></tr>
+            <tr><td>Rendimiento</td><td>Más procesamiento</td><td>Optimización/bajo consumo</td></tr>
+            <tr><td>Estándares</td><td>APIs avanzadas</td><td>Algunas limitaciones</td></tr>
+            <tr><td>Extensiones</td><td>Amplia variedad</td><td>Limitadas</td></tr>
+          </tbody>
+        </table>
+
+        <p>📌 Es esencial que la web sea <strong>responsive</strong> usando <code>meta viewport</code> y media queries en CSS.</p>
+      </details>
+    </div>
+
+    <div class="foto">
+      <img src="assets/navegadoresmoviles.png" alt="Navegadores móviles y de escritorio" />
+    </div>
+  </div>
+</section>
+
+<hr class="separador-verde" />
+
+<!-- ====== AUTOEVALUACIÓN ====== -->
+<section class="bloque">
+  <h3>Autoevaluación UD03</h3>
+
+  <!-- ====== AUTOEVALUACIÓN T3 (UD01) ====== -->
+<section class="bloque">
+  <h3>Autoevaluación · Tema 3: Navegadores</h3>
+
+  <!-- Nota: data-respuestas fija las correctas: q1=b, q2=a, q3=a -->
+  <form id="quiz-ud01-t3"
+        class="bloque"
+        data-quiz
+        data-respuestas='{"q1":"b","q2":"a","q3":"a"}'
+        novalidate>
+
+    <fieldset>
+      <legend>1) ¿Qué es un navegador web?</legend>
+      <label><input type="radio" name="q1" value="a" required> Un servidor que aloja páginas</label><br>
+      <label><input type="radio" name="q1" value="b"> Un cliente HTTP que interpreta HTML/CSS/JS</label><br>
+      <label><input type="radio" name="q1" value="c"> Un lenguaje de marcado</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>2) ¿Qué ayuda a reducir diferencias de estilos entre navegadores?</legend>
+      <label><input type="radio" name="q2" value="a" required> Usar <code>normalize.css</code> o un reset</label><br>
+      <label><input type="radio" name="q2" value="b"> Usar <code>@keyframes</code></label><br>
+      <label><input type="radio" name="q2" value="c"> Usar <code>localStorage</code></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>3) Señala la opción correcta</legend>
+      <label><input type="radio" name="q3" value="a" required> Conviene probar en varios navegadores</label><br>
+      <label><input type="radio" name="q3" value="b"> Todos usan el mismo motor</label><br>
+      <label><input type="radio" name="q3" value="c"> Móvil y escritorio no difieren</label>
+    </fieldset>
+
+    <p id="quiz-ud01-t3-msg" aria-live="polite"></p>
+    <button type="submit" class="boton-ir">Comprobar respuestas</button>
+  </form>
+</section>
+
+  <div id="ud03-completar" style="display:none; margin-top:10px;">
+    <button class="boton-sigue" data-completar="ud03">Marcar UD03 como completada</button>
+    <p class="nota">Esto desbloqueará la siguiente unidad.</p>
+  </div>
+</section>
+

@@ -1,0 +1,250 @@
+
+
+<body>
+    <main class="ud01">
+
+        <section id="ud01-caracteristicas" class="bloque ancla" aria-labelledby="t-ud01-caracteristicas">
+            <h2 id="t-ud01-caracteristicas">📘 1. Características de los lenguajes de marcas (HTML)</h2>
+
+            <p>Cuando queremos crear una página web, se nos presentan múltiples herramientas, pero todas tienen algo en común: el uso de un <strong>lenguaje de marcas</strong>.</p>
+            <p>Los lenguajes de marcas permiten codificar texto utilizando etiquetas que indican cómo debe estructurarse y visualizarse el contenido, sin que el formato dependa del tipo de dispositivo en que se muestre. Esto facilita la compatibilidad y la reutilización del contenido.</p>
+
+            <details>
+                <summary>📖 Leer más sobre los lenguajes de marcas</summary>
+                <p>Existen distintos tipos de lenguajes de marcado, como el lenguaje de marcado generalizado (GML) o el estándar de lenguaje de marcado generalizado (SGML), creado en los años 80.</p>
+                <p>En el ámbito de Internet, encontramos lenguajes de marcas como <strong>HTML</strong>, <strong>XML</strong> y <strong>XHTML</strong>. Aunque tienen nombres similares, su propósito y uso son diferentes.</p>
+                <p><strong>HTML</strong> (HyperText Markup Language) es el lenguaje principal para la creación de páginas web. Utiliza etiquetas como <code>&lt;h1&gt;</code> para títulos, <code>&lt;p&gt;</code> para párrafos, <code>&lt;a&gt;</code> para enlaces, y <code>&lt;img&gt;</code> para imágenes. Su función principal es dar estructura y significado al contenido.</p>
+                <p><strong>XML</strong> (eXtensible Markup Language) se usa principalmente para el intercambio de información estructurada. A diferencia de HTML, XML permite a los usuarios definir sus propias etiquetas, lo que lo hace muy flexible.</p>
+                <p><strong>XHTML</strong> (eXtensible HyperText Markup Language) es una versión de HTML que sigue la sintaxis de XML. Aunque fue popular en el pasado, ha sido en gran parte sustituido por HTML5.</p>
+
+                <h3 class="subtitulo">🔍 1.1 Propiedades del lenguaje de marcas</h3>
+                <ul>
+                    <li>✔️ <strong>Editable con cualquier editor de texto.</strong> Un archivo HTML es un archivo de texto simple, lo que lo hace universalmente accesible.</li>
+                    <li>✔️ <strong>Código y contenido conviven en el mismo documento.</strong> A diferencia de otros formatos, el contenido y las marcas están en un solo archivo, lo que facilita la lectura y el mantenimiento.</li>
+                    <li>✔️ <strong>Flexible y reutilizable.</strong> El mismo contenido se puede adaptar fácilmente para ser visualizado en diferentes dispositivos (móviles, tabletas, ordenadores, etc.) con la ayuda de las hojas de estilo.</li>
+                    <li>✔️ <strong>Respaldado por estándares (<a href="https://www.w3.org/" target="_blank" rel="noopener">W3C</a>).</strong> El Consorcio World Wide Web (W3C) se encarga de definir los estándares para HTML, garantizando su compatibilidad y correcto funcionamiento en todos los navegadores.</li>
+                </ul>
+                <p>Es importante recordar que HTML trabaja junto a <strong>CSS</strong> para dar estilo y a <strong>JavaScript</strong> para añadir interactividad. Los tres forman la base de la mayoría de las páginas web modernas.</p>
+            </details>
+
+            <div class="imagen">
+                <img src="assets/html.png" alt="Representación de dirección web con http" style="width:100%;max-width:500px;display:block;margin:2em auto;">
+            </div>
+        </section>
+
+        <div class="espacio-xl" aria-hidden="true"></div>
+
+        <section id="ud01-etiquetas" class="bloque ancla" aria-labelledby="t-ud01-etiquetas">
+            <h2 id="t-ud01-etiquetas">📘 1.1 Uso de etiquetas (HTML)</h2>
+
+            <p>Las etiquetas HTML son los bloques de construcción esenciales de una página web. Cada etiqueta tiene una función específica y ayuda a organizar el contenido de manera lógica. Están formadas por una etiqueta de apertura y, opcionalmente, una de cierre.</p>
+
+            <h3 class="subtitulo">📐 Estructura básica de una etiqueta</h3>
+            <pre class="esquema-textual"><code>&lt;etiqueta atributo="valor"&gt;Contenido&lt;/etiqueta&gt;</code></pre>
+            <ul>
+                <li><strong>Etiqueta de apertura</strong> (ej: <code>&lt;p&gt;</code>), <strong>contenido</strong> y <strong>etiqueta de cierre</strong> (ej: <code>&lt;/p&gt;</code>).</li>
+                <li><strong>Etiquetas vacías</strong>: No contienen contenido ni etiqueta de cierre, como <code>&lt;br&gt;</code> (salto de línea) o <code>&lt;img&gt;</code> (imagen).</li>
+            </ul>
+            <hr class="separador-verde">
+
+            <h3 class="subtitulo">🔍 ¿Qué son las etiquetas semánticas?</h3>
+            <p>A diferencia de las etiquetas genéricas (como <code>&lt;div&gt;</code> o <code>&lt;span&gt;</code>), las etiquetas semánticas transfieren significado sobre el tipo de contenido que contienen. Por ejemplo, la etiqueta <code>&lt;header&gt;</code> indica que el contenido es la cabecera de una sección o de la página, la etiqueta <code>&lt;nav&gt;</code> indica un menú de navegación, y <code>&lt;article&gt;</code> representa un contenido independiente y autónomo.</p>
+
+            <h4 class="subtitulo">🎯 Ventajas</h4>
+            <ul>
+                <li><strong>Accesibilidad</strong>: Los lectores de pantalla pueden interpretar mejor la estructura de la página y guiar a los usuarios.</li>
+                <li><strong>SEO (Optimización para Motores de Búsqueda)</strong>: Los motores de búsqueda como Google entienden mejor el contenido de tu web, lo que puede mejorar tu posicionamiento.</li>
+                <li><strong>Legibilidad e interoperabilidad</strong>: Facilitan que otros desarrolladores entiendan tu código y que la página funcione correctamente en diferentes navegadores y dispositivos.</li>
+            </ul>
+            <hr class="separador-verde">
+
+            <h3 class="subtitulo">📊 Clasificación y ejemplos</h3>
+            <table class="tabla-indice">
+                <thead>
+                    <tr><th>Categoría</th><th>Etiquetas</th><th>Descripción / Uso</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Estructura global</strong></td>
+                        <td><code>&lt;!DOCTYPE&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code></td>
+                        <td>Define el tipo de documento y su estructura básica.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Metadatos</strong></td>
+                        <td><code>&lt;meta&gt;</code>, <code>&lt;title&gt;</code>, <code>&lt;link&gt;</code>, <code>&lt;style&gt;</code></td>
+                        <td>Información del documento, enlaces a CSS, etc.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Secciones</strong></td>
+                        <td><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code></td>
+                        <td>Organiza el contenido con significado.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Texto</strong></td>
+                        <td><code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;blockquote&gt;</code>, <code>&lt;pre&gt;</code></td>
+                        <td>Encabezados, párrafos y citas.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Estilo / Énfasis</strong></td>
+                        <td><code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;u&gt;</code>, <code>&lt;mark&gt;</code>, <code>&lt;br&gt;</code></td>
+                        <td>Énfasis/formatos de texto.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Enlaces</strong></td>
+                        <td><code>&lt;a&gt;</code></td>
+                        <td>Navegación.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Multimedia</strong></td>
+                        <td><code>&lt;img&gt;</code>, <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code>, <code>&lt;source&gt;</code></td>
+                        <td>Imágenes, audio y vídeo.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Listas</strong></td>
+                        <td><code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code>, <code>&lt;dl&gt;</code></td>
+                        <td>Listas de distintos tipos.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tablas</strong></td>
+                        <td><code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;td&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code></td>
+                        <td>Datos tabulares.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Formularios</strong></td>
+                        <td><code>&lt;form&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;label&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;button&gt;</code></td>
+                        <td>Captura de datos.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <hr class="separador-verde">
+            <h3 class="subtitulo">💡 Buenas prácticas</h3>
+            <ul>
+                <li>Usar semántica, anidar correctamente, validar con <a href="https://validator.w3.org/" target="_blank" rel="noopener">W3C</a> y separar HTML/CSS/JS.</li>
+            </ul>
+
+            <hr class="separador-verde">
+            <h3 class="subtitulo">🧪 Ejemplo práctico resumido</h3>
+            <pre class="esquema-textual"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Mi Página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;&lt;h1&gt;Hola mundo&lt;/h1&gt;&lt;/header&gt;
+    &lt;main&gt;
+      &lt;section&gt;&lt;p&gt;Ejemplo con HTML5 semántico.&lt;/p&gt;&lt;/section&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;&copy; 2025&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+
+        <div class="espacio-xl" aria-hidden="true"></div>
+
+        <section id="ud01-compatibilidad" class="bloque ancla" aria-labelledby="t-ud01-compatibilidad">
+            <h2 id="t-ud01-compatibilidad">📘 1.2 Compatibilidad de los documentos HTML</h2>
+            <p>La **compatibilidad** en HTML se refiere a la capacidad de un documento web de ser renderizado y funcionar correctamente en diferentes navegadores, dispositivos y sistemas operativos. Para asegurar esta compatibilidad, es crucial adherirse a los **estándares** definidos por el World Wide Web Consortium (W3C).</p>
+            <p>El uso del `DOCTYPE` correcto (<code>&lt;!DOCTYPE html&gt;</code> para HTML5) es el primer paso, ya que le indica al navegador qué conjunto de reglas debe seguir para interpretar el código. Además, usar la **etiqueta `meta` con el `charset`** (ej: <code>&lt;meta charset="utf-8"&gt;</code>) asegura que los caracteres especiales y acentos se muestren correctamente.</p>
+            <p>A pesar de los estándares, cada navegador (Chrome, Firefox, Safari, Edge) tiene un motor de renderizado ligeramente diferente. Por ello, es una buena práctica **probar el sitio en varios navegadores** durante el desarrollo. Esto minimiza las sorpresas y garantiza una experiencia consistente para todos los usuarios.</p>
+            <div class="resumen-final">
+                ✅ <strong>Resumen:</strong> La compatibilidad es clave para el éxito de una web. La mejor forma de garantizarla es siguiendo los estándares del W3C y probando el proyecto en distintos navegadores.
+            </div>
+        </section>
+
+        <div class="espacio-xl" aria-hidden="true"></div>
+
+        <section id="ud01-editores" class="bloque ancla" aria-labelledby="t-ud01-editores">
+            <h2 id="ud01-editores">📘 1.3 Editores de texto para desarrollo HTML</h2>
+            <p>Aunque un archivo HTML es un simple archivo de texto que puedes editar con cualquier programa (como el Bloc de notas o TextEdit), existen **editores de código especializados** que hacen el trabajo mucho más fácil y eficiente. Estos editores ofrecen características diseñadas para el desarrollo web.</p>
+            <p>Las características clave de un buen editor de código incluyen:</p>
+            <ul>
+                <li><strong>Resaltado de sintaxis</strong>: Colorea el código para facilitar la lectura de etiquetas, atributos y valores.</li>
+                <li><strong>Autocompletado de código</strong>: Sugiere etiquetas y atributos a medida que escribes, ahorrando tiempo y reduciendo errores.</li>
+                <li><strong>Vista previa en vivo</strong>: Muestra cómo se verá la página web en tiempo real a medida que la modificas.</li>
+                <li><strong>Integración con extensiones y plugins</strong>: Permite añadir funcionalidades extra, como formateadores de código, linters o servidores web locales.</li>
+            </ul>
+            <p>Algunos de los **editores más populares** para el desarrollo web son:</p>
+            <ul>
+                <li><strong>Visual Studio Code (VS Code)</strong>: Gratuito, de Microsoft, y extremadamente popular por su gran cantidad de extensiones y su rendimiento. Es el estándar de la industria.</li>
+                <li><strong>Sublime Text</strong>: Ligero y rápido, ideal para proyectos pequeños.</li>
+                <li><strong>Atom</strong>: Desarrollado por GitHub, es muy personalizable.</li>
+                <li><strong>Brackets</strong>: Enfocado en el desarrollo front-end, con una excelente vista previa en vivo.</li>
+            </ul>
+            <div class="resumen-final">✅ <strong>Conclusión:</strong> Elige un editor de código especializado para optimizar tu flujo de trabajo. Visual Studio Code es una excelente opción para empezar debido a su popularidad y vasto ecosistema de extensiones.</div>
+        </section>
+
+      
+
+        <section id="ud01-autoevaluacion" class="bloque ancla" aria-labelledby="t-ud01-autoevaluacion">
+            <h2 id="t-ud01-autoevaluacion">📝 Autoevaluación UD01</h2>
+
+            <div class="solucion-quiz">
+                <h3>📝 Nota para el equipo de Formacion</h3>
+                <p>
+                    Esta autoevaluación es un ejemplo didáctico de cómo utilizamos la **gamificación** y el **aprendizaje progresivo** para mantener a los estudiantes motivados. Al realizar el test el alumno desbloquea el siguiente tema lo que garantiza un aprendizaje continuo y estructurado.
+                    Esto garantiza que los estudiantes puedan avanzar en su aprendizaje y que la formación sea efectiva y motivadora.
+                </p>
+                <p>
+                    Para que puedan explorar el manual sin restricciones, a continuación, se proporcionan las respuestas. Esto les permitirá avanzar y experimentar la fluidez del contenido, demostrando mi habilidad para crear soluciones interactivas y accesibles para la formación en línea.
+                </p>
+                <p>Asimismo puede probar respuestas erróneas pues el test cuenta con un sistema de retroalimentación que permitirá identificar y corregir errores de respuesta.</p>
+                <h4>Respuestas del Quiz:</h4>
+                <ul>
+                    <li><strong>Pregunta 1:</strong> La respuesta correcta es la opción B (HTML).</li>
+                    <li><strong>Pregunta 2:</strong> La respuesta correcta es la opción A (Mejoran accesibilidad y SEO).</li>
+                    <li><strong>Pregunta 3:</strong> La respuesta correcta es la opción C (<code>&lt;!DOCTYPE html&gt;</code>).</li>
+                </ul>
+            </div>
+
+            <form id="quiz-ud01"
+                class="bloque"
+                novalidate
+                data-quiz
+                data-respuestas='{"q1":"b","q2":"a","q3":"c"}'>
+
+                <fieldset>
+                    <legend>1) ¿Qué lenguaje define la <em>estructura semántica</em> de una página?</legend>
+                    <label><input type="radio" name="q1" value="a" required> CSS</label><br>
+                    <label><input type="radio" name="q1" value="b"> HTML</label><br>
+                    <label><input type="radio" name="q1" value="c"> JavaScript</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>2) ¿Cuál es una ventaja de las etiquetas semánticas?</legend>
+                    <label><input type="radio" name="q2" value="a" required> Mejoran accesibilidad y SEO</label><br>
+                    <label><input type="radio" name="q2" value="b"> Ocultan texto</label><br>
+                    <label><input type="radio" name="q2" value="c"> Sustituyen a CSS</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>3) ¿Cuál es el <em>doctype</em> correcto para HTML5?</legend>
+                    <label><input type="radio" name="q3" value="a" required> &lt;!DOCTYPE HTML PUBLIC…&gt;</label><br>
+                    <label><input type="radio" name="q3" value="b"> &lt;!DOCTYPE xhtml&gt;</label><br>
+                    <label><input type="radio" name="q3" value="c"> &lt;!DOCTYPE html&gt;</label>
+                </fieldset>
+
+                <p id="quiz-ud01-msg" aria-live="polite"></p>
+
+                <button type="submit" class="boton-ir">Comprobar respuestas</button>
+            </form>
+
+            <div id="ud01-completar" style="display:none; margin-top:10px;"></div>
+        </section>
+
+    </main>
+
+    <script>
+        // Solo mantenemos la mejora de <details>; sin lógica de quiz aquí.
+        document.addEventListener('click', (ev) => {
+            const det = ev.target?.closest('details');
+            if (!det) return;
+            if (det.open) return;
+            const cont = det.closest('section');
+            if (!cont) return;
+            cont.querySelectorAll('details[open]').forEach(d => { if (d !== det) d.removeAttribute('open'); });
+        });
+    </script>
+</body>
+</html>

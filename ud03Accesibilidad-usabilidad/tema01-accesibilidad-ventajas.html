@@ -1,0 +1,128 @@
+
+
+  <!-- Cabecera local del módulo (no <header> global) -->
+  
+    <h2>IFCD0110 · Accesibilidad web: recursos, estándares y verificación</h2>
+
+    <p>En este módulo aprenderás a aplicar los estándares de accesibilidad web, utilizar herramientas de verificación y realizar auditorías para garantizar que tus páginas sean accesibles para todos los usuarios.</p>
+    <p>Veremos cómo aplicar las pautas WCAG, utilizar ARIA correctamente y realizar pruebas con herramientas y usuarios reales. También aprenderás a identificar y corregir problemas comunes de accesibilidad.</p>
+    <p>Al finalizar, podrás auditar y mejorar la accesibilidad de tus proyectos web, asegurando que cumplan con los estándares internacionales y sean usables por personas con discapacidad.</p>
+  
+
+  <!-- 1) Aplicaciones -->
+  <section id="aplicaciones" class="bloque">
+    <h3>1) Aplicaciones para verificar accesibilidad</h3>
+    <p>Combina auditorías automáticas con revisión manual para resultados fiables.</p>
+    <ul>
+      <li><strong>Lighthouse</strong> (DevTools): informe de accesibilidad y métricas clave.</li>
+      <li><strong>axe Accessibility</strong>: extensión/biblioteca con reglas WCAG en tiempo real.</li>
+      <li><strong>WAVE</strong>: marcado visual de errores/alertas en la interfaz.</li>
+      <li><strong>Siteimprove Checker</strong>: análisis y seguimiento histórico.</li>
+      <li><strong>Lectores de pantalla</strong> (NVDA/VoiceOver/TalkBack): pruebas manuales reales.</li>
+    </ul>
+    <p class="nota">Ninguna herramienta sustituye a usuarios reales con necesidades diversas.</p>
+  </section>
+
+  <!-- 2) Recursos de estándares -->
+  <section id="recursos" class="bloque">
+    <h3>2) Recursos web de estándares</h3>
+    <ul>
+      <li><a href="https://www.w3.org/WAI/WCAG21/quickref/" target="_blank" rel="noopener">WCAG 2.1 Quick Reference</a></li>
+      <li><a href="https://www.w3.org/WAI-ARIA/" target="_blank" rel="noopener">WAI-ARIA</a> (roles, estados y propiedades).</li>
+      <li><a href="https://www.w3.org/WAI/test-evaluate/" target="_blank" rel="noopener">WAI · Test &amp; Evaluate</a></li>
+      <li><a href="https://www.une.org/" target="_blank" rel="noopener">UNE-EN 301 549</a> (marco europeo/nacional).</li>
+    </ul>
+    <p class="nota">Verifica la versión aplicable (p.ej., WCAG 2.1 vs 2.2) según normativa vigente.</p>
+  </section>
+
+  <!-- 3) Uso en páginas -->
+  <section id="utilizacion" class="bloque">
+    <h3>3) Utilización de los recursos en páginas web</h3>
+    <ul>
+      <li><strong>Semántica</strong>: <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;footer&gt;</code>.</li>
+      <li><strong>Landmarks/ARIA</strong>: <code>role="banner"</code>, <code>navigation</code>, <code>main</code>…</li>
+      <li><strong>Contraste</strong> WCAG AA: 4.5:1 texto normal; 3:1 texto grande.</li>
+      <li><strong>Iteración</strong>: pasa Lighthouse/WAVE + teclado + lector de pantalla en cada entrega.</li>
+    </ul>
+    <div class="esquema-textual">
+<pre><code>&lt;button aria-expanded="false" aria-controls="menu1"&gt;Menú&lt;/button&gt;
+&lt;ul id="menu1" hidden&gt;
+  &lt;li&gt;Opción 1&lt;/li&gt;
+  &lt;li&gt;Opción 2&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+    <p class="nota">Relaciona el control con su contenido y actualiza <code>aria-expanded</code> al abrir/cerrar.</p>
+  </section>
+
+  <!-- 4) Comprobación -->
+  <section id="comprobacion" class="bloque">
+    <h3>4) Comprobar la accesibilidad</h3>
+    <ol>
+      <li>Auditoría automática (Lighthouse/axe/WAVE).</li>
+      <li>Revisión manual: <em>tab</em> para enfoque, orden lógico, <code>alt</code>.</li>
+      <li>Pruebas con lector de pantalla (NVDA/VoiceOver/TalkBack).</li>
+      <li>Validadores: <a href="https://validator.w3.org/" target="_blank" rel="noopener">W3C HTML/CSS</a>.</li>
+      <li>Feedback con usuarios con discapacidad.</li>
+    </ol>
+  </section>
+
+  <!-- 5) Ejercicios -->
+  <section id="ejercicios" class="bloque">
+    <h3>5) Ejercicios prácticos</h3>
+    <ul>
+      <li>Audita una web con Lighthouse y WAVE; corrige ≥10 incidencias.</li>
+      <li>Menú desplegable accesible (teclado + ARIA correcto).</li>
+      <li>Alt descriptivo en imágenes + verificación de contraste.</li>
+      <li>Vídeo con subtítulos y audio con transcripción en HTML.</li>
+    </ul>
+  </section>
+
+  <!-- 6) Quiz (4 preguntas, patrón SPA con data-quiz) -->
+  <section id="quiz-a11y" class="bloque">
+    <h3>6) Autoevaluación — Accesibilidad web</h3>
+
+    <form id="quiz-accesibilidad"
+          class="bloque"
+          data-quiz
+          data-respuestas='{
+            "q1":"b",
+            "q2":"a",
+            "q3":"b",
+            "q4":"a"
+          }'
+          novalidate>
+
+      <fieldset>
+        <legend>1) ¿Qué estándar recoge las pautas de accesibilidad web?</legend>
+        <label><input type="radio" name="q1" value="a" required> ARIA</label><br>
+        <label><input type="radio" name="q1" value="b"> WCAG</label><br>
+        <label><input type="radio" name="q1" value="c"> CSS</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>2) ¿Qué atributo describe imágenes para lectores de pantalla?</legend>
+        <label><input type="radio" name="q2" value="a" required> alt</label><br>
+        <label><input type="radio" name="q2" value="b"> aria-role</label><br>
+        <label><input type="radio" name="q2" value="c"> title</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>3) ¿Qué herramienta integrada en DevTools genera informes de accesibilidad?</legend>
+        <label><input type="radio" name="q3" value="a" required> WAVE</label><br>
+        <label><input type="radio" name="q3" value="b"> Lighthouse</label><br>
+        <label><input type="radio" name="q3" value="c"> Grammarly</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>4) ¿Cuál es el ratio mínimo de contraste (AA) para texto normal?</legend>
+        <label><input type="radio" name="q4" value="a" required> 4.5:1</label><br>
+        <label><input type="radio" name="q4" value="b"> 3:1</label><br>
+        <label><input type="radio" name="q4" value="c"> 2:1</label>
+      </fieldset>
+
+      <p id="quiz-accesibilidad-msg" aria-live="polite"></p>
+      <button type="submit" class="boton-ir">Comprobar respuestas</button>
+    </form>
+  </section>
+
+</section>

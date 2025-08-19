@@ -1,0 +1,141 @@
+<!-- FRAGMENTO SPA · Accesibilidad — verificación y estándares -->
+
+    <h2>Aplicaciones y recursos para verificar la accesibilidad de sitios web</h2>
+    <p><strong>Objetivo:</strong> aprender a utilizar herramientas y estándares web para garantizar que las páginas sean accesibles, aplicando buenas prácticas y metodologías de verificación.</p>
+
+    <div class="esquema-textual" aria-label="Esquema de contenidos">
+<pre><code>Epígrafes:
+– Aplicaciones para verificar la accesibilidad de sitios web (estándares).
+– Recursos web de estándares.
+– Utilización de los recursos en las páginas web.
+– Comprobar la accesibilidad en las páginas web.</code></pre>
+    </div>
+
+    <!-- 1) Aplicaciones -->
+    <div class="bloque">
+      <h3>1) Aplicaciones para verificar la accesibilidad de sitios web</h3>
+      <p>Herramientas de auditoría para detectar y corregir problemas de accesibilidad:</p>
+      <ul>
+        <li><strong>Lighthouse (Chrome DevTools)</strong>: informe de accesibilidad, rendimiento y mejores prácticas.</li>
+        <li><strong>WAVE</strong>: marca errores/alertas directamente sobre la página.</li>
+        <li><strong>axe</strong>: extensión y librería para evaluaciones automatizadas.</li>
+        <li><strong>Tota11y</strong>: visualiza problemas comunes directamente en la interfaz.</li>
+      </ul>
+
+      <details class="tarjeta-inteligente">
+        <summary>Ejemplo de informe Lighthouse</summary>
+<pre><code>Accesibilidad
+-------------
+• Contraste insuficiente: 3 fallos
+• Imágenes con alt: 90%
+• Formularios accesibles: 100%
+• Navegación por teclado: OK
+Puntuación: 88/100</code></pre>
+        <p>Interpreta y prioriza: corrige contraste y textos alternativos primero.</p>
+      </details>
+    </div>
+
+    <!-- 2) Recursos -->
+    <div class="bloque">
+      <h3>2) Recursos web de estándares</h3>
+      <ul>
+        <li><strong>WCAG</strong> — directrices de contenido accesible.</li>
+        <li><strong>WAI-ARIA</strong> — roles y estados para interfaces dinámicas.</li>
+        <li><strong>ISO/IEC 40500</strong> — estandarización internacional de WCAG 2.0.</li>
+        <li><strong>BOE-A-2011-19503</strong> — normativa española (sector público).</li>
+      </ul>
+
+      <details class="tarjeta-inteligente">
+        <summary>Ejemplo de uso ARIA</summary>
+<pre><code>&lt;button aria-label="Cerrar ventana"&gt;✕&lt;/button&gt;
+&lt;div role="alert"&gt;Formulario enviado correctamente&lt;/div&gt;
+&lt;nav role="navigation"&gt;…&lt;/nav&gt;</code></pre>
+      </details>
+    </div>
+
+    <!-- 3) Utilización práctica -->
+    <div class="bloque">
+      <h3>3) Utilización de los recursos en las páginas</h3>
+      <ul>
+        <li>Imágenes con <code>alt</code> significativo.</li>
+        <li>Semántica correcta: <code>header</code>, <code>main</code>, <code>footer</code>, <code>section</code>.</li>
+        <li>Formularios con <code>label</code> asociado y mensajes de error claros.</li>
+        <li>Contraste y tipografía conforme a WCAG (AA como mínimo).</li>
+        <li>Pruebas con teclado y lector de pantalla.</li>
+      </ul>
+
+      <details class="tarjeta-inteligente">
+        <summary>HTML accesible (formulario)</summary>
+<pre><code>&lt;label for="email"&gt;Correo electrónico&lt;/label&gt;
+&lt;input id="email" name="email" type="email" autocomplete="email" required&gt;</code></pre>
+      </details>
+    </div>
+
+    <!-- 4) Comprobación -->
+    <div class="bloque">
+      <h3>4) Comprobar la accesibilidad</h3>
+      <ol>
+        <li>Auditoría automática (Lighthouse / axe / WAVE).</li>
+        <li>Revisión manual: teclado, foco, lectores de pantalla.</li>
+        <li>Validación W3C de HTML/CSS.</li>
+        <li>Documentar y priorizar correcciones.</li>
+      </ol>
+    </div>
+
+    <!-- Ejercicios -->
+    <div class="bloque">
+      <h3>Ejercicios prácticos</h3>
+      <ul>
+        <li>Audita tu home con WAVE/axe y corrige al menos 10 incidencias.</li>
+        <li>Haz un formulario accesible con <code>label</code>, estados y mensajes.</li>
+        <li>Mejora contraste a nivel AA (4.5:1 texto normal, 3:1 texto grande).</li>
+      </ul>
+    </div>
+
+   <!-- Autoevaluación (4 preguntas) -->
+  <section class="bloque" id="quiz-usab-bloque">
+    <h3>🧩 Autoevaluación · Usabilidad</h3>
+
+    <form id="quiz-usabilidad"
+          class="bloque"
+          data-quiz
+          data-respuestas='{
+            "q1":"c",
+            "q2":"a",
+            "q3":"b",
+            "q4":"b"
+          }'
+          novalidate>
+
+      <fieldset>
+        <legend>1) ¿Cuál NO es componente clásico de la definición de usabilidad?</legend>
+        <label><input type="radio" name="q1" value="a" required> Eficacia</label><br>
+        <label><input type="radio" name="q1" value="b"> Eficiencia</label><br>
+        <label><input type="radio" name="q1" value="c"> Estética visual</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>2) “Visibilidad del estado del sistema” significa…</legend>
+        <label><input type="radio" name="q2" value="a" required> Mostrar qué ocurre y si una acción progresa.</label><br>
+        <label><input type="radio" name="q2" value="b"> Usar colores intensos en botones.</label><br>
+        <label><input type="radio" name="q2" value="c"> Diseñar solo en modo oscuro.</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>3) Mejor práctica en formularios:</legend>
+        <label><input type="radio" name="q3" value="a" required> Placeholder como única etiqueta.</label><br>
+        <label><input type="radio" name="q3" value="b"> Etiquetas visibles, ayudas y validación en línea.</label><br>
+        <label><input type="radio" name="q3" value="c"> Pedir más campos “por si acaso”.</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>4) ¿Qué afirmación es correcta?</legend>
+        <label><input type="radio" name="q4" value="a" required> La usabilidad se evalúa solo al final.</label><br>
+        <label><input type="radio" name="q4" value="b"> Se integra en todo el ciclo de vida.</label><br>
+        <label><input type="radio" name="q4" value="c"> No puede medirse con datos.</label>
+      </fieldset>
+
+      <p id="quiz-usabilidad-msg" aria-live="polite"></p>
+      <button type="submit" class="boton-ir">Comprobar respuestas</button>
+    </form>
+  </section>
