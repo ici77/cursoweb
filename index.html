@@ -15,15 +15,29 @@
   <meta property="og:description" content="Manual práctico para aprender diseño web desde cero y prepararte para el examen del certificado IFCD0110.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://inmacontreras.com/cursoweb">
-  <meta property="og:image" content="https://tusitio.com/assets/imagen-manual.jpg">
+  
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Diseño Web desde Cero · Manual IFCD0110 para Aprender y Certificarte">
   <meta name="twitter:description" content="Domina HTML, CSS y JavaScript desde cero y prepárate para certificarte con el manual IFCD0110.">
-  <meta name="twitter:image" content="https://tusitio.com/assets/imagen-manual.jpg">
+  <link rel="canonical" href="https://www.inmacontreras.com/cursoweb/" />
+
+<meta property="og:url" content="https://www.inmacontreras.com/cursoweb/" />
+<meta property="og:image" content="https://www.inmacontreras.com/images/og-inma-contreras.jpg" />
+
+<meta name="twitter:image" content="https://www.inmacontreras.com/images/og-inma-contreras.jpg" />
+
 
  
   <link rel="icon" href="assets/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="../cssgeneral.css">
+  <link rel="stylesheet" href="cssgeneral.css">
+  <!-- ⬇️ pon esto justo dentro de <head>, antes del CSS -->
+<script>
+  (function () {
+    var isEmbed = new URL(location.href).searchParams.get('embed') === '1';
+    if (isEmbed) document.documentElement.classList.add('embed');
+  })();
+</script>
+
 
 
   <style>
@@ -995,6 +1009,29 @@ legend {
       renderVista();
     })();
   </script>
+<script>
+(function () {
+  const isEmbed = new URL(location.href).searchParams.get('embed') === '1';
+  if (isEmbed) document.documentElement.classList.add('embed');
+
+  function postHeight() {
+    const h = Math.max(
+      document.documentElement.scrollHeight,
+      document.body?.scrollHeight || 0
+    );
+    parent.postMessage({ type: 'COURSE_HEIGHT', height: h, hash: location.hash }, location.origin);
+  }
+
+  if (isEmbed) {
+    window.addEventListener('load', postHeight);
+    window.addEventListener('resize', () => requestAnimationFrame(postHeight));
+    window.addEventListener('hashchange', () => setTimeout(postHeight, 50));
+    new MutationObserver(() => setTimeout(postHeight, 50))
+      .observe(document.body, { childList: true, subtree: true });
+  }
+})();
+</script>
+
 
   <footer>
     <p>📌 <strong>María Inmaculada Contreras Iñíguez</strong> — Formadora en Tecnologías de la Información y Administración</p>

@@ -899,5 +899,28 @@ th, td { padding: .5rem; }
 .bc-pill:hover{ text-decoration:underline }
 .bc-current:hover{ text-decoration:none }
 
+/* ======== MODO EMBED ======== */
+html.embed body { background: transparent; }
+
+/* Oculta cabecera y pie del CURSO cuando está embebido */
+html.embed header,
+html.embed footer {
+  display: none !important;
+}
+
+/* Compacta espacios al integrarlo */
+html.embed .layout { 
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 0 12px !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* El primer aviso amarillo queda más pegado al título del wrapper */
+html.embed .resumen:first-of-type {
+  margin-top: 8px !important;
+}
+
 
 /* === FIN DE HOJA UNIFICADA v2 === */

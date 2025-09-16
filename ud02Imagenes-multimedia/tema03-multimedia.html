@@ -23,7 +23,7 @@
 – Autoevaluación con feedback detallado.</code></pre>
     </div>
 <div class="imagen centrado">
-        <img src="assets/02multimedia.png" alt="Capas HTML" />
+        <img src="/cursoweb/assets/02multimedia.png" alt="Capas HTML" />
       </div>
     <!-- INTRO -->
     <div class="bloque">
@@ -43,15 +43,15 @@
       <details class="tarjeta-inteligente">
         <summary>Ejemplo básico: audio y vídeo con varias fuentes</summary>
         <pre><code>&lt;audio controls preload="metadata"&gt;
-  &lt;source src="assets/audio-clase.opus" type="audio/ogg; codecs=opus"&gt;
-  &lt;source src="assets/audio-clase.mp3" type="audio/mpeg"&gt;
-  Tu navegador no soporta audio HTML5. &lt;a href="assets/audio-clase.mp3"&gt;Descargar MP3&lt;/a&gt;
+  &lt;source src="/cursoweb/assets/audio-clase.opus" type="audio/ogg; codecs=opus"&gt;
+  &lt;source src="/cursoweb/assets/audio-clase.mp3" type="audio/mpeg"&gt;
+  Tu navegador no soporta audio HTML5. &lt;a href="/cursoweb/assets/audio-clase.mp3"&gt;Descargar MP3&lt;/a&gt;
 &lt;/audio&gt;
 
-&lt;video controls width="720" poster="assets/poster-clase.jpg" preload="metadata" playsinline&gt;
-  &lt;source src="assets/video-clase.webm" type="video/webm"&gt;
-  &lt;source src="assets/video-clase.mp4" type="video/mp4"&gt;
-  &lt;track src="assets/subs-clase-es.vtt" kind="captions" srclang="es" label="Español" default&gt;
+&lt;video controls width="720" poster="/cursoweb/assets/poster-clase.jpg" preload="metadata" playsinline&gt;
+  &lt;source src="/cursoweb/assets/video-clase.webm" type="video/webm"&gt;
+  &lt;source src="/cursoweb/assets/video-clase.mp4" type="video/mp4"&gt;
+  &lt;track src="/cursoweb/assets/subs-clase-es.vtt" kind="captions" srclang="es" label="Español" default&gt;
   Tu navegador no soporta vídeo HTML5.
 &lt;/video&gt;</code></pre>
         <p>Brindar múltiples <code>&lt;source&gt;</code> incrementa compatibilidad; <code>&lt;track&gt;</code> habilita subtítulos; <code>playsinline</code> evita que algunos móviles lancen fullscreen automáticamente.</p>
@@ -115,12 +115,12 @@ ffmpeg -i origen.mov -c:v libvpx-vp9 -b:v 2M -c:a libopus -b:a 96k salida.webm</
       <details class="tarjeta-inteligente">
         <summary>Ejemplo avanzado: podcast con transcripción y descarga</summary>
         <pre><code>&lt;audio id="player" controls preload="metadata" tabindex="0"&gt;
-  &lt;source src="assets/podcast-ep01.opus" type="audio/ogg; codecs=opus"&gt;
-  &lt;source src="assets/podcast-ep01.mp3" type="audio/mpeg"&gt;
-  Tu navegador no soporta audio HTML5. &lt;a href="assets/podcast-ep01.mp3"&gt;Descargar MP3&lt;/a&gt;
+  &lt;source src="/cursoweb/assets/podcast-ep01.opus" type="audio/ogg; codecs=opus"&gt;
+  &lt;source src="/cursoweb/assets/podcast-ep01.mp3" type="audio/mpeg"&gt;
+  Tu navegador no soporta audio HTML5. &lt;a href="/cursoweb/assets/podcast-ep01.mp3"&gt;Descargar MP3&lt;/a&gt;
 &lt;/audio&gt;
 
-&lt;p&gt;&lt;a href="assets/transcripcion-ep01.html"&gt;Ver transcripción completa (HTML accesible)&lt;/a&gt;&lt;/p&gt;</code></pre>
+&lt;p&gt;&lt;a href="/cursoweb/assets/transcripcion-ep01.html"&gt;Ver transcripción completa (HTML accesible)&lt;/a&gt;&lt;/p&gt;</code></pre>
         <p>Facilita transcripciones en HTML (no solo PDF) para SEO y lectores de pantalla.</p>
       </details>
 
@@ -139,11 +139,11 @@ ffmpeg -i origen.mov -c:v libvpx-vp9 -b:v 2M -c:a libopus -b:a 96k salida.webm</
 
       <details class="tarjeta-inteligente">
         <summary>Vídeo con captions, chapters y pequeño control JS</summary>
-        <pre><code>&lt;video id="vid1" controls width="800" poster="assets/poster-lecture.jpg" preload="metadata" playsinline crossorigin="anonymous"&gt;
-  &lt;source src="assets/lecture-1080.webm" type="video/webm"&gt;
-  &lt;source src="assets/lecture-1080.mp4" type="video/mp4"&gt;
-  &lt;track src="assets/lecture-es.vtt" kind="captions" srclang="es" label="Español" default&gt;
-  &lt;track src="assets/lecture-chapters.vtt" kind="chapters" srclang="es" label="Capítulos"&gt;
+        <pre><code>&lt;video id="vid1" controls width="800" poster="/cursoweb/assets/poster-lecture.jpg" preload="metadata" playsinline crossorigin="anonymous"&gt;
+  &lt;source src="/cursoweb/assets/lecture-1080.webm" type="video/webm"&gt;
+  &lt;source src="/cursoweb/assets/lecture-1080.mp4" type="video/mp4"&gt;
+  &lt;track src="/cursoweb/assets/lecture-es.vtt" kind="captions" srclang="es" label="Español" default&gt;
+  &lt;track src="/cursoweb/assets/lecture-chapters.vtt" kind="chapters" srclang="es" label="Capítulos"&gt;
   Tu navegador no soporta vídeo HTML5.
 &lt;/video&gt;
 
@@ -215,7 +215,7 @@ En esta clase veremos cómo insertar vídeo accesible y optimizado.</code></pre>
 
       <details class="tarjeta-inteligente">
         <summary>Ejemplo: audiodescripción (<code>kind="descriptions"</code>)</summary>
-        <pre><code>&lt;track src="assets/lecture-descriptions.vtt" kind="descriptions" srclang="es" label="Audiodescripción (ES)"&gt;</code></pre>
+        <pre><code>&lt;track src="/cursoweb/assets/lecture-descriptions.vtt" kind="descriptions" srclang="es" label="Audiodescripción (ES)"&gt;</code></pre>
       </details>
 
       <p>Además de pistas, ofrece la transcripción completa en HTML con marcadores y tiempos enlazables.</p>
@@ -280,26 +280,26 @@ En esta clase veremos cómo insertar vídeo accesible y optimizado.</code></pre>
 
       <div>
         <h4>Ejemplo 1 — Incorrecto: autoplay con sonido</h4>
-        <pre><code>&lt;video autoplay src="assets/intro.mp4"&gt;&lt;/video&gt;</code></pre>
+        <pre><code>&lt;video autoplay src="/cursoweb/assets/intro.mp4"&gt;&lt;/video&gt;</code></pre>
         <p>Problemas: autoplay con sonido perjudica UX, accesibilidad y puede ser bloqueado por el navegador.</p>
 
         <h4>Ejemplo 1 — Corrección</h4>
         <pre><code>&lt;video muted autoplay playsinline controls preload="metadata"&gt;
-  &lt;source src="assets/intro.mp4" type="video/mp4"&gt;
-  &lt;track src="assets/intro-es.vtt" kind="captions" srclang="es" label="Español"&gt;
+  &lt;source src="/cursoweb/assets/intro.mp4" type="video/mp4"&gt;
+  &lt;track src="/cursoweb/assets/intro-es.vtt" kind="captions" srclang="es" label="Español"&gt;
 &lt;/video&gt;</code></pre>
         <p>Comienza en silencio, ofrece controles y subtítulos; permite que el usuario active sonido.</p>
       </div>
 
       <div>
         <h4>Ejemplo 2 — Incorrecto: usar <em>poster</em> sin contexto textual</h4>
-        <pre><code>&lt;video poster="assets/poster.jpg" src="assets/lecture.mp4"&gt;&lt;/video&gt;</code></pre>
+        <pre><code>&lt;video poster="/cursoweb/assets/poster.jpg" src="/cursoweb/assets/lecture.mp4"&gt;&lt;/video&gt;</code></pre>
         <p>Problema: la imagen de <em>poster</em> no aporta contexto textual a tecnologías de asistencia.</p>
 
         <h4>Ejemplo 2 — Corrección</h4>
         <pre><code>&lt;figure&gt;
-  &lt;video poster="assets/poster.jpg" controls&gt;
-    &lt;source src="assets/lecture.mp4" type="video/mp4"&gt;
+  &lt;video poster="/cursoweb/assets/poster.jpg" controls&gt;
+    &lt;source src="/cursoweb/assets/lecture.mp4" type="video/mp4"&gt;
   &lt;/video&gt;
   &lt;figcaption&gt;Lección 1: introducción a la accesibilidad en multimedia.&lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre>
